@@ -7,8 +7,13 @@ import Footer from './components/Footer';
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Routes />
-      <Flex height="100vh" backgroundColor="#FED7D7">
+      <Flex
+        width="100%"
+        justifyContent="center"
+        height="100vh"
+        backgroundColor="#FED7D7"
+      >
+        <Routes />
         <Footer />
       </Flex>
     </ChakraProvider>
