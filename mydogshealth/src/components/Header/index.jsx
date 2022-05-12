@@ -1,4 +1,4 @@
-import { Box, Flex, Button, Text } from '@chakra-ui/react';
+import { Flex, Button, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import Logo from '../Logo';
 
@@ -32,7 +32,7 @@ const Header = () => {
           <Text
             marginTop="5px"
             paddingBottom="5px"
-            transition="0.2s"
+            transition="0.4s"
             borderBottom="2px solid #FED7D7"
             _hover={{
               borderBottom: '2px solid #C4C4C4',
@@ -43,7 +43,7 @@ const Header = () => {
           <Text
             marginTop="5px"
             paddingBottom="5px"
-            transition="0.2s"
+            transition="0.4s"
             borderBottom="2px solid #FED7D7"
             _hover={{
               borderBottom: '2px solid #C4C4C4',
@@ -54,7 +54,7 @@ const Header = () => {
           <Text
             marginTop="5px"
             paddingBottom="5px"
-            transition="0.2s"
+            transition="0.4s"
             borderBottom="2px solid #FED7D7"
             _hover={{
               borderBottom: '2px solid #C4C4C4',
