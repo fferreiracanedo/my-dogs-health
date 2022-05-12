@@ -1,10 +1,10 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
+import Header from '../../components/Header';
+
 const LandingPage = () => {
   return (
     <Flex>
-      <Box>
-        <Text>Landing Page</Text>
-      </Box>
+      <Header />
     </Flex>
   );
 };
