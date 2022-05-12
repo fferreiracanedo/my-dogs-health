@@ -6,7 +6,12 @@ import Routes from './routes';
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Flex height="100vh" backgroundColor="#FED7D7">
+      <Flex
+        width="100%"
+        justifyContent="center"
+        height="100vh"
+        backgroundColor="#FED7D7"
+      >
         <Routes />
       </Flex>
     </ChakraProvider>
