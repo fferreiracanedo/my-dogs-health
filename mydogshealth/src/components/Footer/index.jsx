@@ -17,8 +17,7 @@ const Footer = () => {
       </Box>
       <Box display="flex" justifyContent="center">
         <Text fontSize="0.7rem">
-          Desenvolvido com <FcLike />
-          por Equipe-4
+          Desenvolvido com <FcLike /> por Equipe-4
         </Text>
       </Box>
     </Flex>
