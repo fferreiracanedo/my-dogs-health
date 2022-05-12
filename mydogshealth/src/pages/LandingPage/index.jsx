@@ -3,8 +3,11 @@ import Header from '../../components/Header';
 
 const LandingPage = () => {
   return (
-    <Flex>
+    <Flex width="100%">
       <Header />
+      <Box width="100%">
+        <Text>Landing Page</Text>
+      </Box>
     </Flex>
   );
 };
