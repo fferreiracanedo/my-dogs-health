@@ -4,13 +4,20 @@ import theme from '../src/theme/index';
 import Routes from './routes';
 import Contato from './components/Contatos';
 import DashBoard from './components/Contatos';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
       <Routes />
-      <Flex height="100vh" backgroundColor="#FED7D7">
+      <Flex
+        width="100%"
+        justifyContent="center"
+        height="100vh"
+        backgroundColor="#FED7D7"
+      >
         <DashBoard />
+        <Footer />
       </Flex>
     </ChakraProvider>
   );
