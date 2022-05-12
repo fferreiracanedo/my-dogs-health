@@ -3,7 +3,7 @@ const LandingPage = () => {
   return (
     <Flex>
       <Box>
-        <Text>Landing Page</Text>
+        <Text></Text>
       </Box>
     </Flex>
   );
