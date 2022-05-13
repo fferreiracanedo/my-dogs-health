@@ -1,8 +1,9 @@
 import { Flex, Button, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import Logo from '../Logo';
-
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 const Header = () => {
+  const history = useHistory();
   return (
     <Flex
       height="100px"
@@ -79,6 +80,7 @@ const Header = () => {
               color: '#fff',
               border: '2px solid #fff',
             }}
+            onClick={() => history.push('/login')}
           >
             Login
           </Button>
@@ -94,6 +96,7 @@ const Header = () => {
               color: '#FFF',
               border: '2px solid #FFF',
             }}
+            onClick={() => history.push('/register')}
           >
             Cadastrar-se
           </Button>
