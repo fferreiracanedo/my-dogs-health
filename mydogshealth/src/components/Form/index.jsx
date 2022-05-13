@@ -8,17 +8,44 @@ import {
   FormErrorMessage,
   Select,
   Button,
+  InputGroup,
+  InputRightElement,
+  IconButton,
+  shouldForwardProp,
 } from '@chakra-ui/react';
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useState } from 'react';
+
+import { GrFormView, GrFormViewHide } from 'react-icons/gr';
 
 const Form = () => {
-  const schema = yup.object().shape({
+  const [show, setShow] = useState(false);
+  const [show2, setShow2] = useState(false);
+
+  const handleClick = () => {
+    setShow(!show);
+  };
+
+  const handleClick2 = () => {
+    setShow2(!show2);
+  };
+
+  const formSchema = yup.object().shape({
     name: yup.string().required('Nome Obrigatório'),
     email: yup.string().required('Email Obrigatório').email('Email Inválido'),
-    password: yup.string().required('Senha Obrigatória'),
-    confirmPassword: yup.string().required('Digite a confirmação da Senha'),
+    password: yup
+      .string()
+      .required('Senha Obrigatória')
+      .matches(
+        /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+        'Senha deve conter no mínimo 8 caracteres, 1 letra, 1 número e 1 caractere especial'
+      ),
+    confirmPassword: yup
+      .string()
+      .required('Digite a confirmação da Senha')
+      .oneOf([yup.ref('password'), null], 'Senhas não conferem'),
     category: yup.string().required('Categoria Obrigatória'),
   });
 
@@ -27,7 +54,7 @@ const Form = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(formSchema),
   });
 
   const onSubmitFunction = data => console.log(data);
@@ -45,7 +72,7 @@ const Form = () => {
         marginRight="2%"
         marginTop="10px"
       >
-        <Text fontSize="20px" color="white" marginTop="20px">
+        <Text fontWeight="bold" fontSize="20px" color="white" marginTop="20px">
           Registro
         </Text>
 
@@ -77,27 +104,54 @@ const Form = () => {
               </FormErrorMessage>
             </FormControl>
             <FormControl padding="12px" isInvalid={errors.password}>
-              <Input
-                borderColor="#855050"
-                width="50vw"
-                placeholder="Digite sua Senha"
-                {...register('password')}
-              />
+              <InputGroup size="md">
+                <Input
+                  pr="4.5rem"
+                  type={show ? 'text' : 'password'}
+                  placeholder="Digite sua Senha"
+                  {...register('password')}
+                />
+                <InputRightElement width="4.5rem">
+                  <Button
+                    marginRight="5%"
+                    h="1.75rem"
+                    fontSize="12px"
+                    size="lg"
+                    onClick={handleClick}
+                  >
+                    {show ? <GrFormViewHide /> : <GrFormView />}
+                  </Button>
+                </InputRightElement>
+              </InputGroup>
               <FormErrorMessage>
                 <FormErrorIcon />
                 {errors.password && errors.password.message}
               </FormErrorMessage>
             </FormControl>
-            <FormControl padding="12px" isInvalid={errors.passwordConfirm}>
-              <Input
-                borderColor="#855050"
-                width="50vw"
-                placeholder="Confirme sua Senha"
-                {...register('passwordConfirm')}
-              />
+
+            <FormControl padding="12px" isInvalid={errors.confirmPassword}>
+              <InputGroup size="md">
+                <Input
+                  pr="4.5rem"
+                  type={show2 ? 'text' : 'password'}
+                  placeholder="Confirme sua Senha"
+                  {...register('confirmPassword')}
+                />
+                <InputRightElement width="4.5rem">
+                  <Button
+                    marginRight="5%"
+                    h="1.75rem"
+                    fontSize="12px"
+                    size="lg"
+                    onClick={handleClick2}
+                  >
+                    {show2 ? <GrFormViewHide /> : <GrFormView />}
+                  </Button>
+                </InputRightElement>
+              </InputGroup>
               <FormErrorMessage>
                 <FormErrorIcon />
-                {errors.passwordConfirm && errors.passwordConfirm.message}
+                {errors.confirmPassword && errors.confirmPassword.message}
               </FormErrorMessage>
             </FormControl>
             <FormControl padding="12px">
@@ -111,16 +165,18 @@ const Form = () => {
                 <option>Especialista</option>
               </Select>
             </FormControl>
-            <Box padding="12px" marginTop="20px" marginLeft="25%">
-              <Button
-                colorScheme="#2c2121"
-                color="white"
-                bgColor="#962C2C"
-                type="submit"
-              >
-                Registrar
-              </Button>
-            </Box>
+
+            <Button
+              marginTop="20px"
+              marginLeft="38%"
+              type="submit"
+              colorScheme="#2c2121"
+              color="white"
+              bgColor="#962C2C"
+              marginBottom="20px"
+            >
+              Registrar
+            </Button>
           </form>
         </Box>
       </Box>
