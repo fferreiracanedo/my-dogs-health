@@ -1,6 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
 import LandingPage from '../pages/LandingPage';
 import RegisterPage from '../pages/RegisterPage';
+import Dashboard from '../pages/Dashboard';
 
 const Routes = () => {
   return (
@@ -10,6 +11,9 @@ const Routes = () => {
       </Route>
       <Route path="/register">
         <RegisterPage />
+      </Route>
+      <Route path="/dashboard">
+        <Dashboard />
       </Route>
     </Switch>
   );
