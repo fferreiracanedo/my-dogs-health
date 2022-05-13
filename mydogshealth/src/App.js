@@ -9,15 +9,13 @@ import Footer from './components/Footer';
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Routes />
       <Flex
         width="100%"
         justifyContent="center"
-        height="100vh"
+        height="100%"
         backgroundColor="#FED7D7"
       >
-        <DashBoard />
-        <Footer />
+        <Routes />
       </Flex>
     </ChakraProvider>
   );

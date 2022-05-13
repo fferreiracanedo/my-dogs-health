@@ -1,6 +1,7 @@
 import { Box, Flex, Image, Text } from '@chakra-ui/react';
 import imgFooter from '../../Footer.svg';
-import { FcLike } from 'react-icons/fc';
+
+import Greeting from '../greeting';
 
 const Footer = () => {
   return (
@@ -15,10 +16,10 @@ const Footer = () => {
           </Text>
         </Box>
       </Box>
-      <Box display="flex" justifyContent="center">
-        <Text fontSize="0.7rem">
-          Desenvolvido com <FcLike /> por Equipe-4
-        </Text>
+      <Box flexDir="row" display="flex" justifyContent="center">
+        <Box marginTop="20px">
+          <Greeting />
+        </Box>
       </Box>
     </Flex>
   );

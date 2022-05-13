@@ -10,14 +10,8 @@ const SectionPrincipal = () => {
       justifyContent="center"
     >
       <Box display="flex" flexDirection="column" alignItems="center">
-        <Image
-          width="60%"
-          maxWidth="220px"
-          src={Logo}
-          alt="Logo My Dogs Health"
-          marginBottom="10px"
-        />
         <Text
+          marginTop="60px"
           textAlign="center"
           fontSize="16px"
           marginRight="5px"
