@@ -19,7 +19,9 @@ const SectionSecundaria = () => {
       </Box>
       <Flex
         flexBasis="1"
-        flexDirection="column"
+        flexDirection={{ base: 'column', md: 'row' }}
+        maxWidth="1024px"
+        margin="0 auto"
         alignItems="center"
         justifyContent="space-around"
       >
