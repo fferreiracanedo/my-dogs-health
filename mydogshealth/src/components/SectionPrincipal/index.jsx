@@ -11,15 +11,14 @@ const SectionPrincipal = () => {
     >
       <Box display="flex" flexDirection="column" alignItems="center">
         <Image
-          width="60%"
-          maxWidth="220px"
           src={Logo}
-          alt="Logo My Dogs Health"
-          marginBottom="10px"
-        />
+          display={{ base: 'none', md: 'block' }}
+          width="500px"
+        ></Image>
         <Text
+          marginTop="60px"
           textAlign="center"
-          fontSize="16px"
+          fontSize={{ base: '16px', md: '22px', lg: '26px' }}
           marginRight="5px"
           marginLeft="5px"
         >

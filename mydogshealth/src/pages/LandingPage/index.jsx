@@ -1,10 +1,16 @@
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import SectionSecundaria from '../../components/SectionSecundaria';
+import SectionPrincipal from '../../components/SectionPrincipal';
+
 const LandingPage = () => {
   return (
-    <Flex width="100%">
-      <Box width="100%">
-        <Text>Landing Page</Text>
-      </Box>
+    <Flex flexDir="column" width="100%">
+      <Header />
+      <SectionPrincipal />
+      <SectionSecundaria />
+      <Footer />
     </Flex>
   );
 };
