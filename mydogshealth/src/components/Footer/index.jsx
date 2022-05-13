@@ -1,5 +1,5 @@
 import { Box, Flex, Image, Text } from '@chakra-ui/react';
-import imgFooter from '../../Footer.svg';
+import imgFooter from '../../assets/image/Footer.svg';
 
 import Greeting from '../greeting';
 
