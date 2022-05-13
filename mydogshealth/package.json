@@ -21,7 +21,6 @@
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.1",
-    "swiper": "^8.1.4",
     "web-vitals": "^0.2.2",
     "yup": "^0.32.11"
   },
