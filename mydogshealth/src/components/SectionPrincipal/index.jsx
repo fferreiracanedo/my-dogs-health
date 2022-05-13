@@ -10,10 +10,15 @@ const SectionPrincipal = () => {
       justifyContent="center"
     >
       <Box display="flex" flexDirection="column" alignItems="center">
+        <Image
+          src={Logo}
+          display={{ base: 'none', md: 'block' }}
+          width="500px"
+        ></Image>
         <Text
           marginTop="60px"
           textAlign="center"
-          fontSize="16px"
+          fontSize={{ base: '16px', md: '22px', lg: '26px' }}
           marginRight="5px"
           marginLeft="5px"
         >

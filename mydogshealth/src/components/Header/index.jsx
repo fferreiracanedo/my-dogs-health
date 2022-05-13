@@ -10,6 +10,7 @@ const Header = () => {
       padding="10px"
       width="100vw"
       maxWidth="1024px"
+      margin="0 auto"
       flexDirection={{ base: 'column', md: 'row' }}
       justifyContent="space-between"
       marginTop={{ base: '25px', md: '0' }}
