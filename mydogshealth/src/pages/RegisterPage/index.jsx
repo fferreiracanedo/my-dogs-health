@@ -8,8 +8,8 @@ import RegisterLogo from '../../assets/image/registerLogo.svg';
 
 const RegisterPage = () => {
   return (
-    <Flex flexDir="row">
-      <Box marginTop="10px" marginRight="1%" >
+    <Flex flexDir="row" height="100vh">
+      <Box marginTop="10px" marginRight="1%">
         <Image
           src={Logo}
           alt="Imagem do logo da MyDogsHealth, MyDogs está em preto e a texto Health em verde"

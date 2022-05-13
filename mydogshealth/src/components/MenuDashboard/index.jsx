@@ -9,7 +9,6 @@ const MenuDashboard = () => {
     <Flex>
       <Box width="100%">
         <Box
-          marginTop="5%"
           height="650px"
           width="132.5px"
           bgColor="#A95757"

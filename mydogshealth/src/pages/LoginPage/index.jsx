@@ -5,7 +5,12 @@ import Login from '../../components/Login';
 
 const LoginPage = () => {
   return (
-    <Flex alignItems="center" w="100%" justifyContent="space-evenly">
+    <Flex
+      alignItems="center"
+      w="100%"
+      justifyContent="space-evenly"
+      height="100vh"
+    >
       <Box display="flex" flexDirection="column" alignItems="center">
         <Image
           m="2%"
