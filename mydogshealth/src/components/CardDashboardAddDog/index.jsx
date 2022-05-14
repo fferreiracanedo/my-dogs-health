@@ -34,7 +34,7 @@ const CardDashboardAddDog = () => {
             
             >
                 {/* COLOCAR IMG QUE VAI SER UTILIZADA NO SRC */}
-                <Image alt="" src={"https://img.freepik.com/fotos-gratis/cachorro-sorridente-fofo-usando-oculos-escuros_23-2148865714.jpg?w=2000"} maxHeight="40px"></Image>
+                <Image alt="Saúde" src={"https://img.freepik.com/fotos-gratis/cachorro-sorridente-fofo-usando-oculos-escuros_23-2148865714.jpg?w=2000"} maxHeight="40px"></Image>
                 <Button 
                     backgroundColor='#792323' 
                     color="#fff" 
