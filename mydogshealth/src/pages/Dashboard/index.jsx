@@ -9,9 +9,9 @@ const Dashboard = () => {
         <HeaderDashBoard />
       </Box>
       <Box display="flex" flexDir="column">
-        <Box marginRight="2%">
+        <Flex marginRight="2%">
           <MenuDashboard />
-        </Box>
+        </Flex>
       </Box>
     </Flex>
   );
