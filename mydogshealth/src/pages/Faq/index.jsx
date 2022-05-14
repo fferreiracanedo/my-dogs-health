@@ -1,5 +1,11 @@
+import CardDashboardAddDog from "../../components/CardDashboardAddDog"
+
 const Faq = () => {
-    return (<h1>FAQ</h1>)
+    return (
+        <>
+            <CardDashboardAddDog />
+        </>
+    )
 }
 
 export default Faq
