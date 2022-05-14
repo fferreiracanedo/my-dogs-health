@@ -1,9 +1,9 @@
-import CardDashboardAddDog from "../../components/CardDashboardAddDog"
+import CardMarcarConsulta from "../../components/CardMarcarConsulta"
 
 const Faq = () => {
     return (
         <>
-            <CardDashboardAddDog />
+            faq
         </>
     )
 }
