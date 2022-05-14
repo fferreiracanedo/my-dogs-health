@@ -2,18 +2,18 @@ import { Flex, Box } from '@chakra-ui/react';
 import HeaderDashBoard from '../../components/HeaderDashBoard';
 import MenuDashboard from '../../components/MenuDashboard';
 
-const Dashboard = () => {
+const Cuidados = () => {
   return (
     <Flex width="100%" flexDirection="column" height="100vh">
       <Box>
         <HeaderDashBoard />
       </Box>
       <Box display="flex" flexDir="column">
-        <Flex marginRight="2%">
+        <Box marginRight="2%">
           <MenuDashboard />
-        </Flex>
+        </Box>
       </Box>
     </Flex>
   );
 };
-export default Dashboard;
+export default Cuidados;
