@@ -4,14 +4,14 @@ const CardFeed = ({ title, text }) => {
   return (
     <Flex
       backgroundColor="#AC5858"
-      width="485px"
+      width="350px"
       color="#FFFFFF"
       borderRadius="8px"
       margin="10px 0"
       justifyContent="space-around"
       padding="0.5rem"
     >
-      <Box display="flex" flexDirection="column">
+      <Box width="300px" display="flex" flexDirection="column">
         <Text
           fontFamily="Inter"
           textAlign="center"
@@ -20,7 +20,7 @@ const CardFeed = ({ title, text }) => {
         >
           {title}
         </Text>
-        <Text fontFamily="Poppins" width="387px" fontSize="10px">
+        <Text fontFamily="Poppins" width="287px" fontSize="10px">
           {text}
         </Text>
       </Box>

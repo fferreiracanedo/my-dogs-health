@@ -30,7 +30,7 @@ const Dashboard = () => {
                   </Box>
                 </Box>
 
-                <Box padding="12px 24px" marginTop="5px" marginLeft="20px">
+                <Box padding="12px 24px" marginLeft="10px">
                   <FeedDashboard />
                 </Box>
               </Box>

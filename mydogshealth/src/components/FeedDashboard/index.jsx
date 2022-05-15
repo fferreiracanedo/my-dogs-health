@@ -31,14 +31,16 @@ const FeedDashboard = () => {
       bgColor="#F56565"
       display="flex"
       flexDir="column"
+      width="400px"
     >
       <Box
         fontSize="2.5rem"
         color="#2B2424"
         justifySelf="center"
         fontWeight="bold"
+        width="400px"
       >
-        <Text textAlign="center" fontFamily="Inter">
+        <Text marginLeft="30%" fontFamily="Poppins">
           Feed
         </Text>
       </Box>
