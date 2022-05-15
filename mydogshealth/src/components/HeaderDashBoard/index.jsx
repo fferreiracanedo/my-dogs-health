@@ -10,9 +10,13 @@ import {
   MenuItem,
   MenuList,
   Text,
+  Avatar,
+  AvatarBadge,
+  AvatarGroup,
 } from '@chakra-ui/react';
-import profilePicture from '../../assets/image/ProfilePicture.svg';
+
 import { BiAddToQueue } from 'react-icons/bi';
+import { AiOutlineUser } from 'react-icons/ai';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 const HeaderDashBoard = () => {
   const history = useHistory();
@@ -27,15 +31,16 @@ const HeaderDashBoard = () => {
         p="15px 5px"
         align="center"
       >
-        <Image
-          src={profilePicture}
-          w="54px"
-          h="54px"
-          borderRadius="50px"
-        ></Image>
+        <Avatar>
+          <AvatarBadge boxSize="1.25em" bg="green.500" />
+        </Avatar>
         <Box>
-          <Text color="#000">Nome</Text>
-          <Text color="#FFF4F4">Sobrenome</Text>
+          <Text fontFamily="Inter" color="#000">
+            Nome
+          </Text>
+          <Text fontFamily="Poppins" color="#6d6666">
+            @Sobrenome
+          </Text>
         </Box>
         <Flex
           w="16.5rem"
