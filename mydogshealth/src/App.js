@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Flex justifyContent="center" backgroundColor="#FED7D7">
+      <Flex justifyContent="center" bgColor="#FED7D7">
         <Routes />
       </Flex>
     </ChakraProvider>
