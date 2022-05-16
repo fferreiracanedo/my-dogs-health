@@ -9,7 +9,7 @@ const MenuDashboard = () => {
     <Flex display={{ base: 'none', md: 'flex' }}>
       <Box width="100%">
         <Box
-          height="650px"
+          height="550px"
           width="132.5px"
           bgColor="#A95757"
           display="flex"
@@ -17,6 +17,8 @@ const MenuDashboard = () => {
           borderRadius="0px 8px 8px 0px"
           justifyContent="center"
           alignItems="center"
+          alignContent="center"
+          marginTop="20px"
         >
           <Box alignContent="center">
             <Box display="flex" flexDir="column" margin="10px auto">

@@ -10,16 +10,27 @@ import {
   MenuItem,
   MenuList,
   Text,
+  Avatar,
+  AvatarBadge,
+  AvatarGroup,
 } from '@chakra-ui/react';
-import profilePicture from '../../assets/image/ProfilePicture.svg';
+
 import { BiAddToQueue } from 'react-icons/bi';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+
+import { useHistory } from 'react-router-dom';
 const HeaderDashBoard = () => {
   const history = useHistory();
   const date = new Date();
   console.log(date.toLocaleDateString());
   return (
-    <Box w="100%">
+    <Box
+      boxShadow="-webkit-box-shadow: -1px 6px 9px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 6px 9px -3px rgba(0,0,0,0.75);
+    box-shadow: -1px 6px 9px -3px rgba(0,0,0,0.75);"
+      marginBottom="2px"
+      bgColor="#e28686"
+      w="100%"
+    >
       <Flex
         w="100%"
         m="0 auto"
@@ -27,42 +38,35 @@ const HeaderDashBoard = () => {
         p={{ base: '15px 0', md: '15px 38px' }}
         align="center"
       >
-        <Image
-          src={profilePicture}
-          w="54px"
-          h="54px"
-          borderRadius="50px"
-        ></Image>
+        <Avatar>
+          <AvatarBadge boxSize="1.25em" bg="green.500" />
+        </Avatar>
         <Box>
-          <Text color="#000">Nome</Text>
-          <Text color="#FFF4F4">Sobrenome</Text>
+          <Text fontFamily="Inter" color="#000">
+            Nome
+          </Text>
+          <Text fontFamily="Poppins" color="#6d6666">
+            @Sobrenome
+          </Text>
         </Box>
         <Flex
-          w="16.5rem"
+          w="190px"
+          height="40px"
           justifyContent="space-between"
-          bgColor="#8E2C2C"
+          bgColor="#b84040"
           padding="13px 20px"
           borderRadius="13px"
           color="white"
           display={{ base: 'none', md: 'flex' }}
         >
-          <Text>{date.toLocaleDateString()}</Text>
-          <Text>14:33</Text>
-        </Flex>
-        <Flex
-          w="14rem"
-          justifyContent="space-between"
-          bgColor="#8E2C2C"
-          padding="13px 20px"
-          borderRadius="13px"
-          color="white"
-          display={{ base: 'none', md: 'flex' }}
-        >
-          <Text>Faça uma Consulta</Text>
-          <Text>
-            <BiAddToQueue />
+          <Text marginTop="-4px" fontFamily="Inter">
+            {date.toLocaleDateString()}
+          </Text>
+          <Text marginTop="-4px" fontFamily="Inter">
+            14:33
           </Text>
         </Flex>
+
         <Menu>
           <MenuButton as={Button} bgColor="#8E2C2C" color="white">
             Perfil
