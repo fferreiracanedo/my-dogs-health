@@ -7,12 +7,15 @@ import {
   FormErrorMessage,
   Input,
   FormLabel,
+  useToast,
 } from '@chakra-ui/react';
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 const DogRegisterForm = ({ onClose }) => {
+  const toast = useToast();
+
   const dogRegisterSchema = yup.object().shape({
     name: yup.string().required('Nome Obrigatório'),
     breed: yup.string().required('Raça Obrigatória'),
@@ -30,6 +33,14 @@ const DogRegisterForm = ({ onClose }) => {
   const onSubmitFunction = data => {
     console.log(data);
     onClose();
+    toast({
+      title: 'Cão Adicionado com Sucesso!',
+      description: 'Verifique a pagina de cães para mais detalhes',
+      status: 'success',
+      duration: 9000,
+      isClosable: true,
+      position: 'top-right',
+    });
   };
 
   return (
