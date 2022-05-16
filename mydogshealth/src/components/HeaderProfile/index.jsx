@@ -17,7 +17,7 @@ const HeaderProfile = () => {
         justifyContent="space-evenly"
         margin="0 auto"
       >
-        <Heading>Seu nome aqui</Heading>
+        <Heading fontFamily="Inter">Seu nome aqui</Heading>
         <Box
           bgColor="white"
           w="30%"
@@ -32,8 +32,7 @@ const HeaderProfile = () => {
             Tutor
           </Text>
         </Box>
-        <Text>Sua bio: Nos conte um pouco sobre você</Text>
-        <Text maxW="320px">Seu endereço</Text>
+        <Text maxW="320px">Seu endereço:undefined</Text>
         <Box>
           <Flex>
             <FaDog /> <Text marginLeft="20px">Quantidade: 5</Text>
