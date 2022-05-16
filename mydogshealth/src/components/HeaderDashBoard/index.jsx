@@ -21,7 +21,7 @@ import { useHistory } from 'react-router-dom';
 const HeaderDashBoard = () => {
   const history = useHistory();
   const date = new Date();
-  console.log(date.toLocaleDateString());
+
   return (
     <Box
       boxShadow="-webkit-box-shadow: -1px 6px 9px -3px rgba(0,0,0,0.75);
