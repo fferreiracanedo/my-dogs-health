@@ -6,7 +6,7 @@ import { BiNews } from 'react-icons/bi';
 
 const MenuDashboard = () => {
   return (
-    <Flex>
+    <Flex display={{ base: 'none', md: 'flex' }}>
       <Box width="100%">
         <Box
           height="550px"

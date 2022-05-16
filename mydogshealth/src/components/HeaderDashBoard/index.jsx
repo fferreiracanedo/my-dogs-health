@@ -34,8 +34,8 @@ const HeaderDashBoard = () => {
       <Flex
         w="100%"
         m="0 auto"
-        justifyContent={{ base: 'space-evenly', md: 'space-evenly' }}
-        p="15px 5px"
+        justifyContent={{ base: 'space-evenly', md: 'space-between' }}
+        p={{ base: '15px 0', md: '15px 38px' }}
         align="center"
       >
         <Avatar>
