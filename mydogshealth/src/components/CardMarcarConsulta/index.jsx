@@ -1,7 +1,28 @@
-import { Image, Box, Flex, Button, Text } from '@chakra-ui/react';
-import LogoConsulta from '../../assets/image/AvatarConsulta.svg';
+import {
+  Image,
+  Box,
+  Flex,
+  Button,
+  Text,
+  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  IconButton,
+} from '@chakra-ui/react';
+
+import { FaWhatsapp } from 'react-icons/fa';
+import { AiOutlineLinkedin } from 'react-icons/ai';
+import { BsCalendarPlus } from 'react-icons/bs';
+
 import Task from '../../assets/image/task.svg';
 const CardMarcarConsulta = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Flex
       width="350px"
@@ -11,6 +32,197 @@ const CardMarcarConsulta = () => {
       borderRadius="8px"
       justifyContent="center"
     >
+      <>
+        <Modal isOpen={isOpen} onClose={onClose}>
+          <ModalOverlay />
+          <ModalContent>
+            <ModalHeader textAlign="center">Falar com Especialista</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody>
+              <Box
+                justifyContent="center"
+                alignItems="center"
+                borderRadius="8px"
+                display="flex"
+                bgColor="#c07b7b"
+                width="100%"
+                marginBottom="5px"
+              >
+                <Box>
+                  <Text color="#fff" fontFamily="Inter">
+                    Junior Carlos
+                  </Text>
+                  <Text color="#4d4848" fontFamily="Poppins" as="span">
+                    Especialista Veterinário
+                  </Text>
+                </Box>
+
+                <Box padding="12px 24px" display="flex">
+                  <IconButton
+                    bgColor="#c07b7b"
+                    marginRight="10px"
+                    icon={<FaWhatsapp />}
+                  ></IconButton>
+                  <IconButton
+                    bgColor="#c07b7b"
+                    marginRight="10px"
+                    icon={<AiOutlineLinkedin />}
+                  ></IconButton>
+                  <IconButton
+                    bgColor="#c07b7b"
+                    icon={<BsCalendarPlus />}
+                  ></IconButton>
+                </Box>
+              </Box>
+              <Box
+                justifyContent="center"
+                alignItems="center"
+                borderRadius="8px"
+                display="flex"
+                bgColor="#c07b7b"
+                width="100%"
+                marginBottom="5px"
+              >
+                <Box>
+                  <Text color="#fff" fontFamily="Inter">
+                    Junior Carlos
+                  </Text>
+                  <Text color="#4d4848" fontFamily="Poppins" as="span">
+                    Especialista Veterinário
+                  </Text>
+                </Box>
+
+                <Box padding="12px 24px" display="flex">
+                  <IconButton
+                    bgColor="#c07b7b"
+                    marginRight="10px"
+                    icon={<FaWhatsapp />}
+                  ></IconButton>
+                  <IconButton
+                    bgColor="#c07b7b"
+                    marginRight="10px"
+                    icon={<AiOutlineLinkedin />}
+                  ></IconButton>
+                  <IconButton
+                    bgColor="#c07b7b"
+                    icon={<BsCalendarPlus />}
+                  ></IconButton>
+                </Box>
+              </Box>
+              <Box
+                justifyContent="center"
+                alignItems="center"
+                borderRadius="8px"
+                display="flex"
+                bgColor="#c07b7b"
+                width="100%"
+                marginBottom="5px"
+              >
+                <Box>
+                  <Text color="#fff" fontFamily="Inter">
+                    Junior Carlos
+                  </Text>
+                  <Text color="#4d4848" fontFamily="Poppins" as="span">
+                    Especialista Veterinário
+                  </Text>
+                </Box>
+
+                <Box padding="12px 24px" display="flex">
+                  <IconButton
+                    bgColor="#c07b7b"
+                    marginRight="10px"
+                    icon={<FaWhatsapp />}
+                  ></IconButton>
+                  <IconButton
+                    bgColor="#c07b7b"
+                    marginRight="10px"
+                    icon={<AiOutlineLinkedin />}
+                  ></IconButton>
+                  <IconButton
+                    bgColor="#c07b7b"
+                    icon={<BsCalendarPlus />}
+                  ></IconButton>
+                </Box>
+              </Box>
+              <Box
+                justifyContent="center"
+                alignItems="center"
+                borderRadius="8px"
+                display="flex"
+                bgColor="#c07b7b"
+                width="100%"
+                marginBottom="5px"
+              >
+                <Box>
+                  <Text color="#fff" fontFamily="Inter">
+                    Junior Carlos
+                  </Text>
+                  <Text color="#4d4848" fontFamily="Poppins" as="span">
+                    Especialista Veterinário
+                  </Text>
+                </Box>
+
+                <Box padding="12px 24px" display="flex">
+                  <IconButton
+                    bgColor="#c07b7b"
+                    marginRight="10px"
+                    icon={<FaWhatsapp />}
+                  ></IconButton>
+                  <IconButton
+                    bgColor="#c07b7b"
+                    marginRight="10px"
+                    icon={<AiOutlineLinkedin />}
+                  ></IconButton>
+                  <IconButton
+                    bgColor="#c07b7b"
+                    icon={<BsCalendarPlus />}
+                  ></IconButton>
+                </Box>
+              </Box>
+              <Box
+                justifyContent="center"
+                alignItems="center"
+                borderRadius="8px"
+                display="flex"
+                bgColor="#c07b7b"
+                width="100%"
+              >
+                <Box>
+                  <Text color="#fff" fontFamily="Inter">
+                    Junior Carlos
+                  </Text>
+                  <Text color="#4d4848" fontFamily="Poppins" as="span">
+                    Especialista Veterinário
+                  </Text>
+                </Box>
+
+                <Box padding="12px 24px" display="flex">
+                  <IconButton
+                    bgColor="#c07b7b"
+                    marginRight="10px"
+                    icon={<FaWhatsapp />}
+                  ></IconButton>
+                  <IconButton
+                    bgColor="#c07b7b"
+                    marginRight="10px"
+                    icon={<AiOutlineLinkedin />}
+                  ></IconButton>
+                  <IconButton
+                    bgColor="#c07b7b"
+                    icon={<BsCalendarPlus />}
+                  ></IconButton>
+                </Box>
+              </Box>
+            </ModalBody>
+
+            <ModalFooter>
+              <Button onClick={onClose} variant="ghost">
+                Cancelar Operação
+              </Button>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
+      </>
       <Box paddingRight="1rem">
         <Box
           justifyContent="center"
@@ -65,7 +277,7 @@ const CardMarcarConsulta = () => {
             backgroundColor="#792323"
             color="#fff"
             size="xs"
-            onClick={() => console.log(12)}
+            onClick={onOpen}
             fontWeight="bold"
             fontSize="11px"
             padding="12px 24px"
@@ -74,7 +286,7 @@ const CardMarcarConsulta = () => {
             left="170px"
             bottom="355px"
           >
-            AGENDAR
+            BUSCAR ESPECIALISTA
           </Button>
         </Box>
       </Box>
