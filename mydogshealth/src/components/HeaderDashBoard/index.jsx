@@ -73,7 +73,9 @@ const HeaderDashBoard = () => {
           </MenuButton>
           <MenuList>
             <MenuGroup title="Perfil">
-              <MenuItem>Minha Conta</MenuItem>
+              <MenuItem onClick={() => history.push('/perfil')}>
+                Minha Conta
+              </MenuItem>
               <MenuItem onClick={() => history.push('/')}>Sair </MenuItem>
             </MenuGroup>
             <MenuDivider />
