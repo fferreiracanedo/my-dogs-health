@@ -1,8 +1,23 @@
-import { Image, Box, Flex, Button } from '@chakra-ui/react';
+import {
+  Image,
+  Box,
+  Flex,
+  Button,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+} from '@chakra-ui/react';
+import DogRegisterForm from '../dogRegisterForm';
+import { useDisclosure } from '@chakra-ui/react';
 
 import LogoDog from '../../assets/image/dog.svg';
 
 const CardDashboardAddDog = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Flex
       marginTop="12px"
@@ -50,7 +65,7 @@ const CardDashboardAddDog = () => {
           backgroundColor="#792323"
           color="#fff"
           size="xs"
-          onClick={() => console.log(12)}
+          onClick={onOpen}
           fontWeight="bold"
           fontSize="11px"
           padding="12px 24px"
@@ -61,6 +76,17 @@ const CardDashboardAddDog = () => {
         >
           ADICIONAR
         </Button>
+
+        <Modal isOpen={isOpen} onClose={onClose}>
+          <ModalOverlay />
+          <ModalContent>
+            <ModalHeader textAlign="center">Registrar um Novo Cão</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody>
+              <DogRegisterForm onClose={onClose} />
+            </ModalBody>
+          </ModalContent>
+        </Modal>
       </Box>
     </Flex>
   );
