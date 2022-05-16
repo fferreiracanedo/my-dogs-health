@@ -9,6 +9,7 @@ import Novidades from '../pages/Novidades';
 import Faq from '../pages/Faq';
 import Perfil from '../pages/Perfil';
 import Docs from '../pages/Docs';
+import RegisterFinal from '../pages/RegisterFinal';
 
 const Routes = () => {
   return (
@@ -16,10 +17,10 @@ const Routes = () => {
       <Route exact path="/">
         <LandingPage />
       </Route>
-      <Route path="/register">
+      <Route exact path="/register">
         <RegisterPage />
       </Route>
-      <Route path="/login">
+      <Route exact path="/login">
         <LoginPage />
       </Route>
       <Route exact path="/dashboard">
@@ -35,13 +36,16 @@ const Routes = () => {
         <Novidades />
       </Route>
       <Route exact path="/perfil">
-        <Perfil /> 
+        <Perfil />
       </Route>
       <Route exact path="/perfil/docs">
         <Docs />
       </Route>
       <Route exact path="/perfil/faq">
         <Faq />
+      </Route>
+      <Route path="/register/final">
+        <RegisterFinal />
       </Route>
     </Switch>
   );
