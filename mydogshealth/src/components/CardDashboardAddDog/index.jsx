@@ -11,6 +11,7 @@ import {
   ModalBody,
   ModalCloseButton,
 } from '@chakra-ui/react';
+import DogRegisterForm from '../dogRegisterForm';
 import { useDisclosure } from '@chakra-ui/react';
 
 import LogoDog from '../../assets/image/dog.svg';
@@ -79,15 +80,11 @@ const CardDashboardAddDog = () => {
         <Modal isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
           <ModalContent>
-            <ModalHeader>Registrar um novo Cão</ModalHeader>
+            <ModalHeader textAlign="center">Registrar um Novo Cão</ModalHeader>
             <ModalCloseButton />
-            <ModalBody>dasdas</ModalBody>
-            <ModalFooter>
-              <Button variant="ghost">Cadastrar</Button>
-              <Button colorScheme="blue" mr={3} onClick={onClose}>
-                Close
-              </Button>
-            </ModalFooter>
+            <ModalBody>
+              <DogRegisterForm onClose={onClose} />
+            </ModalBody>
           </ModalContent>
         </Modal>
       </Box>
