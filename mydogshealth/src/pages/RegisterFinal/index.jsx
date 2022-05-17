@@ -6,7 +6,7 @@ const RegisterFinal = () => {
     <Flex
       w="90%"
       margin="0 auto"
-      height="100vh"
+      height="100%"
       flexDirection="column"
       alignItems="center"
     >

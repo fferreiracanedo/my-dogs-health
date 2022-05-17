@@ -7,7 +7,7 @@ import CardSlide from '../../components/CardSlide';
 import FeedDashboard from '../../components/FeedDashboard';
 const Dashboard = () => {
   return (
-    <Flex width="100%" flexDirection="column" height="100vh">
+    <Flex width="100%" flexDirection="column" height="100%">
       <HeaderDashBoard />
 
       <Box display="flex" flexDir="column">
