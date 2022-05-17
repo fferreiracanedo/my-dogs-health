@@ -16,6 +16,9 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useState } from 'react';
 import { GrFormView, GrFormViewHide } from 'react-icons/gr';
 
+import { useDispatch } from 'react-redux';
+import { loginThunk } from '../../store/modules/api/thunks';
+
 const Login = () => {
   const [show, setShow] = useState(false);
 
@@ -35,8 +38,12 @@ const Login = () => {
     resolver: yupResolver(loginSchema),
   });
 
-  const onSubmitFunction = data => console.log(data);
 
+  const dispatch = useDispatch();
+  const onSubmitFunction = data => {console.log(data);
+      dispatch(loginThunk(data.email, data.password));
+  };
+  
   return (
     <Flex w="100%">
       <Box w="100%" bgColor="#EEC0C0" padding="20px" borderRadius="10px">
