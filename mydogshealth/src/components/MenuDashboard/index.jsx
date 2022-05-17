@@ -10,7 +10,7 @@ const MenuDashboard = () => {
       <Box width="100%">
         <Box
           height="550px"
-          width="132.5px"
+          width="100%"
           bgColor="#A95757"
           display="flex"
           flexDir="column"
