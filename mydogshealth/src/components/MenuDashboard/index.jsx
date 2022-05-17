@@ -3,8 +3,10 @@ import { FiHome, FiHelpCircle } from 'react-icons/fi';
 import { MdOutlineHealthAndSafety } from 'react-icons/md';
 import { AiOutlineUser, AiOutlineCalendar } from 'react-icons/ai';
 import { BiNews } from 'react-icons/bi';
+import { useHistory } from 'react-router-dom';
 
 const MenuDashboard = () => {
+  const history = useHistory();
   return (
     <Flex display={{ base: 'none', md: 'flex' }}>
       <Box width="100%">
@@ -27,6 +29,7 @@ const MenuDashboard = () => {
                   colorScheme=""
                   marginTop="40px"
                   width="100px"
+                  onClick={() => history.push('/dashboard')}
                   icon={<FiHome />}
                 ></IconButton>
                 <Text
@@ -45,6 +48,7 @@ const MenuDashboard = () => {
                   colorScheme=""
                   width="100px"
                   icon={<MdOutlineHealthAndSafety />}
+                  onClick={() => history.push('/dashboard/cuidados')}
                 ></IconButton>
                 <Text
                   color="white"
