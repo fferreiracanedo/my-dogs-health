@@ -1,6 +1,7 @@
 import { Flex, Box } from '@chakra-ui/react';
 import HeaderDashBoard from '../../components/HeaderDashBoard';
 import MenuDashboard from '../../components/MenuDashboard';
+import TableDog from '../../components/TableDog';
 
 const Cuidados = () => {
   return (
@@ -8,10 +9,14 @@ const Cuidados = () => {
       <Box>
         <HeaderDashBoard />
       </Box>
-      <Box display="flex" flexDir="column">
+
+      <Box display="flex" flexDir="row">
         <Box marginRight="2%">
-          <MenuDashboard />
+          <Box>
+            <MenuDashboard />
+          </Box>
         </Box>
+        <TableDog />
       </Box>
     </Flex>
   );

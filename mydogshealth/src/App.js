@@ -5,7 +5,10 @@ import Routes from './routes';
 // import DashBoard from './components/Contatos';
 import Footer from './components/Footer';
 
+
 function App() {
+
+
   return (
     <ChakraProvider theme={theme}>
       <Flex
