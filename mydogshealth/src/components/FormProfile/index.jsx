@@ -95,8 +95,11 @@ const FormProfile = () => {
               as={'textarea'}
               placeholder="Digite aqui algo sobre"
               {...register('bio')}
+              height="80px"
             ></Input>
-            <Button type="submit">Enviar</Button>
+            <Button type="submit" width="100%" bgColor="#FED7D7">
+              Enviar
+            </Button>
           </FormControl>
         </form>
       </Flex>
