@@ -5,9 +5,15 @@ import HeaderProfile from '../../components/HeaderProfile';
 
 const Perfil = () => {
   return (
-    <Box w="100%" height="100vh">
+    <Box w="100%" height="100%">
       <HeaderProfile></HeaderProfile>
-      <Flex w="75%">
+      <Flex
+        w="75%"
+        margin="0 auto"
+        justifyContent="space-around"
+        flexDirection={{ base: 'column', md: 'row' }}
+        alignItems="center"
+      >
         <BioProfile />
         <FormProfilePage />
       </Flex>

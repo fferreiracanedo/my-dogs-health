@@ -12,8 +12,8 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 const FormProfilePage = () => {
   const loginSchema = yup.object().shape({
-    name: yup.string().required('Nome obrigatório'),
-    city: yup.string().required('Cidade obrigatória'),
+    // name: yup.string().required('Nome obrigatório'),
+    // city: yup.string().required('Cidade obrigatória'),
   });
   const {
     register,
@@ -22,9 +22,18 @@ const FormProfilePage = () => {
   } = useForm({
     resolver: yupResolver(loginSchema),
   });
-  const onSubmitFunction = data => console.log(data);
+  const onSubmitFunction = data => {
+    //esquema feito para a pessoa não mandar dados em branco e atualizar o que não deseja
+    let result = {};
+    for (let i in data) {
+      if (data[i].trim() !== '') {
+        result[i] = data[i];
+      }
+    }
+    console.log(result);
+  };
   return (
-    <Box bgColor="#8E2C2C" padding="20px" borderRadius="15px">
+    <Box bgColor="#8E2C2C" padding="20px" borderRadius="15px" w="288px">
       <Flex>
         <form onSubmit={handleSubmit(onSubmitFunction)}>
           <FormControl>
@@ -76,7 +85,7 @@ const FormProfilePage = () => {
             ></Input>
             <Flex justifyContent="space-between">
               <Button type="submit" width="45%" bgColor="#FED7D7">
-                Enviar
+                Editar
               </Button>
               <Button width="45%" bgColor="black" color="white">
                 Deletar Conta
