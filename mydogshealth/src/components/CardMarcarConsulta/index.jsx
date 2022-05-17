@@ -26,7 +26,7 @@ const CardMarcarConsulta = () => {
   return (
     <Flex
       m="2%"
-      width={{base:"100%", md:"45%"}}
+      width={{ base: '100%', md: '45%' }}
       height="200px"
       backgroundColor="#AC5858"
       padding="1rem"
@@ -36,10 +36,15 @@ const CardMarcarConsulta = () => {
       <>
         <Modal isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
-          <ModalContent>
+          <ModalContent
+            width="90%"
+            height="70%"
+            bgColor="#FED7D7"
+            padding="10px"
+          >
             <ModalHeader textAlign="center">Falar com Especialista</ModalHeader>
             <ModalCloseButton />
-            <ModalBody>
+            <ModalBody overflow="auto">
               <Box
                 justifyContent="center"
                 alignItems="center"
@@ -48,17 +53,28 @@ const CardMarcarConsulta = () => {
                 bgColor="#c07b7b"
                 width="100%"
                 marginBottom="5px"
+                
               >
-                <Box>
-                  <Text color="#fff" fontFamily="Inter">
+                <Box width="100%">
+                  <Text color="#fff" fontFamily="Inter" padding="5px">
                     Junior Carlos
                   </Text>
-                  <Text color="#4d4848" fontFamily="Poppins" as="span">
-                    Especialista Veterinário
+                  <Text
+                    textAlign="center"
+                    padding="12px"
+                    margin="5px"
+                    color="#4d4848"
+                    fontFamily="Poppins"
+                    as="span"
+                    fontSize={{ base: '12px' }}
+                    height="100%"
+                    boxSize="borderBox"
+                  >
+                    Veterinário
                   </Text>
                 </Box>
 
-                <Box padding="12px 24px" display="flex">
+                <Box display="flex" width="100%">
                   <IconButton
                     bgColor="#c07b7b"
                     marginRight="10px"
@@ -84,16 +100,26 @@ const CardMarcarConsulta = () => {
                 width="100%"
                 marginBottom="5px"
               >
-                <Box>
-                  <Text color="#fff" fontFamily="Inter">
+                <Box width="100%">
+                  <Text color="#fff" fontFamily="Inter" padding="5px">
                     Junior Carlos
                   </Text>
-                  <Text color="#4d4848" fontFamily="Poppins" as="span">
-                    Especialista Veterinário
+                  <Text
+                    textAlign="center"
+                    padding="12px"
+                    margin="5px"
+                    color="#4d4848"
+                    fontFamily="Poppins"
+                    as="span"
+                    fontSize={{ base: '12px' }}
+                    height="100%"
+                    boxSize="borderBox"
+                  >
+                    Veterinário
                   </Text>
                 </Box>
 
-                <Box padding="12px 24px" display="flex">
+                <Box display="flex" width="100%">
                   <IconButton
                     bgColor="#c07b7b"
                     marginRight="10px"
@@ -119,16 +145,26 @@ const CardMarcarConsulta = () => {
                 width="100%"
                 marginBottom="5px"
               >
-                <Box>
-                  <Text color="#fff" fontFamily="Inter">
+                <Box width="100%">
+                  <Text color="#fff" fontFamily="Inter" padding="5px">
                     Junior Carlos
                   </Text>
-                  <Text color="#4d4848" fontFamily="Poppins" as="span">
-                    Especialista Veterinário
+                  <Text
+                    textAlign="center"
+                    padding="12px"
+                    margin="5px"
+                    color="#4d4848"
+                    fontFamily="Poppins"
+                    as="span"
+                    fontSize={{ base: '12px' }}
+                    height="100%"
+                    boxSize="borderBox"
+                  >
+                    Veterinário
                   </Text>
                 </Box>
 
-                <Box padding="12px 24px" display="flex">
+                <Box display="flex" width="100%">
                   <IconButton
                     bgColor="#c07b7b"
                     marginRight="10px"
@@ -154,16 +190,26 @@ const CardMarcarConsulta = () => {
                 width="100%"
                 marginBottom="5px"
               >
-                <Box>
-                  <Text color="#fff" fontFamily="Inter">
+                <Box width="100%">
+                  <Text color="#fff" fontFamily="Inter" padding="5px">
                     Junior Carlos
                   </Text>
-                  <Text color="#4d4848" fontFamily="Poppins" as="span">
-                    Especialista Veterinário
+                  <Text
+                    textAlign="center"
+                    padding="12px"
+                    margin="5px"
+                    color="#4d4848"
+                    fontFamily="Poppins"
+                    as="span"
+                    fontSize={{ base: '12px' }}
+                    height="100%"
+                    boxSize="borderBox"
+                  >
+                    Veterinário
                   </Text>
                 </Box>
 
-                <Box padding="12px 24px" display="flex">
+                <Box display="flex" width="100%">
                   <IconButton
                     bgColor="#c07b7b"
                     marginRight="10px"
@@ -187,17 +233,28 @@ const CardMarcarConsulta = () => {
                 display="flex"
                 bgColor="#c07b7b"
                 width="100%"
+                marginBottom="5px"
               >
-                <Box>
-                  <Text color="#fff" fontFamily="Inter">
+                <Box width="100%">
+                  <Text color="#fff" fontFamily="Inter" padding="5px">
                     Junior Carlos
                   </Text>
-                  <Text color="#4d4848" fontFamily="Poppins" as="span">
-                    Especialista Veterinário
+                  <Text
+                    textAlign="center"
+                    padding="12px"
+                    margin="5px"
+                    color="#4d4848"
+                    fontFamily="Poppins"
+                    as="span"
+                    fontSize={{ base: '12px' }}
+                    height="100%"
+                    boxSize="borderBox"
+                  >
+                    Veterinário
                   </Text>
                 </Box>
 
-                <Box padding="12px 24px" display="flex">
+                <Box display="flex" width="100%">
                   <IconButton
                     bgColor="#c07b7b"
                     marginRight="10px"
@@ -279,7 +336,6 @@ const CardMarcarConsulta = () => {
             onClick={onOpen}
             fontWeight="bold"
             fontSize={{ base: '10px', md: '12px', lg: '18px' }}
-            
           >
             <Text margin="5px 5px 6px 5px">+</Text>
           </Button>
@@ -290,5 +346,3 @@ const CardMarcarConsulta = () => {
 };
 
 export default CardMarcarConsulta;
-
-

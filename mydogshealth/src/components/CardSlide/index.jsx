@@ -24,7 +24,7 @@ const CardSlide = () => {
   ];
 
   return (
-    <Box width="100%">
+    <Box width="100%" height="200px">
       <Carousel slides={CardList} autoplay={false} />
     </Box>
   );
