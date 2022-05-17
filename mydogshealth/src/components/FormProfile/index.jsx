@@ -4,10 +4,9 @@ import {
   Flex,
   FormControl,
   FormLabel,
-  FormErrorIcon,
   Input,
   Select,
-  FormErrorMessage,
+  Text,
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import * as yup from 'yup';
@@ -34,7 +33,12 @@ const FormProfile = () => {
         <form onSubmit={handleSubmit(onSubmitFunction)}>
           <FormControl>
             <FormLabel color="white" marginTop="5px" htmlFor="name">
-              Nome:
+              Nome:{' '}
+              {errors.name && (
+                <Text as={'span'} color="#2b0d0d">
+                  {errors.name.message}!
+                </Text>
+              )}
             </FormLabel>
             <Input
               placeholder="Digite seu nome"
@@ -53,6 +57,11 @@ const FormProfile = () => {
             />
             <FormLabel color="white" marginTop="5px" htmlFor="city">
               Cidade:
+              {errors.city && (
+                <Text as={'span'} color="#2b0d0d">
+                  {errors.city.message}!
+                </Text>
+              )}
             </FormLabel>
             <Input
               placeholder="Digite seu cidade"
@@ -80,6 +89,11 @@ const FormProfile = () => {
               <>
                 <FormLabel color="white" marginTop="5px" htmlFor="certificate">
                   Certificado CRMV:
+                  {errors.certificate && (
+                    <Text as={'span'} color="#2b0d0d">
+                      {errors.certificate.message}!
+                    </Text>
+                  )}
                 </FormLabel>
                 <Input
                   placeholder="Digite seu certificado"
@@ -93,7 +107,7 @@ const FormProfile = () => {
             </FormLabel>
             <Input
               as={'textarea'}
-              placeholder="Digite aqui algo sobre"
+              placeholder="Digite aqui algo sobre você"
               {...register('bio')}
               height="80px"
             ></Input>
