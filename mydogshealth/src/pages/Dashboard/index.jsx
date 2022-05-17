@@ -5,10 +5,11 @@ import CardMarcarConsulta from '../../components/CardMarcarConsulta';
 import CardDashboardAddDog from '../../components/CardDashboardAddDog';
 import CardSlide from '../../components/CardSlide';
 import FeedDashboard from '../../components/FeedDashboard';
+import HeaderMainSection from '../../components/HeaderMainSection';
 
 const Dashboard = () => {
   return (
-    <Flex width="100%" flexDirection="column" height="100%">
+    <Flex width="100%" flexDirection="column" height="100%" alignItems="center">
       <HeaderDashBoard />
       <Box
         display="flex"
@@ -23,7 +24,11 @@ const Dashboard = () => {
           width={{ base: '100%', md: '80%', lg: '45%' }}
           flexWrap="wrap"
           justifyContent="space-between"
+          alignItems="center"
         >
+          <Box width="100%" height="80px">
+            <HeaderMainSection />
+          </Box>
           <CardMarcarConsulta />
           <CardDashboardAddDog />
           <Box width="100%" margin="3%">
