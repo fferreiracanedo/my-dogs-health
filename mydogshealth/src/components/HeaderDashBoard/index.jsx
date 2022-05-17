@@ -18,10 +18,17 @@ import {
 import { BiAddToQueue } from 'react-icons/bi';
 
 import { useHistory } from 'react-router-dom';
+
+import { useDispatch } from 'react-redux';
+import { logoutThunk } from '../../store/modules/api/thunks';
+import { useSelector } from 'react-redux';
+
 const HeaderDashBoard = () => {
   const history = useHistory();
   const date = new Date();
-
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.login);
+console.log(user)
   return (
     <Box
       boxShadow="-webkit-box-shadow: -1px 6px 9px -3px rgba(0,0,0,0.75);
@@ -43,10 +50,10 @@ const HeaderDashBoard = () => {
         </Avatar>
         <Box>
           <Text fontFamily="Inter" color="#000">
-            Nome
+            {user.userdata.name}
           </Text>
           <Text fontFamily="Poppins" color="#6d6666">
-            @Sobrenome
+          {user.userdata.email}
           </Text>
         </Box>
         <Flex
@@ -76,7 +83,7 @@ const HeaderDashBoard = () => {
               <MenuItem onClick={() => history.push('/perfil')}>
                 Minha Conta
               </MenuItem>
-              <MenuItem onClick={() => history.push('/')}>Sair </MenuItem>
+              <MenuItem onClick={() => dispatch(logoutThunk())}>Sair </MenuItem>
             </MenuGroup>
             <MenuDivider />
             <MenuGroup title="Ajuda">

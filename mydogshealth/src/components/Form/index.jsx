@@ -18,6 +18,9 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useState } from 'react';
 
+import { useDispatch } from 'react-redux';
+import { registerThunk } from '../../store/modules/api/thunks';
+
 import { GrFormView, GrFormViewHide } from 'react-icons/gr';
 
 const Form = () => {
@@ -33,7 +36,6 @@ const Form = () => {
   };
 
   const formSchema = yup.object().shape({
-    name: yup.string().required('Nome Obrigatório'),
     email: yup.string().required('Email Obrigatório').email('Email Inválido'),
     password: yup
       .string()
@@ -46,7 +48,6 @@ const Form = () => {
       .string()
       .required('Digite a confirmação da Senha')
       .oneOf([yup.ref('password'), null], 'Senhas não conferem'),
-    category: yup.string().required('Categoria Obrigatória'),
   });
 
   const {
@@ -57,7 +58,10 @@ const Form = () => {
     resolver: yupResolver(formSchema),
   });
 
-  const onSubmitFunction = data => console.log(data);
+  const dispatch = useDispatch();
+  const onSubmitFunction = data => {console.log(data);
+      dispatch(registerThunk(data.email, data.password));
+    };
 
   return (
     <Flex>
@@ -78,18 +82,6 @@ const Form = () => {
 
         <Box>
           <form onSubmit={handleSubmit(onSubmitFunction)}>
-            <FormControl padding="12px" isInvalid={errors.name}>
-              <Input
-                borderColor="#855050"
-                width="50vw"
-                placeholder="Digite seu Nome"
-                {...register('name')}
-              />
-              <FormErrorMessage>
-                <FormErrorIcon />
-                {errors.name && errors.name.message}
-              </FormErrorMessage>
-            </FormControl>
 
             <FormControl padding="12px" isInvalid={errors.email}>
               <Input
@@ -154,17 +146,7 @@ const Form = () => {
                 {errors.confirmPassword && errors.confirmPassword.message}
               </FormErrorMessage>
             </FormControl>
-            <FormControl padding="12px">
-              <Select
-                borderColor="#855050"
-                width="50vw"
-                placeholder="Escolha sua Categoria"
-                {...register('category')}
-              >
-                <option>Cachorro</option>
-                <option>Especialista</option>
-              </Select>
-            </FormControl>
+            
 
             <Button
               marginTop="20px"

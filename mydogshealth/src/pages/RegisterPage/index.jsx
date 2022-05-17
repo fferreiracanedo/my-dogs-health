@@ -7,6 +7,7 @@ import Logo from '../../assets/image/logo.svg';
 import RegisterLogo from '../../assets/image/registerLogo.svg';
 
 const RegisterPage = () => {
+
   return (
     <Flex flexDir="row" height="100vh">
       <Box marginTop="10px" marginRight="1%">
