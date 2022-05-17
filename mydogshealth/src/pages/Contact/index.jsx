@@ -17,7 +17,7 @@ const Contact = () => {
         <Logo width={{ base: '290px', md: '350px', lg: '500px' }} />
         <Text
           fontWeight="600"
-          fontSize={{ base: '24px', md: '32px', lg: '40px' }}
+          fontSize={{ base: '24px', md: '24px', lg: '32px' }}
           textAlign="center"
         >
           Escolha a melhor forma de contato
