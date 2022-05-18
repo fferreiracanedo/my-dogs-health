@@ -18,11 +18,7 @@ const FeedDashboard = () => {
       texto:
         'Warm up laptop with butt lick butt fart rainbows until owner yells pee in litter box hiss at cats chirp at birds or just going to dip my paw in your coffee and do a taste test',
     },
-    {
-      titulo: 'OLá Mundo',
-      texto:
-        'Warm up laptop with butt lick butt fart rainbows until owner yells pee in litter box hiss at cats chirp at birds or just going to dip my paw in your coffee and do a taste test',
-    },
+    
   ];
   return (
     <Box
@@ -31,16 +27,16 @@ const FeedDashboard = () => {
       bgColor="#F56565"
       display="flex"
       flexDir="column"
-      width="400px"
+      width="100%"
     >
       <Box
         fontSize="2.5rem"
         color="#2B2424"
         justifySelf="center"
         fontWeight="bold"
-        width="400px"
+        width="100%"
       >
-        <Text marginLeft="30%" fontFamily="Poppins">
+        <Text  fontFamily="Poppins" textAlign="center">
           Feed
         </Text>
       </Box>
