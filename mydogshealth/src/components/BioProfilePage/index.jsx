@@ -5,10 +5,10 @@ const BioProfile = () => {
     <Box
       padding="10px"
       w="288px"
-      m="0 auto"
       bgColor="#8E2C2C"
       borderRadius="10px"
       mt="10px"
+      marginBottom="10px"
       display="flex"
       flexDirection="column"
       justifyContent="space-evenly"
