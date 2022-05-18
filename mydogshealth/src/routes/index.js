@@ -12,22 +12,34 @@ import Docs from '../pages/Docs';
 import RegisterFinal from '../pages/RegisterFinal';
 import DashboardDoctor from '../pages/DashboardDoctor';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { useToast } from '@chakra-ui/react';
+import { updateThunk } from '../store/modules/api/thunks';
+
 import Contact from '../pages/Contact';
 
 const Routes = () => {
   const toast = useToast();
-  const user = useSelector(state => state.login);
+  const user = useSelector(state => state.user);
   const msg = useSelector(state => state.msg);
-  console.log(user, msg);
+  const dispatch = useDispatch();
 
+
+  console.log("token",user);
+  
   useEffect(() => {
     if (msg.toast) {
       toast(msg.toast);
     }
   }, [msg]);
+
+  useEffect(() => {
+    if (user.status==="updating" && user.userdata && user.userdata.token) {
+      console.log("updating",user.userdata.token)
+      dispatch(updateThunk(user.userdata.token));
+    }
+  }, [user]);
 
   return (
     <Switch>
@@ -47,7 +59,7 @@ const Routes = () => {
         {user.logged ? <Redirect to="/dashboard" /> : <LoginPage />}
       </Route>
       <Route exact path="/dashboard">
-        {user.logged ? <Dashboard /> : <Redirect to="/" />}
+        {!user.logged ? <Redirect to="/" /> : user.userdata && user.userdata.status==="incomplete" ? <Redirect to="/register/final" /> :  <Dashboard />}
       </Route>
       <Route exact path="/contact">
         <Contact />
@@ -71,7 +83,7 @@ const Routes = () => {
         <Faq />
       </Route>
       <Route path="/register/final">
-        <RegisterFinal />
+        {user.userdata && user.userdata.status==="incomplete" ? <RegisterFinal /> : <Redirect to="/dashboard" />}
       </Route>
       <Route path="/dashboard/doctor">
         <DashboardDoctor />

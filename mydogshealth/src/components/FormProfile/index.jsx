@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  Checkbox,
   Flex,
   FormControl,
   FormLabel,
@@ -14,20 +15,29 @@ import { useState } from 'react';
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+
+import { useDispatch } from 'react-redux';
+import { profileThunk } from '../../store/modules/api/thunks';
+import { useSelector } from 'react-redux';
+
 const FormProfile = () => {
   const [isSpecialist, setIsSpecialist] = useState(false);
   const loginSchema = yup.object().shape({
+    thumb: yup.string(),
     name: yup.string().required('Nome obrigatório'),
     username: yup.string().required('Nome de usuário obrigatório'),
     city: yup.string().required('Cidade obrigatória'),
-    certificate: yup.string().required('Campo Obrigatório'),
-    number: yup
+    specialist: yup.boolean(),
+    association: yup.string().when("specialist", {
+      is: true,
+      then: yup.string().required('CRMV obrigatório')
+    }),
+    contact: yup
       .string()
-      .required('Numero obrigatório')
-      .matches(
+      /*.matches(
         '^\\([0-9]{2}\\) (([0-9]{5}-[0-9]{4})|([0-9]{5}-[0-9]{5}))$',
         'Formato inválido'
-      ),
+      )*/,
   });
   const {
     register,
@@ -36,11 +46,40 @@ const FormProfile = () => {
   } = useForm({
     resolver: yupResolver(loginSchema),
   });
-  const onSubmitFunction = data => console.log(data);
+
+
+  const token = useSelector(state => state.user.userdata.token);
+  console.log("token",token);
+  const dispatch = useDispatch();
+  const onSubmitFunction = data => {
+    console.log("formprofile",token, data.thumb, data.name, data.username, data.city, data.specialist,
+    data.association, data.contact, data.bio);
+      dispatch(profileThunk(token, data.thumb, data.name, data.username, data.city, data.specialist,
+        data.association, data.contact, data.bio));
+    };
+
+  
   return (
     <Box bgColor="#8E2C2C" padding="20px" borderRadius="15px">
       <Flex>
         <form onSubmit={handleSubmit(onSubmitFunction)}>
+          
+        <FormControl isInvalid={errors.thumb}>
+            <FormLabel color="white" marginTop="5px" htmlFor="name">
+              Thumb:{' '}
+            </FormLabel>
+            <Input
+              placeholder="Link do avatar"
+              borderColor="#855050"
+              id="thumb"
+              {...register('thumb')}
+            />
+            <FormErrorMessage>
+              <FormErrorIcon />
+              {errors.thumb && errors.thumb.message}
+            </FormErrorMessage>
+          </FormControl>
+
           <FormControl isInvalid={errors.name}>
             <FormLabel color="white" marginTop="5px" htmlFor="name">
               Nome:{' '}
@@ -91,73 +130,52 @@ const FormProfile = () => {
               {errors.city && errors.city.message}
             </FormErrorMessage>
           </FormControl>
-          <FormLabel ormLabel color="white" marginTop="5px" htmlFor="type">
-            Selecione sua categoria:
-          </FormLabel>
-          <Select
-            id="type"
-            onChange={e => {
-              if (e.target.value === 'Especialista Veterinário') {
-                setIsSpecialist(true);
-              } else {
-                setIsSpecialist(false);
-              }
-            }}
-          >
-            <option>Especialista Veterinário</option>
-            <option selected>Proprietário de Doguinhos</option>
-          </Select>
-          {isSpecialist === true && (
-            <>
-              <FormControl isInvalid={errors.certificate}>
-                <FormLabel color="white" marginTop="5px" htmlFor="certificate">
+
+          <FormControl isInvalid={errors.specialist}>
+            <FormLabel color="white" marginTop="5px" htmlFor="specialist">
+            </FormLabel>
+            <Checkbox
+              borderColor="#855050"
+              id="specialist"
+              {...register('specialist')}
+            >Especialista com CRVM?</Checkbox>
+            <FormErrorMessage>
+              <FormErrorIcon />
+              {errors.specialist && errors.specialist.message}
+            </FormErrorMessage>
+          </FormControl>
+
+
+              <FormControl isInvalid={errors.association}>
+                <FormLabel color="white" marginTop="5px" htmlFor="association">
                   Certificado CRMV:
-                  {errors.certificate && (
-                    <Text as={'span'} color="#2b0d0d">
-                      {errors.certificate.message}!
-                    </Text>
-                  )}
                 </FormLabel>
                 <Input
                   placeholder="Digite seu certificado"
-                  id="certificate"
-                  {...register('certificate')}
+                  id="association"
+                  {...register('association')}
                 ></Input>
                 <FormErrorMessage>
                   <FormErrorIcon />
-                  {errors.certificate && errors.certificate.message}
+                  {errors.association && errors.association.message}
                 </FormErrorMessage>
               </FormControl>
-              <FormControl isInvalid={errors.number}>
-                <FormLabel color="white" marginTop="5px" htmlFor="number">
+
+              <FormControl isInvalid={errors.contact}>
+                <FormLabel color="white" marginTop="5px" htmlFor="contact">
                   Número de contato:
                 </FormLabel>
                 <Input
                   placeholder="(dd) 99999-0000"
-                  id="number"
-                  {...register('number')}
+                  id="contact"
+                  {...register('contact')}
                 ></Input>
                 <FormErrorMessage>
                   <FormErrorIcon />
-                  {errors.number && errors.number.message}
+                  {errors.contact && errors.contact.message}
                 </FormErrorMessage>
               </FormControl>
-              <FormControl>
-                <FormLabel
-                  color="white"
-                  marginTop="5px"
-                  htmlFor="googleCalendar"
-                >
-                  Calendário do google:
-                </FormLabel>
-                <Input
-                  placeholder="Digite seu certificado"
-                  id="certificate"
-                  {...register('googleCalendar')}
-                ></Input>
-              </FormControl>
-            </>
-          )}
+
           <FormLabel color="white" marginTop="5px" htmlFor="bio">
             Bio:
           </FormLabel>

@@ -23,6 +23,13 @@ export const LOGIN_OK = "@api/LOGIN_OK";
 export const LOGIN_ERROR = "@api/LOGIN_ERROR";
 export const LOGOUT = "@api/LOGOUT";
 
+export const DOG_UPDATE_OK = "@api/UPDATE_OK";
+export const DOG_UPDATE_ERROR = "@api/UPDATE_ERROR";
+
+export const REPORT_UPDATE_OK = "@api/UPDATE_OK";
+export const REPORT_UPDATE_ERROR = "@api/UPDATE_ERROR";
+
+
 export const SHOW_MSG = "@api/SHOW_MSG";
 export const CLEAR_MSG = "@api/CLEAR_MSG";
 

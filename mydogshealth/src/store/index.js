@@ -1,10 +1,12 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import { loginReducer, msgReducer } from "./modules/api/reducers";
+import { dogReducer, loginReducer, msgReducer, reportReducer } from "./modules/api/reducers";
 
 const reducers = combineReducers({ 
-    login: loginReducer,
+    user: loginReducer,
     msg: msgReducer,
+    dog: dogReducer,
+    report: reportReducer,
  });
 
 const store = createStore(reducers, applyMiddleware(thunk));
