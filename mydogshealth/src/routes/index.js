@@ -10,12 +10,12 @@ import Faq from '../pages/Faq';
 import Perfil from '../pages/Perfil';
 import Docs from '../pages/Docs';
 import RegisterFinal from '../pages/RegisterFinal';
+import DashboardDoctor from '../pages/DashboardDoctor';
 
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useToast } from '@chakra-ui/react';
 import Contact from '../pages/Contact';
-import DashboardDoctor from '../pages/DashboardDoctor';
 
 const Routes = () => {
   const toast = useToast();
