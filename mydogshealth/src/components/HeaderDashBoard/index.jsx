@@ -27,8 +27,8 @@ const HeaderDashBoard = () => {
   const history = useHistory();
   const date = new Date();
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.login);
-console.log(user)
+  const user = useSelector(state => state.login);
+  console.log(user);
   return (
     <Box
       boxShadow="-webkit-box-shadow: -1px 6px 9px -3px rgba(0,0,0,0.75);
@@ -53,7 +53,7 @@ console.log(user)
             {user.userdata.name}
           </Text>
           <Text fontFamily="Poppins" color="#6d6666">
-          {user.userdata.email}
+            {user.userdata.email}
           </Text>
         </Box>
         <Flex
@@ -88,6 +88,9 @@ console.log(user)
             <MenuDivider />
             <MenuGroup title="Ajuda">
               <MenuItem>Docs</MenuItem>
+              <MenuItem onClick={() => history.push('/contact')}>
+                Contato
+              </MenuItem>
               <MenuItem>FAQ</MenuItem>
             </MenuGroup>
           </MenuList>
