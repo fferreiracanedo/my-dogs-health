@@ -2,6 +2,9 @@ import { Box, Flex, Heading, Image, Text } from '@chakra-ui/react';
 import logo from '../../assets/image/LogoLandign.svg';
 import { FaDog } from 'react-icons/fa';
 const HeaderProfile = () => {
+  const userInfo = JSON.parse(localStorage.getItem('userdata'));
+  const { name, category } = userInfo.userdata;
+
   return (
     <Flex
       w={{ base: '90%', md: '75%' }}
@@ -17,7 +20,7 @@ const HeaderProfile = () => {
         justifyContent="space-evenly"
         margin="0 auto"
       >
-        <Heading fontFamily="Inter">Seu nome aqui</Heading>
+        <Heading fontFamily="Inter">Olá {name}</Heading>
         <Box
           bgColor="white"
           w="30%"
@@ -29,7 +32,7 @@ const HeaderProfile = () => {
           }}
         >
           <Text textAlign="center" fontWeight="bolder">
-            Tutor
+            {category}
           </Text>
         </Box>
         <Text maxW="320px">Seu endereço:undefined</Text>
