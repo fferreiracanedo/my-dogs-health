@@ -8,6 +8,7 @@ import {
   Input,
   FormLabel,
   useToast,
+  Select,
 } from '@chakra-ui/react';
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
@@ -20,6 +21,11 @@ const DogRegisterForm = ({ onClose }) => {
     name: yup.string().required('Nome Obrigatório'),
     breed: yup.string().required('Raça Obrigatória'),
     birthDate: yup.string().required('Data de Nascimento Obrigatória'),
+    gender: yup.string().required('Gênero Obrigatório'),
+    imgUrl: yup
+      .string()
+      .required('Link de imagem obrigatória')
+      .url('Formato inválido'),
   });
 
   const {
@@ -45,7 +51,14 @@ const DogRegisterForm = ({ onClose }) => {
 
   return (
     <Flex w="100%">
-      <Box w="100%" bgColor="#fff" padding="20px" borderRadius="10px" display="flex" alignItems="center">
+      <Box
+        w="100%"
+        bgColor="#fff"
+        padding="20px"
+        borderRadius="10px"
+        display="flex"
+        alignItems="center"
+      >
         <form onSubmit={handleSubmit(onSubmitFunction)}>
           <FormControl padding="12px" isInvalid={errors.name}>
             <Input
@@ -73,8 +86,33 @@ const DogRegisterForm = ({ onClose }) => {
             </FormErrorMessage>
           </FormControl>
 
+          <FormControl padding="12px" isInvalid={errors.gender}>
+            <FormLabel htmlFor="gender">Gênero:</FormLabel>
+            <Select {...register('gender')} id="gender">
+              <option value="male">Macho</option>
+              <option value="female">Fêmea</option>
+            </Select>
+            <FormErrorMessage>
+              <FormErrorIcon />
+              {errors.gender && errors.gender.message}
+            </FormErrorMessage>
+          </FormControl>
+
+          <FormControl padding="12px" isInvalid={errors.imgUrl}>
+            <Input
+              borderColor="#855050"
+              width="100%"
+              placeholder="Imagem do seu doguinho"
+              {...register('imgUrl')}
+            />
+            <FormErrorMessage>
+              <FormErrorIcon />
+              {errors.imgUrl && errors.imgUrl.message}
+            </FormErrorMessage>
+          </FormControl>
+
           <FormControl padding="12px" isInvalid={errors.birthDate}>
-            <FormLabel>Data de Nascimento</FormLabel>
+            <FormLabel>Data de Nascimento:</FormLabel>
             <Input
               type="date"
               borderColor="#855050"
