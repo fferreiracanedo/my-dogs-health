@@ -35,7 +35,7 @@ const HeaderDashBoard = () => {
     -moz-box-shadow: -1px 6px 9px -3px rgba(0,0,0,0.75);
     box-shadow: -1px 6px 9px -3px rgba(0,0,0,0.75);"
       marginBottom="2px"
-      bgColor="#e28686"
+      bgColor="#ffffff"
       w="100%"
     >
       <Flex
@@ -60,7 +60,7 @@ const HeaderDashBoard = () => {
           w="190px"
           height="40px"
           justifyContent="space-between"
-          bgColor="#b84040"
+          bgColor="#2A4058"
           padding="13px 20px"
           borderRadius="13px"
           color="white"
@@ -75,7 +75,7 @@ const HeaderDashBoard = () => {
         </Flex>
 
         <Menu>
-          <MenuButton as={Button} bgColor="#8E2C2C" color="white">
+          <MenuButton as={Button} bgColor="#2A4058" color="white">
             Perfil
           </MenuButton>
           <MenuList>

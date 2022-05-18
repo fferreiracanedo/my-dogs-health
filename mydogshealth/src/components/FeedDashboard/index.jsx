@@ -24,7 +24,7 @@ const FeedDashboard = () => {
     <Box
       borderRadius="8px"
       padding="12px 24px"
-      bgColor="#F56565"
+      bgColor="#FFF"
       display="flex"
       flexDir="column"
       width="100%"
@@ -36,7 +36,7 @@ const FeedDashboard = () => {
         fontWeight="bold"
         width="100%"
       >
-        <Text  fontFamily="Poppins" textAlign="center">
+        <Text fontFamily="Poppins" textAlign="center">
           Feed
         </Text>
       </Box>

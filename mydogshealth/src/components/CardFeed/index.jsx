@@ -3,9 +3,9 @@ import { Box, Text, Button, Flex } from '@chakra-ui/react';
 const CardFeed = ({ title, text }) => {
   return (
     <Flex
-      backgroundColor="#AC5858"
+      backgroundColor="#A5B6CA"
       width="100%"
-      color="#FFFFFF"
+      color="#000"
       borderRadius="8px"
       margin="10px 0"
       justifyContent="space-around"

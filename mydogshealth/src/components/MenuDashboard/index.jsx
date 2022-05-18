@@ -12,8 +12,8 @@ const MenuDashboard = () => {
       <Box width="100%">
         <Box
           height="550px"
-          width="100%"
-          bgColor="#A95757"
+          width="130px"
+          bgColor="#FFF"
           display="flex"
           flexDir="column"
           borderRadius="0px 8px 8px 0px"
@@ -23,17 +23,21 @@ const MenuDashboard = () => {
           marginTop="20px"
         >
           <Box alignContent="center">
-            <Box display="flex" flexDir="column" margin="10px auto">
+            <Box display="flex" flexDir="column"  alignItems="center">
               <Box marginBottom="35px">
                 <IconButton
                   colorScheme=""
+                  color="#262262"
+                  fontSize="24px"
                   marginTop="40px"
-                  width="100px"
+                  margin="0 auto"
+                  width="100%"
                   onClick={() => history.push('/dashboard')}
                   icon={<FiHome />}
                 ></IconButton>
+                
                 <Text
-                  color="white"
+                  color="#262262"
                   marginTop="10px"
                   left="10%"
                   position="relative"
@@ -46,14 +50,18 @@ const MenuDashboard = () => {
               <Box marginBottom="35px">
                 <IconButton
                   colorScheme=""
-                  width="100px"
+                  color="#262262"
+                  fontSize="24px"
+                  marginTop="40px"
+                  margin="0 auto"
+                  width="100%"
                   icon={<MdOutlineHealthAndSafety />}
                   onClick={() => history.push('/dashboard/cuidados')}
                 ></IconButton>
                 <Text
-                  color="white"
+                  color="#262262"
                   marginTop="10px"
-                  left="25%"
+                  // left="25%"
                   position="relative"
                   fontWeight="bold"
                 >
@@ -65,10 +73,15 @@ const MenuDashboard = () => {
                 <IconButton
                   width="100px"
                   colorScheme=""
+                  color="#262262"
+                  fontSize="24px"
+                  marginTop="40px"
+                  margin="0 auto"
+                  
                   icon={<AiOutlineCalendar />}
                 ></IconButton>
                 <Text
-                  color="white"
+                  color="#262262"
                   marginTop="10px"
                   left="20%"
                   position="relative"
@@ -81,13 +94,17 @@ const MenuDashboard = () => {
               <Box marginBottom="35px">
                 <IconButton
                   colorScheme=""
-                  width="100px"
+                  color="#262262"
+                  fontSize="24px"
+                  marginTop="40px"
+                  margin="0 auto"
+                  width="100%"
                   icon={<BiNews />}
                 ></IconButton>
                 <Text
-                  color="white"
+                  color="#262262"
                   marginTop="10px"
-                  left="10%"
+                  // left="10%"
                   position="relative"
                   fontWeight="bold"
                 >

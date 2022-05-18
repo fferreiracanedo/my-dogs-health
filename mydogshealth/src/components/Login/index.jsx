@@ -51,24 +51,21 @@ const Login = () => {
       <Box
         width="100%"
         maxWidth="400px"
-        bgColor="#EEC0C0"
+        bgColor="#FFF"
         padding="20px"
         borderRadius="10px"
         display="flex"
         flexDirection="column"
         alignItems="center"
       >
-        <Text fontWeight="bold" fontSize="20px" color="white" marginTop="20px">
+        <Text fontWeight="bold" fontSize="20px" color="#2A4058" marginTop="20px">
           Login
         </Text>
         <form onSubmit={handleSubmit(onSubmitFunction)}>
-          <Box
-            display="flex"
-            flexDirection="column"
-            alignItems="center"
-          >
+          <Box display="flex" flexDirection="column" alignItems="center">
             <FormControl padding="12px" isInvalid={errors.email} width="100%">
               <Input
+                color="#000"
                 w="100%"
                 borderColor="#855050"
                 placeholder="Digite seu E-mail"
@@ -83,6 +80,7 @@ const Login = () => {
             <FormControl padding="12px" isInvalid={errors.password}>
               <InputGroup>
                 <Input
+                  color="#000"
                   w="100%"
                   type={show ? 'text' : 'password'}
                   placeholder="Digite sua Senha"
@@ -111,12 +109,12 @@ const Login = () => {
               type="submit"
               colorScheme="#2c2121"
               color="white"
-              bgColor="#962C2C"
+              bgColor="#2A4058"
               marginBottom="20px"
               _hover={{
-                background: '#EEC0C0',
-                color: 'teal.500',
-                border: '2px solid #FFFFFF',
+                background: '#FFF',
+                color: '#000',
+                border: '2px solid #000',
               }}
             >
               Login
@@ -124,7 +122,7 @@ const Login = () => {
           </Box>
         </form>
         <Box display="flex" flexDirection="column">
-          <Text fontSize="10px" color="#E2E8F0" fontWeight="700">
+          <Text fontSize="10px" color="#9b9191" fontWeight="700">
             Ainda nao possui cadastro?{' '}
           </Text>
           <Button
@@ -133,13 +131,13 @@ const Login = () => {
             type="submit"
             colorScheme="#2c2121"
             color="white"
-            bgColor="#962C2C"
+            bgColor="#2A4058"
             marginBottom="20px"
             onClick={() => history.push('/register')}
             _hover={{
-              background: '#EEC0C0',
-              color: 'teal.500',
-              border: '2px solid #FFFFFF',
+              background: '#FFF',
+              color: '#000',
+              border: '2px solid #000',
             }}
           >
             Clique Aqui

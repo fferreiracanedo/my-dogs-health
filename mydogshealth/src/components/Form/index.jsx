@@ -71,24 +71,24 @@ const Form = () => {
         width="90%"
         display="flex"
         flexDir="column"
-        bgColor="#EEC0C0"
+        bgColor="#FFF"
         alignContent="center"
         alignItems="center"
         borderRadius="8px"
       >
-        <Text fontWeight="bold" fontSize="20px" color="white" marginTop="20px">
-          Registro
-        </Text>
-
         <Box
           width="100%"
-          bgColor="#EEC0C0"
+          // bgColor="#EEC0C0"
           padding="20px"
           borderRadius="10px"
           display="flex"
           flexDirection="column"
           alignItems="center"
+          // border="1px solid black"
         >
+          <Text fontWeight="bold" fontSize="20px" marginTop="20px" color="#2A4058">
+            Registro
+          </Text>
           <form onSubmit={handleSubmit(onSubmitFunction)}>
             <Box
               display="flex"
@@ -111,6 +111,7 @@ const Form = () => {
               <FormControl padding="12px" isInvalid={errors.password}>
                 <InputGroup size="md">
                   <Input
+                    color="#000"
                     width="100%"
                     type={show ? 'text' : 'password'}
                     placeholder="Digite sua Senha"
@@ -137,6 +138,7 @@ const Form = () => {
               <FormControl padding="12px" isInvalid={errors.confirmPassword}>
                 <InputGroup size="md">
                   <Input
+                    color="#000"
                     width="100%"
                     type={show2 ? 'text' : 'password'}
                     placeholder="Confirme sua Senha"
@@ -166,12 +168,12 @@ const Form = () => {
                 type="submit"
                 colorScheme="#2c2121"
                 color="white"
-                bgColor="#962C2C"
+                bgColor="#2A4058"
                 marginBottom="20px"
                 _hover={{
-                  background: '#EEC0C0',
-                  color: 'teal.500',
-                  border: '2px solid #FFFFFF',
+                  background: '#FFF',
+                  color: '#000',
+                  border: '2px solid #000000',
                 }}
               >
                 Registrar
