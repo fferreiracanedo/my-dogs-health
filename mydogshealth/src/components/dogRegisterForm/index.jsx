@@ -45,7 +45,7 @@ const DogRegisterForm = ({ onClose }) => {
 
   return (
     <Flex w="100%">
-      <Box w="100%" bgColor="#fff" padding="20px" borderRadius="10px">
+      <Box w="100%" bgColor="#fff" padding="20px" borderRadius="10px" display="flex" alignItems="center">
         <form onSubmit={handleSubmit(onSubmitFunction)}>
           <FormControl padding="12px" isInvalid={errors.name}>
             <Input
@@ -90,7 +90,7 @@ const DogRegisterForm = ({ onClose }) => {
 
           <Button
             marginTop="20px"
-            marginLeft="38%"
+            marginLeft="28%"
             type="submit"
             colorScheme="#2c2121"
             color="white"

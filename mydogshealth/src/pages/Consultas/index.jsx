@@ -11,7 +11,7 @@ const Consultas = () => {
       <Box display="flex" flexDir="column">
         <Box marginRight="2%">
           <MenuDashboard />
-        </Box>  
+        </Box>
       </Box>
     </Flex>
   );

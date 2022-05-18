@@ -15,6 +15,7 @@ import DashboardDoctor from '../pages/DashboardDoctor';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useToast } from '@chakra-ui/react';
+import Contact from '../pages/Contact';
 
 const Routes = () => {
   const toast = useToast();
@@ -47,6 +48,9 @@ const Routes = () => {
       </Route>
       <Route exact path="/dashboard">
         {user.logged ? <Dashboard /> : <Redirect to="/" />}
+      </Route>
+      <Route exact path="/contact">
+        <Contact />
       </Route>
       <Route exact path="/dashboard/cuidados">
         <Cuidados />

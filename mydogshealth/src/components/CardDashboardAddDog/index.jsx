@@ -99,9 +99,14 @@ const CardDashboardAddDog = () => {
         </Box>
         <Modal isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
-          <ModalContent>
-            <ModalHeader textAlign="center">Registrar um Novo Cão</ModalHeader>
-            <ModalCloseButton />
+          <ModalContent width="90%" display="flex" alignItems="center">
+            <ModalHeader
+              textAlign="center"
+              fontSize={{ base: '16px', md: '18px' }}
+            >
+              Registrar um Novo Cão
+            </ModalHeader>
+            <ModalCloseButton bgColor="#AC5858" />
             <ModalBody>
               <DogRegisterForm onClose={onClose} />
             </ModalBody>

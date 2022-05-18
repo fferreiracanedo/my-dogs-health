@@ -16,7 +16,7 @@ const Header = () => {
       justifyContent="space-between"
       marginTop={{ base: '25px', md: '0' }}
     >
-      <Logo />
+      <Logo width="200px" />
       <Flex
         width="100%"
         flexDirection={{ base: 'column-reverse', md: 'row' }}
@@ -51,7 +51,7 @@ const Header = () => {
               borderBottom: '2px solid #C4C4C4',
             }}
           >
-            <Link>Contato</Link>
+            <Link to="/contact">Contato</Link>
           </Text>
           <Text
             marginTop="5px"
