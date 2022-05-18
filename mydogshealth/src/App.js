@@ -6,10 +6,7 @@ import Routes from './routes';
 import Footer from './components/Footer';
 import DashboardDoctor from './pages/DashboardDoctor';
 
-
 function App() {
-
-
   return (
     <ChakraProvider theme={theme}>
       <Flex

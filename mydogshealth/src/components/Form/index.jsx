@@ -12,6 +12,7 @@ import {
   InputRightElement,
   IconButton,
   shouldForwardProp,
+  VStack,
 } from '@chakra-ui/react';
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
@@ -59,106 +60,123 @@ const Form = () => {
   });
 
   const dispatch = useDispatch();
-  const onSubmitFunction = data => {console.log(data);
-      dispatch(registerThunk(data.email, data.password));
-    };
+  const onSubmitFunction = data => {
+    console.log(data);
+    dispatch(registerThunk(data.email, data.password));
+  };
 
   return (
-    <Flex>
+    <Flex width="100%" display="flex" justifyContent="center">
       <Box
-        width="60vw"
+        width="90%"
         display="flex"
         flexDir="column"
         bgColor="#EEC0C0"
         alignContent="center"
         alignItems="center"
         borderRadius="8px"
-        marginRight="2%"
-        marginTop="10px"
       >
         <Text fontWeight="bold" fontSize="20px" color="white" marginTop="20px">
           Registro
         </Text>
 
-        <Box>
+        <Box
+          width="100%"
+          bgColor="#EEC0C0"
+          padding="20px"
+          borderRadius="10px"
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+        >
           <form onSubmit={handleSubmit(onSubmitFunction)}>
-
-            <FormControl padding="12px" isInvalid={errors.email}>
-              <Input
-                borderColor="#855050"
-                width="50vw"
-                placeholder="Digite seu Email"
-                {...register('email')}
-              />
-              <FormErrorMessage>
-                <FormErrorIcon />
-                {errors.email && errors.email.message}
-              </FormErrorMessage>
-            </FormControl>
-            <FormControl padding="12px" isInvalid={errors.password}>
-              <InputGroup size="md">
-                <Input
-                  pr="4.5rem"
-                  type={show ? 'text' : 'password'}
-                  placeholder="Digite sua Senha"
-                  {...register('password')}
-                />
-                <InputRightElement width="4.5rem">
-                  <Button
-                    marginRight="5%"
-                    h="1.75rem"
-                    fontSize="12px"
-                    size="lg"
-                    onClick={handleClick}
-                  >
-                    {show ? <GrFormViewHide /> : <GrFormView />}
-                  </Button>
-                </InputRightElement>
-              </InputGroup>
-              <FormErrorMessage>
-                <FormErrorIcon />
-                {errors.password && errors.password.message}
-              </FormErrorMessage>
-            </FormControl>
-
-            <FormControl padding="12px" isInvalid={errors.confirmPassword}>
-              <InputGroup size="md">
-                <Input
-                  pr="4.5rem"
-                  type={show2 ? 'text' : 'password'}
-                  placeholder="Confirme sua Senha"
-                  {...register('confirmPassword')}
-                />
-                <InputRightElement width="4.5rem">
-                  <Button
-                    marginRight="5%"
-                    h="1.75rem"
-                    fontSize="12px"
-                    size="lg"
-                    onClick={handleClick2}
-                  >
-                    {show2 ? <GrFormViewHide /> : <GrFormView />}
-                  </Button>
-                </InputRightElement>
-              </InputGroup>
-              <FormErrorMessage>
-                <FormErrorIcon />
-                {errors.confirmPassword && errors.confirmPassword.message}
-              </FormErrorMessage>
-            </FormControl>
-            
-
-            <Button
-              marginTop="20px"
-              marginLeft="38%"
-              type="submit"
-              colorScheme="#2c2121"
-              color="white"
-              bgColor="#962C2C"
-              marginBottom="20px"
+            <Box
+              display="flex"
+              flexDirection="column"
+              alignItems="center"
+              w="100%"
             >
-              Registrar
-            </Button>
+              <FormControl padding="12px" isInvalid={errors.email}>
+                <Input
+                  borderColor="#855050"
+                  width="100%"
+                  placeholder="Digite seu Email"
+                  {...register('email')}
+                />
+                <FormErrorMessage>
+                  <FormErrorIcon />
+                  {errors.email && errors.email.message}
+                </FormErrorMessage>
+              </FormControl>
+              <FormControl padding="12px" isInvalid={errors.password}>
+                <InputGroup size="md">
+                  <Input
+                    width="100%"
+                    type={show ? 'text' : 'password'}
+                    placeholder="Digite sua Senha"
+                    {...register('password')}
+                  />
+                  <InputRightElement width="4.5rem">
+                    <Button
+                      marginRight="5%"
+                      h="1.75rem"
+                      fontSize="12px"
+                      size="lg"
+                      onClick={handleClick}
+                    >
+                      {show ? <GrFormViewHide /> : <GrFormView />}
+                    </Button>
+                  </InputRightElement>
+                </InputGroup>
+                <FormErrorMessage>
+                  <FormErrorIcon />
+                  {errors.password && errors.password.message}
+                </FormErrorMessage>
+              </FormControl>
+
+              <FormControl padding="12px" isInvalid={errors.confirmPassword}>
+                <InputGroup size="md">
+                  <Input
+                    width="100%"
+                    type={show2 ? 'text' : 'password'}
+                    placeholder="Confirme sua Senha"
+                    {...register('confirmPassword')}
+                  />
+                  <InputRightElement width="4.5rem">
+                    <Button
+                      marginRight="5%"
+                      h="1.75rem"
+                      fontSize="12px"
+                      size="lg"
+                      onClick={handleClick2}
+                    >
+                      {show2 ? <GrFormViewHide /> : <GrFormView />}
+                    </Button>
+                  </InputRightElement>
+                </InputGroup>
+                <FormErrorMessage>
+                  <FormErrorIcon />
+                  {errors.confirmPassword && errors.confirmPassword.message}
+                </FormErrorMessage>
+              </FormControl>
+
+              <Button
+                width="130px"
+                marginTop="20px"
+                type="submit"
+                colorScheme="#2c2121"
+                color="white"
+                bgColor="#962C2C"
+                marginBottom="20px"
+                _hover={{
+                  background: '#EEC0C0',
+                  color: 'teal.500',
+                  border: '2px solid #FFFFFF',
+                }}
+              >
+                Registrar
+              </Button>
+            </Box>
           </form>
         </Box>
       </Box>
