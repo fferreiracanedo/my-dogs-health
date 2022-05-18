@@ -8,6 +8,7 @@ import {
   FormErrorIcon,
   FormErrorMessage,
   Select,
+  Text,
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import * as yup from 'yup';
@@ -73,6 +74,11 @@ const FormProfile = () => {
           <FormControl isInvalid={errors.city}>
             <FormLabel color="white" marginTop="5px" htmlFor="city">
               Cidade:
+              {errors.city && (
+                <Text as={'span'} color="#2b0d0d">
+                  {errors.city.message}!
+                </Text>
+              )}
             </FormLabel>
             <Input
               placeholder="Digite seu cidade"
@@ -106,6 +112,11 @@ const FormProfile = () => {
               <FormControl isInvalid={errors.certificate}>
                 <FormLabel color="white" marginTop="5px" htmlFor="certificate">
                   Certificado CRMV:
+                  {errors.certificate && (
+                    <Text as={'span'} color="#2b0d0d">
+                      {errors.certificate.message}!
+                    </Text>
+                  )}
                 </FormLabel>
                 <Input
                   placeholder="Digite seu certificado"
