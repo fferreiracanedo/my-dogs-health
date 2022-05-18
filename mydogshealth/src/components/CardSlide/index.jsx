@@ -1,4 +1,4 @@
-import { Box, Img } from '@chakra-ui/react';
+import { Box, Img} from '@chakra-ui/react';
 import { Carousel } from '3d-react-carousal';
 
 const CardSlide = () => {
@@ -24,7 +24,7 @@ const CardSlide = () => {
   ];
 
   return (
-    <Box width="100%">
+    <Box width="100%" height="200px">
       <Carousel slides={CardList} autoplay={false} />
     </Box>
   );

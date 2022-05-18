@@ -15,6 +15,7 @@ import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useToast } from '@chakra-ui/react';
 import Contact from '../pages/Contact';
+import DashboardDoctor from '../pages/DashboardDoctor';
 
 const Routes = () => {
   const toast = useToast();
@@ -71,6 +72,9 @@ const Routes = () => {
       </Route>
       <Route path="/register/final">
         <RegisterFinal />
+      </Route>
+      <Route path="/dashboard/doctor">
+        <DashboardDoctor />
       </Route>
     </Switch>
   );

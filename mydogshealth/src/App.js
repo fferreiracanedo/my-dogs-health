@@ -4,6 +4,7 @@ import theme from '../src/theme/index';
 import Routes from './routes';
 // import DashBoard from './components/Contatos';
 import Footer from './components/Footer';
+import DashboardDoctor from './pages/DashboardDoctor';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         bgColor="#FED7D7"
       >
         <Routes />
+        {/* <DashboardDoctor /> */}
       </Flex>
     </ChakraProvider>
   );

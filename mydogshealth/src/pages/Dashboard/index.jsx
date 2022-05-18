@@ -5,37 +5,38 @@ import CardMarcarConsulta from '../../components/CardMarcarConsulta';
 import CardDashboardAddDog from '../../components/CardDashboardAddDog';
 import CardSlide from '../../components/CardSlide';
 import FeedDashboard from '../../components/FeedDashboard';
+import HeaderMainSection from '../../components/HeaderMainSection';
+
 const Dashboard = () => {
   return (
-    <Flex width="100%" flexDirection="column" height="100vh">
+    <Flex width="100%" flexDirection="column" height="100%" alignItems="center">
       <HeaderDashBoard />
+      <Box
+        display="flex"
+        flexDirection={{ base: 'column', md: 'row', lg: 'row' }}
+        alignItems={{ base: 'center', md: 'baseline', lg: 'baseline' }}
+        justifyContent="space-between"
+      >
+        <MenuDashboard />
 
-      <Box display="flex" flexDir="column">
-        <Box marginRight="2%">
-          <Box display="flex" flexDir="row">
-            <MenuDashboard />
-            <Box
-              display="flex"
-              flexDir={{ base: 'column', sm: 'row' }}
-              margin="10px"
-            >
-              <Box display="flex">
-                <Box margin="12px">
-                  <CardMarcarConsulta />
-                </Box>
-                <Box>
-                  <CardDashboardAddDog />
-                  <Box marginTop="20px" marginLeft="-360px">
-                    <CardSlide />
-                  </Box>
-                </Box>
-
-                <Box padding="12px 24px" marginLeft="10px">
-                  <FeedDashboard />
-                </Box>
-              </Box>
-            </Box>
+        <Box
+          display="flex"
+          width={{ base: '100%', md: '80%', lg: '45%' }}
+          flexWrap="wrap"
+          justifyContent="space-between"
+          alignItems="center"
+        >
+          <Box width="100%" height="80px">
+            <HeaderMainSection />
           </Box>
+          <CardMarcarConsulta />
+          <CardDashboardAddDog />
+          <Box width="100%" margin="3%">
+            <CardSlide />
+          </Box>
+        </Box>
+        <Box width={{ base: '90%', md: '30%', lg: '30%' }} margin="1%">
+          <FeedDashboard />
         </Box>
       </Box>
     </Flex>
