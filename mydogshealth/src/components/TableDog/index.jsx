@@ -35,7 +35,7 @@ const TableDog = () => {
           <TabPanels>
             <TabPanel>
               <Box>
-                <Text>Todass vacinaas dos cães</Text>
+                <Text>Todas vacinas dos cães</Text>
               </Box>
             </TabPanel>
             <TabPanel>
