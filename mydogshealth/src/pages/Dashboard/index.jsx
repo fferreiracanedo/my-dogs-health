@@ -6,6 +6,7 @@ import CardDashboardAddDog from '../../components/CardDashboardAddDog';
 import CardSlide from '../../components/CardSlide';
 import FeedDashboard from '../../components/FeedDashboard';
 import HeaderMainSection from '../../components/HeaderMainSection';
+import DashboardMenu from '../../components/DashboardMenu';
 
 const Dashboard = () => {
   return (
@@ -17,8 +18,6 @@ const Dashboard = () => {
         alignItems={{ base: 'center', md: 'baseline', lg: 'baseline' }}
         justifyContent="space-between"
       >
-        <MenuDashboard />
-
         <Box
           display="flex"
           width={{ base: '100%', md: '80%', lg: '45%' }}
