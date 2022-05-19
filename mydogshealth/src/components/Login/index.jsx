@@ -18,8 +18,10 @@ import { GrFormView, GrFormViewHide } from 'react-icons/gr';
 
 import { useDispatch } from 'react-redux';
 import { loginThunk } from '../../store/modules/api/thunks';
+import { useHistory } from 'react-router-dom';
 
 const Login = () => {
+  const history = useHistory();
   const [show, setShow] = useState(false);
 
   const handleClick = () => {
@@ -38,69 +40,109 @@ const Login = () => {
     resolver: yupResolver(loginSchema),
   });
 
-
   const dispatch = useDispatch();
-  const onSubmitFunction = data => {console.log(data);
-      dispatch(loginThunk(data.email, data.password));
+  const onSubmitFunction = data => {
+    console.log(data);
+    dispatch(loginThunk(data.email, data.password));
   };
-  
+
   return (
-    <Flex w="100%">
-      <Box w="100%" bgColor="#EEC0C0" padding="20px" borderRadius="10px">
-        <Text fontWeight="bold" fontSize="20px" color="white" marginTop="20px">
+    <Flex justifyContent="center" width="90%">
+      <Box
+        width="100%"
+        maxWidth="400px"
+        bgColor="#FFF"
+        padding="20px"
+        borderRadius="10px"
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+      >
+        <Text fontWeight="bold" fontSize="20px" color="#2A4058" marginTop="20px">
           Login
         </Text>
         <form onSubmit={handleSubmit(onSubmitFunction)}>
-          <FormControl padding="12px" isInvalid={errors.email}>
-            <Input
-              borderColor="#855050"
-              width="30vw"
-              placeholder="Digite seu E-mail"
-              {...register('email')}
-            />
-            <FormErrorMessage>
-              <FormErrorIcon />
-              {errors.email && errors.email.message}
-            </FormErrorMessage>
-          </FormControl>
-
-          <FormControl padding="12px" isInvalid={errors.password}>
-            <InputGroup size="md">
+          <Box display="flex" flexDirection="column" alignItems="center">
+            <FormControl padding="12px" isInvalid={errors.email} width="100%">
               <Input
-                pr="4.5rem"
-                type={show ? 'text' : 'password'}
-                placeholder="Digite sua Senha"
-                {...register('password')}
+                color="#000"
+                w="100%"
+                borderColor="#855050"
+                placeholder="Digite seu E-mail"
+                {...register('email')}
               />
-              <InputRightElement width="4.5rem">
-                <Button
-                  marginRight="5%"
-                  h="1.75rem"
-                  fontSize="12px"
-                  size="lg"
-                  onClick={handleClick}
-                >
-                  {show ? <GrFormViewHide /> : <GrFormView />}
-                </Button>
-              </InputRightElement>
-            </InputGroup>
-            <FormErrorMessage>
-              <FormErrorIcon />
-              {errors.password && errors.password.message}
-            </FormErrorMessage>
-          </FormControl>
+              <FormErrorMessage>
+                <FormErrorIcon />
+                {errors.email && errors.email.message}
+              </FormErrorMessage>
+            </FormControl>
+
+            <FormControl padding="12px" isInvalid={errors.password}>
+              <InputGroup>
+                <Input
+                  color="#000"
+                  w="100%"
+                  type={show ? 'text' : 'password'}
+                  placeholder="Digite sua Senha"
+                  {...register('password')}
+                />
+                <InputRightElement width="4.5rem">
+                  <Button
+                    marginRight="5%"
+                    h="1.75rem"
+                    fontSize="12px"
+                    size="lg"
+                    onClick={handleClick}
+                  >
+                    {show ? <GrFormViewHide /> : <GrFormView />}
+                  </Button>
+                </InputRightElement>
+              </InputGroup>
+              <FormErrorMessage>
+                <FormErrorIcon />
+                {errors.password && errors.password.message}
+              </FormErrorMessage>
+            </FormControl>
+            <Button
+              width="130px"
+              marginTop="20px"
+              type="submit"
+              colorScheme="#2c2121"
+              color="white"
+              bgColor="#2A4058"
+              marginBottom="20px"
+              _hover={{
+                background: '#FFF',
+                color: '#000',
+                border: '2px solid #000',
+              }}
+            >
+              Login
+            </Button>
+          </Box>
+        </form>
+        <Box display="flex" flexDirection="column">
+          <Text fontSize="10px" color="#9b9191" fontWeight="700">
+            Ainda nao possui cadastro?{' '}
+          </Text>
           <Button
+            width="130px"
             marginTop="20px"
-            marginLeft="38%"
             type="submit"
             colorScheme="#2c2121"
             color="white"
-            bgColor="#962C2C"
+            bgColor="#2A4058"
             marginBottom="20px"
+            onClick={() => history.push('/register')}
+            _hover={{
+              background: '#FFF',
+              color: '#000',
+              border: '2px solid #000',
+            }}
           >
-            Login
+            Clique Aqui
           </Button>
-        </form>
+        </Box>
       </Box>
     </Flex>
   );

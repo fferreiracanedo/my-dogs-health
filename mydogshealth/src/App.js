@@ -6,17 +6,15 @@ import Routes from './routes';
 import Footer from './components/Footer';
 import DashboardDoctor from './pages/DashboardDoctor';
 
-
 function App() {
-
-
   return (
     <ChakraProvider theme={theme}>
       <Flex
-        height="100%"
+        height="220vh"
         width="100%"
         justifyContent="center"
-        bgColor="#FED7D7"
+        bgColor="#2A4058"
+        color="#FFF"
       >
         <Routes />
         {/* <DashboardDoctor /> */}

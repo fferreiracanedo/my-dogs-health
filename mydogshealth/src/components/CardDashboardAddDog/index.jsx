@@ -22,7 +22,7 @@ const CardDashboardAddDog = () => {
   return (
     <Flex
       m="2%"
-      backgroundColor="#AC5858"
+      backgroundColor="#FFF"
       padding="1rem"
       borderRadius="8px"
       width={{ base: '100%', md: '45%' }}
@@ -34,7 +34,7 @@ const CardDashboardAddDog = () => {
         <Box
           width="100%"
           fontSize={{ base: '18px', md: '14px', lg: '16px', xl: '20px' }}
-          color="#ffffff"
+          color="#000"
           fontFamily="Inter"
           fontStyle="normal"
           fontWeight="700"
@@ -45,7 +45,7 @@ const CardDashboardAddDog = () => {
         <Box
           width="100%"
           maxWidth="300px"
-          color="#ffffff"
+          color="#000"
           fontFamily="Poppins"
           fontStyle="normal"
           fontWeight="400"
@@ -86,8 +86,8 @@ const CardDashboardAddDog = () => {
             display="flex"
             alignItems="center"
             textAlign="center"
-            backgroundColor="#792323"
-            color="#fff"
+            backgroundColor="#b8b3b3"
+            color="#000"
             size="xs"
             onClick={onOpen}
             fontWeight="bold"
