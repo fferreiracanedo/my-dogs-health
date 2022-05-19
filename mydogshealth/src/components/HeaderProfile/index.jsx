@@ -1,9 +1,13 @@
 import { Box, Flex, Heading, Image, Text } from '@chakra-ui/react';
 import logo from '../../assets/image/LogoLandign.svg';
 import { FaDog } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
+
 const HeaderProfile = () => {
-  const userInfo = JSON.parse(localStorage.getItem('userdata'));
-  const { name, category } = userInfo.userdata;
+  const user = useSelector(state => state.user);
+  const { name, category } = user.profile;
+
+ 
 
   return (
     <Flex

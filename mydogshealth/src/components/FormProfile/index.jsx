@@ -48,7 +48,7 @@ const FormProfile = () => {
   });
 
 
-  const token = useSelector(state => state.user.userdata.token);
+  const token = useSelector(state => state.user.profile.token);
   console.log("token",token);
   const dispatch = useDispatch();
   const onSubmitFunction = data => {

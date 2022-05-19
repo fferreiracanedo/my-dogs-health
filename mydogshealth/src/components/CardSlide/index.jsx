@@ -1,8 +1,15 @@
 import { Box, Img} from '@chakra-ui/react';
 import { Carousel } from '3d-react-carousal';
+import { useSelector } from 'react-redux';
 
 const CardSlide = () => {
-  const CardList = [
+  const dogs = useSelector(state => state.dogs);
+console.log("carousel", dogs)
+  const cardList = dogs.list.map((item, index)=> <Img width="300px" height="200px" src={item.thumb} alt={item.name} title={item.name} />); 
+  
+  console.log("carousel", dogs, cardList)
+  /*
+  [
     <Img
       width="300px"
       height="200px"
@@ -22,10 +29,10 @@ const CardSlide = () => {
       alt="3"
     />,
   ];
-
+*/
   return (
     <Box width="100%" height="200px">
-      <Carousel slides={CardList} autoplay={false} />
+      <Carousel slides={cardList} autoplay={false} />
     </Box>
   );
 };
