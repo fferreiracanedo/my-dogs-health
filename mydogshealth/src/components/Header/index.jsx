@@ -33,33 +33,36 @@ const Header = () => {
         >
           <Text
             marginTop="5px"
+            color="white"
             paddingBottom="5px"
             transition="0.4s"
             borderBottom="2px solid #FED7D7"
             _hover={{
-              borderBottom: '2px solid #C4C4C4',
+              borderBottom: '2px solid black',
             }}
           >
             <Link>O projeto</Link>
           </Text>
           <Text
             marginTop="5px"
+            color="white"
             paddingBottom="5px"
             transition="0.4s"
             borderBottom="2px solid #FED7D7"
             _hover={{
-              borderBottom: '2px solid #C4C4C4',
+              borderBottom: '2px solid black',
             }}
           >
             <Link to="/contact">Contato</Link>
           </Text>
           <Text
             marginTop="5px"
+            color="white"
             paddingBottom="5px"
             transition="0.4s"
             borderBottom="2px solid #FED7D7"
             _hover={{
-              borderBottom: '2px solid #C4C4C4',
+              borderBottom: '2px solid black',
             }}
           >
             <Link>Saiba Mais</Link>
@@ -70,15 +73,16 @@ const Header = () => {
           <Button
             height="30px"
             backgroundColor="transparent"
-            border="2px solid #962C2C"
-            color="#962C2C"
+            border="2px solid #fff"
+            color="#fff"
             borderRadius="20px"
             marginInline="5px"
             fontSize="16px"
             transition="0.4s"
             _hover={{
-              color: '#fff',
+              color: '#2A4058',
               border: '2px solid #fff',
+              bgColor: '#fff',
             }}
             onClick={() => history.push('/login')}
           >
@@ -86,9 +90,9 @@ const Header = () => {
           </Button>
           <Button
             height="30px"
-            backgroundColor="#962C2C"
-            border="2px solid #962C2C"
-            color="#FFF"
+            backgroundColor="#fff"
+            border="2px solid black"
+            color="#2A4058"
             borderRadius="20px"
             transition="0.4s"
             _hover={{

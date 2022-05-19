@@ -78,12 +78,19 @@ const HeaderDashBoard = () => {
           <MenuButton as={Button} bgColor="#2A4058" color="white">
             Perfil
           </MenuButton>
-          <MenuList  color="#6d6666">
+          <MenuList color="#6d6666">
             <MenuGroup title="Perfil">
               <MenuItem onClick={() => history.push('/perfil')}>
                 Minha Conta
               </MenuItem>
-              <MenuItem onClick={() => dispatch(logoutThunk())}>Sair </MenuItem>
+              <MenuItem
+                onClick={() => {
+                  dispatch(logoutThunk());
+                  history.push('/');
+                }}
+              >
+                Sair{' '}
+              </MenuItem>
             </MenuGroup>
             <MenuDivider />
             <MenuGroup title="Ajuda">
