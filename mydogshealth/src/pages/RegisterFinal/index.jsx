@@ -6,14 +6,14 @@ const RegisterFinal = () => {
     <Flex
       w="90%"
       margin="0 auto"
-      height="100%"
-      flexDirection="column"
+      height="100vh"
+      flexDirection={{ base: 'column', md: 'row' }}
+      justifyContent="space-around"
       alignItems="center"
     >
       <HeaderRegisterFinal />
-      <Box mt="30px">
-        <FormProfile></FormProfile>
-      </Box>
+
+      <FormProfile></FormProfile>
     </Flex>
   );
 };
