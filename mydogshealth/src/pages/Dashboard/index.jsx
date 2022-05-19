@@ -10,7 +10,12 @@ import DashboardMenu from '../../components/DashboardMenu';
 
 const Dashboard = () => {
   return (
-    <Flex width="100%" flexDirection="column" height="100%" alignItems="center">
+    <Flex
+      width="100%"
+      flexDirection="column"
+      alignItems="center"
+      height="100vh"
+    >
       <HeaderDashBoard />
       <Box
         display="flex"

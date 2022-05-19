@@ -10,7 +10,6 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <Flex
-        height="220vh"
         width="100%"
         justifyContent="center"
         bgColor="#2A4058"
