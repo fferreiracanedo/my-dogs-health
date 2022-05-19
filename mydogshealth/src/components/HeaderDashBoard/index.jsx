@@ -13,6 +13,13 @@ import {
   Avatar,
   AvatarBadge,
   AvatarGroup,
+  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
 } from '@chakra-ui/react';
 
 import { BiAddToQueue } from 'react-icons/bi';
@@ -23,9 +30,12 @@ import { useDispatch } from 'react-redux';
 import { logoutThunk } from '../../store/modules/api/thunks';
 import { useSelector } from 'react-redux';
 import DashboardMenu from '../DashboardMenu';
+import UpdateProfile from '../UpdateProfile';
+import FormProfile from '../FormProfile';
 
 const HeaderDashBoard = () => {
   const history = useHistory();
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const date = new Date();
   const dispatch = useDispatch();
   const user = useSelector(state => state.user);
@@ -80,7 +90,9 @@ const HeaderDashBoard = () => {
             Perfil
           </MenuButton>
           <MenuList color="#6d6666">
-            <MenuGroup title="Perfil">
+            <MenuGroup>
+              <UpdateProfile isOpen={isOpen} onClose={onClose}/>
+              <MenuItem onClick={onOpen}>Perfil</MenuItem>
               <MenuItem onClick={() => history.push('/perfil')}>
                 Minha Conta
               </MenuItem>

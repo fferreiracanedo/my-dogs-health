@@ -3,8 +3,8 @@ import { REGISTER_OK, REGISTER_ERROR, LOGIN_OK, LOGIN_ERROR, UPDATE_OK, UPDATE_E
 import { successMsg, errorMsg, warningMsg, infoMsg } from "./actions";
 import axios from "axios";
 
-//const API_URL = "https://www.vanderhaegen.com.br/mydogshealth/api/";
-const API_URL = "http://localhost/www/mydogshealth/api/";
+const API_URL = "https://www.vanderhaegen.com.br/mydogshealth/api/";
+// const API_URL = "http://localhost/www/mydogshealth/api/";
 
 export const registerThunk = (email, password) => (dispatch) => {
     axios.post(API_URL + "register/", {
