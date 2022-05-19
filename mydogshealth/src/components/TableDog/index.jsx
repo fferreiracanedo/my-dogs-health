@@ -19,10 +19,12 @@ import {
   FormControl,
   Input,
   Button,
-  LinkBox, LinkOverlay,
+  LinkBox,
+  LinkOverlay,
   Avatar,
   Badge,
-  Stack
+  Stack,
+  Heading,
 } from '@chakra-ui/react';
 import { MdOutlineEditNote, MdHealthAndSafety, MdPets } from 'react-icons/md';
 
@@ -34,7 +36,7 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
 
 import FormVacina from '../FormVacina';
 import DogCard from '../DogCard';
@@ -45,25 +47,30 @@ import DogReport from '../DogReport';
 
 const TableDog = () => {
   const dogs = useSelector(state => state.dogs);
+  console.log(dogs.list);
   const { id } = useParams();
-  
-  const dogPage = dogs.list.find(item=>item.id.toString()===id);
 
-console.log("tabledog", dogPage, id )
+  const dogPage = dogs.list.find(item => item.id.toString() === id);
+
   return (
     <Flex>
       <Box marginTop="10px">
-    {dogPage 
-    ? <>
-    <DogReportCard info={dogPage}/>
-    <DogReport info={dogPage}/>
-
-    </>
-
-    : <Flex> {dogs.list.map((item, index)=><LinkBox><LinkOverlay href={"/dashboard/cuidados/"+item.id}><DogCard info={item} key={index}/></LinkOverlay></LinkBox>)} </Flex> }
-
-
-
+        {dogPage ? (
+          <>
+            <DogReportCard info={dogPage} />
+            <DogReport info={dogPage} />
+          </>
+        ) : (
+          <Flex flexWrap="wrap">
+            {dogs.list.map((item, index) => (
+              <LinkBox>
+                <LinkOverlay href={'/dashboard/cuidados/' + item.id}>
+                  <DogCard info={item} key={index} />
+                </LinkOverlay>
+              </LinkBox>
+            ))}
+          </Flex>
+        )}
       </Box>
     </Flex>
   );
