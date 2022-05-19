@@ -1,10 +1,10 @@
-export const CREATE_USER = "@api/CREATE_USER"; // email, password
-export const UPDATE_PROFILE = "@api/UPDATE_PROFILE"; // firstName, lastName, city, zip, category, bio, network
-export const LOGIN_USER = "@api/LOGIN_USER"; // email, password
-export const CHANGE_EMAIL = "@api/CHANGE_EMAIL"; // email, password
-export const CHANGE_PASSWORD = "@api/CHANGE_PASSWORD"; // email, password
+export const CREATE_USER = "@api/CREATE_USER";
+export const UPDATE_PROFILE = "@api/UPDATE_PROFILE";
+export const LOGIN_USER = "@api/LOGIN_USER";
+export const CHANGE_EMAIL = "@api/CHANGE_EMAIL";
+export const CHANGE_PASSWORD = "@api/CHANGE_PASSWORD";
 
-export const GET_PROFILE = "@api/GET_USER"; // token
+export const GET_PROFILE = "@api/GET_USER";
 
 export const CREATE_DOG = "@api/CREATE_DOG";
 export const GET_DOG = "@api/GET_DOG";
