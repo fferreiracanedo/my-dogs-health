@@ -1,5 +1,5 @@
 import { Flex, Img, Text, Button, Box } from '@chakra-ui/react';
-import { MdOutlineEditNote, MdHealthAndSafety, MdPets } from 'react-icons/md';
+import { MdPets } from 'react-icons/md';
 const DogCard = ({ info }) => {
   const { name, id, thumb, breed, gender, birth } = info;
   return (
@@ -15,9 +15,6 @@ const DogCard = ({ info }) => {
       mr="20px"
     >
       <Flex width="100%" justifyContent="space-around">
-        {/* <Button margin="2px" padding="0" backgroundColor="transparent">
-          <MdOutlineEditNote size="30px" color="#b84040" />
-        </Button> */}
         <Button
           margin="2px"
           padding="0"
@@ -26,9 +23,6 @@ const DogCard = ({ info }) => {
         >
           <MdPets size="30px" color="#2A4058" />
         </Button>
-        {/* <Button margin="2px" padding="0" backgroundColor="transparent">
-          <MdHealthAndSafety size="30px" color="#b84040" />
-        </Button> */}
       </Flex>
       <Flex flexDirection="column" alignItems="center">
         <Img
