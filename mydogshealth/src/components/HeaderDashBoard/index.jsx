@@ -27,7 +27,7 @@ const HeaderDashBoard = () => {
   const history = useHistory();
   const date = new Date();
   const dispatch = useDispatch();
-  const user = useSelector(state => state.login);
+  const user = useSelector(state => state.user);
   console.log(user);
   return (
     <Box
@@ -50,10 +50,10 @@ const HeaderDashBoard = () => {
         </Avatar>
         <Box>
           <Text fontFamily="Inter" color="#000">
-            {user.userdata.name}
+            {user.userdata && user.userdata.name}
           </Text>
           <Text fontFamily="Poppins" color="#6d6666">
-            {user.userdata.email}
+            {user.userdata && user.userdata.email}
           </Text>
         </Box>
         <Flex
