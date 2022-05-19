@@ -4,7 +4,7 @@ const HeaderRegisterFinal = () => {
   return (
     <Box>
       <Flex
-        flexDirection={{ base: 'column', md: 'row' }}
+        flexDirection={{ base: 'column' }}
         justifyContent="space-around"
         alignItems="center"
       >

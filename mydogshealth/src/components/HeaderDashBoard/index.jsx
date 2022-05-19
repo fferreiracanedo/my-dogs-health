@@ -22,6 +22,7 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { logoutThunk } from '../../store/modules/api/thunks';
 import { useSelector } from 'react-redux';
+import DashboardMenu from '../DashboardMenu';
 
 const HeaderDashBoard = () => {
   const history = useHistory();
@@ -78,12 +79,19 @@ const HeaderDashBoard = () => {
           <MenuButton as={Button} bgColor="#2A4058" color="white">
             Perfil
           </MenuButton>
-          <MenuList  color="#6d6666">
+          <MenuList color="#6d6666">
             <MenuGroup title="Perfil">
               <MenuItem onClick={() => history.push('/perfil')}>
                 Minha Conta
               </MenuItem>
-              <MenuItem onClick={() => dispatch(logoutThunk())}>Sair </MenuItem>
+              <MenuItem
+                onClick={() => {
+                  dispatch(logoutThunk());
+                  history.push('/');
+                }}
+              >
+                Sair{' '}
+              </MenuItem>
             </MenuGroup>
             <MenuDivider />
             <MenuGroup title="Ajuda">
@@ -95,6 +103,7 @@ const HeaderDashBoard = () => {
             </MenuGroup>
           </MenuList>
         </Menu>
+        <DashboardMenu />
       </Flex>
     </Box>
   );

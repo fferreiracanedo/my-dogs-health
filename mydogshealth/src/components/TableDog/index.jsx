@@ -19,10 +19,12 @@ import {
   FormControl,
   Input,
   Button,
-  LinkBox, LinkOverlay,
+  LinkBox,
+  LinkOverlay,
   Avatar,
   Badge,
-  Stack
+  Stack,
+  Heading,
 } from '@chakra-ui/react';
 
 
@@ -45,7 +47,7 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
 
 import {
   Breadcrumb,
@@ -65,11 +67,11 @@ import DogReport from '../DogReport';
 const TableDog = () => {
   const dogs = useSelector(state => state.dogs);
   const user = useSelector(state => state.user);
-  const { id } = useParams();
-  
-  const dogPage = dogs.list.find(item=>item.id.toString()===id);
 
-console.log("tabledog", dogPage, id )
+  const { id } = useParams();
+
+  const dogPage = dogs.list.find(item => item.id.toString() === id);
+
   return (
     <Flex maxWidth="800px">
 

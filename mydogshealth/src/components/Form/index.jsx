@@ -86,7 +86,12 @@ const Form = () => {
           alignItems="center"
           // border="1px solid black"
         >
-          <Text fontWeight="bold" fontSize="20px" marginTop="20px" color="#2A4058">
+          <Text
+            fontWeight="bold"
+            fontSize="20px"
+            marginTop="20px"
+            color="#2A4058"
+          >
             Registro
           </Text>
           <form onSubmit={handleSubmit(onSubmitFunction)}>
@@ -102,6 +107,7 @@ const Form = () => {
                   width="100%"
                   placeholder="Digite seu Email"
                   {...register('email')}
+                  color="black"
                 />
                 <FormErrorMessage>
                   <FormErrorIcon />
