@@ -27,7 +27,6 @@ import {
   Heading,
 } from '@chakra-ui/react';
 
-
 import {
   Menu,
   MenuButton,
@@ -214,6 +213,7 @@ console.log(id, act)
             </ModalBody>
           </ModalContent>
         </Modal>
+
 
 
     </Flex>
