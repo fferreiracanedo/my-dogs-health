@@ -14,13 +14,16 @@ import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
+import { useSelector, useDispatch } from 'react-redux';
+import { dogRegisterThunk } from '../../store/modules/api/thunks';
+
 const DogRegisterForm = ({ onClose }) => {
   const toast = useToast();
 
   const dogRegisterSchema = yup.object().shape({
     name: yup.string().required('Nome Obrigatório'),
     breed: yup.string().required('Raça Obrigatória'),
-    birthDate: yup.string().required('Data de Nascimento Obrigatória'),
+    birth: yup.string().required('Data de Nascimento Obrigatória'),
     gender: yup.string().required('Gênero Obrigatório'),
     imgUrl: yup
       .string()
@@ -36,6 +39,16 @@ const DogRegisterForm = ({ onClose }) => {
     resolver: yupResolver(dogRegisterSchema),
   });
 
+
+  const token = useSelector(state => state.user.profile.token);
+  console.log("token dog",token);
+  const dispatch = useDispatch();
+  const onSubmitFunction = data => {
+    console.log(data,token);
+    dispatch(dogRegisterThunk(token, data.imgUrl, data.name, data.breed, data.gender, data.birth));
+    //token, thumb, name, breed, gender, birth
+  };
+/*
   const onSubmitFunction = data => {
     console.log(data);
     onClose();
@@ -48,7 +61,7 @@ const DogRegisterForm = ({ onClose }) => {
       position: 'top-right',
     });
   };
-
+*/
   return (
     <Flex w="100%">
       <Box
@@ -89,8 +102,8 @@ const DogRegisterForm = ({ onClose }) => {
           <FormControl padding="12px" isInvalid={errors.gender}>
             <FormLabel htmlFor="gender">Gênero:</FormLabel>
             <Select {...register('gender')} id="gender">
-              <option value="male">Macho</option>
-              <option value="female">Fêmea</option>
+              <option value="macho">Macho</option>
+              <option value="fêmea">Fêmea</option>
             </Select>
             <FormErrorMessage>
               <FormErrorIcon />
@@ -111,18 +124,18 @@ const DogRegisterForm = ({ onClose }) => {
             </FormErrorMessage>
           </FormControl>
 
-          <FormControl padding="12px" isInvalid={errors.birthDate}>
+          <FormControl padding="12px" isInvalid={errors.birth}>
             <FormLabel>Data de Nascimento:</FormLabel>
             <Input
               type="date"
               borderColor="#855050"
               width="100%"
               placeholder="Digite a Data de Nascimento"
-              {...register('birthDate')}
+              {...register('birth')}
             />
             <FormErrorMessage>
               <FormErrorIcon />
-              {errors.birthDate && errors.birthDate.message}
+              {errors.birth && errors.birth.message}
             </FormErrorMessage>
           </FormControl>
 

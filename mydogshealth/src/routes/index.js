@@ -15,7 +15,7 @@ import DashboardDoctor from '../pages/DashboardDoctor';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { useToast } from '@chakra-ui/react';
-import { updateThunk } from '../store/modules/api/thunks';
+import { userdataThunk, dogdataThunk, reportdataThunk } from '../store/modules/api/thunks';
 
 import Contact from '../pages/Contact';
 
@@ -23,10 +23,12 @@ const Routes = () => {
   const toast = useToast();
   const user = useSelector(state => state.user);
   const msg = useSelector(state => state.msg);
+  const dogs = useSelector(state => state.dogs);
+  const reports = useSelector(state => state.reports);
   const dispatch = useDispatch();
 
 
-  console.log("token",user);
+  console.log("token",user, dogs);
   
   useEffect(() => {
     if (msg.toast) {
@@ -35,11 +37,29 @@ const Routes = () => {
   }, [msg]);
 
   useEffect(() => {
-    if (user.status==="updating" && user.userdata && user.userdata.token) {
-      console.log("updating",user.userdata.token)
-      dispatch(updateThunk(user.userdata.token));
+    if (user.status==="updating" && user.profile && user.profile.token) {
+      console.log("updating user",user.profile.token)
+      dispatch(userdataThunk(user.profile.token));
     }
   }, [user]);
+
+
+  useEffect(() => {
+    if (dogs.status==="updating" && user.profile && user.profile.token) {
+      console.log("updating dogs",user.profile.token)
+      dispatch(dogdataThunk(user.profile.token));
+    }
+  }, [dogs]);
+
+
+  useEffect(() => {
+    if (reports.status==="updating" && user.profile && user.profile.token) {
+      console.log("updating reports", user.profile.token)
+      dispatch(reportdataThunk(user.profile.token));
+    }
+  }, [reports]);
+
+
 
   return (
     <Switch>
@@ -59,12 +79,15 @@ const Routes = () => {
         {user.logged ? <Redirect to="/dashboard" /> : <LoginPage />}
       </Route>
       <Route exact path="/dashboard">
-        {!user.logged ? <Redirect to="/" /> : user.userdata && user.userdata.status==="incomplete" ? <Redirect to="/register/final" /> :  <Dashboard />}
+        {!user.logged ? <Redirect to="/" /> : user.profile && user.profile.status==="incomplete" ? <Redirect to="/register/final" /> :  <Dashboard />}
       </Route>
       <Route exact path="/contact">
         <Contact />
       </Route>
       <Route exact path="/dashboard/cuidados">
+        <Cuidados />
+      </Route>
+      <Route path="/dashboard/cuidados/:id">
         <Cuidados />
       </Route>
       <Route exact path="/dashboard/consultas">
@@ -83,7 +106,7 @@ const Routes = () => {
         <Faq />
       </Route>
       <Route path="/register/final">
-        {user.userdata && user.userdata.status==="incomplete" ? <RegisterFinal /> : <Redirect to="/dashboard" />}
+        {user.profile && user.profile.status==="incomplete" ? <RegisterFinal /> : <Redirect to="/dashboard" />}
       </Route>
       <Route path="/dashboard/doctor">
         <DashboardDoctor />

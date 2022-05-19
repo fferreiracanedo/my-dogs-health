@@ -3,7 +3,9 @@ import { REGISTER_OK, REGISTER_ERROR, LOGIN_OK, LOGIN_ERROR, LOGOUT, UPDATE_OK, 
 import { SHOW_MSG, CLEAR_MSG } from "./actionTypes";
 
 const userdata = JSON.parse(localStorage.getItem("userdata"))
-const loginState = userdata ? { ...userdata, status: "updating" } : { logged: false, status: "loading", userdata: null };
+const loginState = userdata 
+    ? { ...userdata, status: "updating" }
+    : { logged: false, status: "updating", profile: null };
 export const loginReducer = (state = loginState, action) => {
     const { type, payload } = action;
     switch (type) {
@@ -20,11 +22,12 @@ export const loginReducer = (state = loginState, action) => {
         };
       case LOGIN_OK: //fall-through
       case UPDATE_OK:
+            localStorage.setItem("userdata", JSON.stringify({logged: true, profile: payload}));
             return {
           ...state,
           logged: true,
           status: "updated",
-          userdata: payload,
+          profile: payload,
         };
         case UPDATE_ERROR:
             return {
@@ -46,39 +49,43 @@ export const loginReducer = (state = loginState, action) => {
 
 
 const dogdata = JSON.parse(localStorage.getItem("dogdata"))
-const dogState = dogdata ? { ...dogdata, status: "updating" } : {status: "loading", list: []};
+const dogState = dogdata ? { ...dogdata, status: "updating" } : {status: "updating", list: []};
 export const dogReducer = (state = dogState, action) => {
     const { type, payload } = action;
     switch (type) {
       case DOG_UPDATE_OK: 
+        localStorage.setItem("dogdata", JSON.stringify({status: "updated", list: payload}));
         return {
             status: "updated",
             list: payload,
         };
       case DOG_UPDATE_ERROR:
+        localStorage.setItem("dogdata", JSON.stringify({...state, status: "outdated"}));
         return {
-          status: "outdated",
-          loaded: false,
+            ...state,
+            status: "outdated",
         };
       default:
-        return state;
+            return state;
     }
 }
 
 const reportdata = JSON.parse(localStorage.getItem("reportdata"))
-const reportState = reportdata ?  { ...dogdata, status: "updating" } : {status: "loading", list: []};
+const reportState = reportdata ?  { ...reportdata, status: "updating" } : {status: "updating", list: []};
 export const reportReducer = (state = reportState, action) => {
     const { type, payload } = action;
     switch (type) {
       case REPORT_UPDATE_OK: 
+      localStorage.setItem("reportdata", JSON.stringify({status: "updated", list: payload}));
         return {
             status: "updated",
             list: payload,
         };
       case REPORT_UPDATE_ERROR:
+        localStorage.setItem("reportdata", JSON.stringify({...state, status: "outdated"}));
+
         return {
           status: "outdated",
-          loaded: false,
         };
       default:
         return state;

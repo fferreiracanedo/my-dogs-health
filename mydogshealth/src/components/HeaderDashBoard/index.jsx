@@ -50,10 +50,10 @@ const HeaderDashBoard = () => {
         </Avatar>
         <Box>
           <Text fontFamily="Inter" color="#000">
-            {user.userdata && user.userdata.name}
+            {user.profile && user.profile.name}
           </Text>
           <Text fontFamily="Poppins" color="#6d6666">
-            {user.userdata && user.userdata.email}
+            {user.profile && user.profile.email}
           </Text>
         </Box>
         <Flex
@@ -78,7 +78,7 @@ const HeaderDashBoard = () => {
           <MenuButton as={Button} bgColor="#2A4058" color="white">
             Perfil
           </MenuButton>
-          <MenuList>
+          <MenuList  color="#6d6666">
             <MenuGroup title="Perfil">
               <MenuItem onClick={() => history.push('/perfil')}>
                 Minha Conta

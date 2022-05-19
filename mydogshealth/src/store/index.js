@@ -5,8 +5,8 @@ import { dogReducer, loginReducer, msgReducer, reportReducer } from "./modules/a
 const reducers = combineReducers({ 
     user: loginReducer,
     msg: msgReducer,
-    dog: dogReducer,
-    report: reportReducer,
+    dogs: dogReducer,
+    reports: reportReducer,
  });
 
 const store = createStore(reducers, applyMiddleware(thunk));

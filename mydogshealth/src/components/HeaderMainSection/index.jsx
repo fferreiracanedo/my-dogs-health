@@ -1,7 +1,12 @@
 import { Box, Flex, Image, Text } from '@chakra-ui/react';
 import dogMainSection from '../../assets/image/dogMainSection.svg';
 
+import { useSelector } from 'react-redux';
+
 const HeaderMainSection = () => {
+  const user = useSelector(state => state.user);
+  const dogs = useSelector(state => state.dogs);
+
   return (
     <Flex
       display="flex"
@@ -16,7 +21,7 @@ const HeaderMainSection = () => {
           marginLeft="10px"
           fontFamily="Inter"
         >
-          Bem vindo, Alfredo
+          Olá, {user.profile.name}!
         </Text>
       </Box>
       <Box display="flex" alignItems="center" marginRight="10px">
@@ -32,7 +37,7 @@ const HeaderMainSection = () => {
           padding="5px"
           fontFamily="Inter"
         >
-          Doguinhos, 10
+          Total de dogs: {dogs.list.length} 
         </Text>
       </Box>
     </Flex>
