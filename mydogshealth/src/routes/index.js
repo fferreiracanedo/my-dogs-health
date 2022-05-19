@@ -32,21 +32,21 @@ const Routes = () => {
       console.log("updating user",user.profile.token)
       dispatch(userdataThunk(user.profile.token));
     }
-  }, [user]);
+  }, []);
 
   useEffect(() => {
     if (dogs.status==="updating" && user.profile && user.profile.token) {
       console.log("updating dogs",user.profile.token)
       dispatch(dogdataThunk(user.profile.token));
     }
-  }, [dogs]);
+  }, []);
 
   useEffect(() => {
     if (reports.status==="updating" && user.profile && user.profile.token) {
       console.log("updating reports", user.profile.token)
       dispatch(reportdataThunk(user.profile.token));
     }
-  }, [reports]);
+  }, []);
 
   return (
     <Switch>

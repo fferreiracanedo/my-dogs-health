@@ -219,7 +219,7 @@ console.log(id, act)
     </Flex>
 
     </WrapItem>
-    {dogs.list.map((item, index)=><LinkBox><LinkOverlay href={"/dashboard/cuidados/"+item.id}><DogCard info={item} key={index}/></LinkOverlay></LinkBox>)}
+    {dogs.list.map((item, index)=><LinkBox key={index}><LinkOverlay href={"/dashboard/cuidados/"+item.id}><DogCard info={item}/></LinkOverlay></LinkBox>)}
     </Wrap> 
     </Flex>
     
