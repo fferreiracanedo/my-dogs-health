@@ -84,7 +84,14 @@ const HeaderDashBoard = () => {
               <MenuItem onClick={() => history.push('/perfil')}>
                 Minha Conta
               </MenuItem>
-              <MenuItem onClick={() => dispatch(logoutThunk())}>Sair </MenuItem>
+              <MenuItem
+                onClick={() => {
+                  dispatch(logoutThunk());
+                  history.push('/');
+                }}
+              >
+                Sair{' '}
+              </MenuItem>
             </MenuGroup>
             <MenuDivider />
             <MenuGroup title="Ajuda">
