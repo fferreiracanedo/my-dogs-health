@@ -1,11 +1,13 @@
-import { Flex, Img, Text, Button, Box } from '@chakra-ui/react';
+import { Flex, Img, Text, Button, Box, WrapItem } from '@chakra-ui/react';
 import { MdPets } from 'react-icons/md';
 const DogCard = ({ info }) => {
   const { name, id, thumb, breed, gender, birth } = info;
   return (
+    <WrapItem>
     <Flex
       backgroundColor="#FFFF"
       width="300px"
+      height="400px"
       flexDirection="column"
       alignItems="center"
       marginTop="20px"
@@ -28,72 +30,28 @@ const DogCard = ({ info }) => {
         <Img
           width="230px"
           height="230px"
-          borderRadius="20px"
+          borderRadius="12px"
           border="2px solid #333333"
           objectFit="cover"
           src={thumb}
           alt={name}
         />
-        <Box marginBlock="10px" width="190px">
-          <Flex>
-            <Text
-              fontWeight="600"
-              marginRight="4px"
-              fontSize="20px"
-              width="50%"
-              color="#26226B"
-            >
-              {'Nome:'}
+        <Box marginBlock="10px" width="200px">
+          <Flex flexDirection="column"  justifyContent="space-around">
+            <Text width="100%" fontWeight="600" fontSize="16px" color="#2A4058">
+              {name} ({gender})
             </Text>
-            <Text width="80%" fontWeight="600" fontSize="20px" color="#2A4058">
-              {name}
+            <Text width="100%" fontWeight="600" fontSize="12px" color="#2A4058">
+              {breed} 
             </Text>
-          </Flex>
-          <Flex>
-            <Text
-              fontWeight="600"
-              marginRight="4px"
-              fontSize="20px"
-              width="50%"
-              color="#26226B"
-            >
-              {'Raça:'}
-            </Text>
-            <Text width="80%" fontWeight="600" fontSize="20px" color="#2A4058">
-              {breed}
-            </Text>
-          </Flex>
-          <Flex>
-            <Text
-              fontWeight="600"
-              marginRight="4px"
-              fontSize="20px"
-              width="50%"
-              color="#26226B"
-            >
-              {'Sexo:'}
-            </Text>
-            <Text width="80%" fontWeight="600" fontSize="20px" color="#2A4058">
-              {gender}
-            </Text>
-          </Flex>
-          <Flex>
-            <Text
-              fontWeight="600"
-              marginRight="4px"
-              fontSize="20px"
-              width="50%"
-              color="#26226B"
-            >
-              {'Id:'}
-            </Text>
-            <Text width="80%" fontWeight="600" fontSize="20px" color="#2A4058">
-              {id}
+            <Text width="100%" fontWeight="600" fontSize="12px" color="#2A4058">
+              Id {id} : {birth}
             </Text>
           </Flex>
         </Box>
       </Flex>
     </Flex>
+    </WrapItem>
   );
 };
 

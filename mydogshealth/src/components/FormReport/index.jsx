@@ -11,6 +11,14 @@ import {
     Select,
     Text,
   } from '@chakra-ui/react';
+
+  import {
+    Editable,
+    EditableInput,
+    EditableTextarea,
+    EditablePreview,
+  } from "@chakra-ui/react";
+
   import { useState } from 'react';
   import * as yup from 'yup';
   import { useForm } from 'react-hook-form';
@@ -107,13 +115,18 @@ import {
             <FormLabel color="white" marginTop="5px" htmlFor="notes">
               Observação:
             </FormLabel>
-            <Input
-              as={'textarea'}
-              placeholder=""
-              {...register('notes')}
-              height="80px"
-            ></Input>
 
+            <Editable defaultValue='Efeitos e Médico Veterinário responsável.'>
+            <EditablePreview />
+            <EditableTextarea
+                as={'textarea'}
+                placeholder=""
+                {...register('notes')}
+                height="80px"
+            />
+            </Editable>
+
+  
            <FormControl padding="12px" isInvalid={errors.date}>
             <FormLabel>Data:</FormLabel>
             <Input

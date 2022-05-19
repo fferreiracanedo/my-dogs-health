@@ -99,10 +99,10 @@ export const dogRegisterThunk = (token, thumb, name, breed, gender, birth) => (d
         });
 };
 
-export const dogUpdateThunk = (token, id, thumb, name, breed, gender, birth) => (dispatch) => {
+export const dogUpdateThunk = (token, dogId, thumb, name, breed) => (dispatch) => {
     axios.post(API_URL + 'dogs/update/', {
-        token, id, thumb, name, breed, gender, birth
-    }, { headers: { 'Content-Type': 'multipart/form-data' } })
+          token, dogId, thumb, name, breed
+        }, { headers: { 'Content-Type': 'multipart/form-data' }})
         .then((success) => {
             dispatch({
                 type: DOG_UPDATE_OK,
@@ -120,10 +120,10 @@ export const dogUpdateThunk = (token, id, thumb, name, breed, gender, birth) => 
 };
 
 
-export const dogDeleteThunk = (token, id) => (dispatch) => {
+export const dogDeleteThunk = (token, dogId) => (dispatch) => {
     axios.post(API_URL + 'dogs/delete/', {
-        token, id,
-    }, { headers: { 'Content-Type': 'multipart/form-data' } })
+            token, dogId,
+        }, { headers: { 'Content-Type': 'multipart/form-data' }})
         .then((success) => {
             dispatch({
                 type: DOG_UPDATE_OK,
@@ -162,10 +162,10 @@ export const reportRegisterThunk = (token, dogId, action, title, notes, date) =>
         });
 };
 
-export const reportUpdateThunk = (token, reportId, title, description, date) => (dispatch) => {
+export const reportUpdateThunk = (token, reportId, notes) => (dispatch) => {
     axios.post(API_URL + 'reports/update/', {
-        token, reportId, title, description, date
-    }, { headers: { 'Content-Type': 'multipart/form-data' } })
+          token, reportId, notes
+        }, { headers: { 'Content-Type': 'multipart/form-data' }})
         .then((success) => {
             dispatch({
                 type: REPORT_UPDATE_OK,

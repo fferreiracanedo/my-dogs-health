@@ -52,34 +52,16 @@ import {
   
 import DogReportCard from '../DogReportCard';
 
+import { Skeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react'
+
+
   const DogReport = ({info}) => {
     const reports = useSelector(state => state.reports);
   
     return (
-      <Flex>
-        <Box marginTop="10px">
-  
-  <Accordion allowToggle>
-  <AccordionItem>
-      <h2>
-        <AccordionButton>
-          <Box flex='1' textAlign='left'>
-          Ficha {info.id}
-          </Box>
-          <AccordionIcon />
-        </AccordionButton>
-      </h2>
-      <AccordionPanel>
-      <UnorderedList>
-  <ListItem>{info.name}</ListItem>
-  <ListItem>{info.breed} - {info.gender}</ListItem>
-  <ListItem>{info.birth}</ListItem>
-</UnorderedList>
-         
-      </AccordionPanel>
-    </AccordionItem>
-  
-  
+      <Flex w="100%" alignItems="center" justifyContent="center">
+    <Accordion allowToggle w="100%" maxWidth="800px">
+      <Text m="4">Total de Registros: {reports.list.filter(item=>item.dog==info.id).length} </Text>
     <AccordionItem>
       <h2>
         <AccordionButton>
@@ -93,24 +75,36 @@ import DogReportCard from '../DogReportCard';
         
 <List spacing={3}>
 {reports.list.filter(item=>item.action==="1" && item.dog==info.id).map((item, index)=>
+  <LinkBox><LinkOverlay href={"/dashboard/cuidados/"+item.dog+"/"+item.id}>
   <ListItem>
     <ListIcon as={MdCheckCircle} color='green.500' /> Vacina - {item.id}
+    <Button margin="0 16px" size="32px" padding="0px" backgroundColor="transparent">
+      <MdOutlineEditNote size="32px" color="white" />
+    </Button>
     <UnorderedList>
     <ListItem>{item.title} - {item.date}</ListItem>
     <ListItem>{item.notes}</ListItem>
     </UnorderedList>
-  </ListItem>)}
+  </ListItem>
+  </LinkOverlay></LinkBox>
+  )}
 </List>
 
 <List spacing={3}>
 {reports.list.filter(item=>item.action==="2" && item.dog==info.id).map((item, index)=>
+  <LinkBox><LinkOverlay href={"/dashboard/cuidados/"+item.dog+"/"+item.id}>
   <ListItem>
     <ListIcon as={MdCheckCircle} color='green.500' /> Vermífugo - {item.id}
+    <Button margin="0 16px" size="32px" padding="0px" backgroundColor="transparent">
+      <MdOutlineEditNote size="32px" color="white" />
+    </Button>
     <UnorderedList>
     <ListItem>{item.title} - {item.date}</ListItem>
     <ListItem>{item.notes}</ListItem>
     </UnorderedList>
-  </ListItem>)}
+  </ListItem>
+  </LinkOverlay></LinkBox>
+  )}
 </List>
 
       </AccordionPanel>
@@ -129,35 +123,53 @@ import DogReportCard from '../DogReportCard';
         
       <List spacing={3}>
 {reports.list.filter(item=>item.action==="3" && item.dog==info.id).map((item, index)=>
+  <LinkBox><LinkOverlay href={"/dashboard/cuidados/"+item.dog+"/"+item.id}>
   <ListItem>
     <ListIcon as={MdCheckCircle} color='green.500' /> Nutrição - {item.id}
+    <Button margin="0 16px" size="32px" padding="0px" backgroundColor="transparent">
+      <MdOutlineEditNote size="32px" color="white" />
+    </Button>
     <UnorderedList>
     <ListItem>{item.title} - {item.date}</ListItem>
     <ListItem>{item.notes}</ListItem>
     </UnorderedList>
-  </ListItem>)}
+  </ListItem>
+  </LinkOverlay></LinkBox>
+  )}
 </List>
 
 <List spacing={3}>
 {reports.list.filter(item=>item.action==="4" && item.dog==info.id).map((item, index)=>
+  <LinkBox><LinkOverlay href={"/dashboard/cuidados/"+item.dog+"/"+item.id}>
   <ListItem>
     <ListIcon as={MdCheckCircle} color='green.500' /> Medicamento - {item.id}
+    <Button margin="0 16px" size="32px" padding="0px" backgroundColor="transparent">
+      <MdOutlineEditNote size="32px" color="white" />
+    </Button>
     <UnorderedList>
     <ListItem>{item.title} - {item.date}</ListItem>
     <ListItem>{item.notes}</ListItem>
     </UnorderedList>
-  </ListItem>)}
+  </ListItem>
+  </LinkOverlay></LinkBox>
+  )}
 </List>
 
 <List spacing={3}>
 {reports.list.filter(item=>item.action==="6" && item.dog==info.id).map((item, index)=>
+  <LinkBox><LinkOverlay href={"/dashboard/cuidados/"+item.dog+"/"+item.id}>
   <ListItem>
     <ListIcon as={MdCheckCircle} color='green.500' /> Alergia - {item.id}
+    <Button margin="0 16px" size="32px" padding="0px" backgroundColor="transparent">
+      <MdOutlineEditNote size="32px" color="white" />
+    </Button>
     <UnorderedList>
     <ListItem>{item.title} - {item.date}</ListItem>
     <ListItem>{item.notes}</ListItem>
     </UnorderedList>
-  </ListItem>)}
+  </ListItem>
+  </LinkOverlay></LinkBox>
+  )}
 </List>
 
 
@@ -177,35 +189,53 @@ import DogReportCard from '../DogReportCard';
         
       <List spacing={3}>
 {reports.list.filter(item=>item.action==="5" && item.dog==info.id).map((item, index)=>
+  <LinkBox><LinkOverlay href={"/dashboard/cuidados/"+item.dog+"/"+item.id}>
   <ListItem>
     <ListIcon as={MdCheckCircle} color='green.500' /> Exame - {item.id}
+    <Button margin="0 16px" size="32px" padding="0px" backgroundColor="transparent">
+      <MdOutlineEditNote size="32px" color="white" />
+    </Button>
     <UnorderedList>
     <ListItem>{item.title} - {item.date}</ListItem>
     <ListItem>{item.notes}</ListItem>
     </UnorderedList>
-  </ListItem>)}
+  </ListItem>
+  </LinkOverlay></LinkBox>
+  )}
 </List>
         
 <List spacing={3}>
 {reports.list.filter(item=>item.action==="7" && item.dog==info.id).map((item, index)=>
+  <LinkBox><LinkOverlay href={"/dashboard/cuidados/"+item.dog+"/"+item.id}>
   <ListItem>
     <ListIcon as={MdCheckCircle} color='green.500' /> Doença - {item.id}
+    <Button margin="0 16px" size="32px" padding="0px" backgroundColor="transparent">
+      <MdOutlineEditNote size="32px" color="white" />
+    </Button>
     <UnorderedList>
     <ListItem>{item.title} - {item.date}</ListItem>
     <ListItem>{item.notes}</ListItem>
     </UnorderedList>
-  </ListItem>)}
+  </ListItem>
+  </LinkOverlay></LinkBox>
+  )}
 </List>
 
 <List spacing={3}>
 {reports.list.filter(item=>item.action==="8" && item.dog==info.id).map((item, index)=>
+  <LinkBox><LinkOverlay href={"/dashboard/cuidados/"+item.dog+"/"+item.id}>
   <ListItem>
     <ListIcon as={MdCheckCircle} color='green.500' /> Procedimento - {item.id}
+    <Button margin="0 16px" size="32px" padding="0px" backgroundColor="transparent">
+      <MdOutlineEditNote size="32px" color="white" />
+    </Button>
     <UnorderedList>
     <ListItem>{item.title} - {item.date}</ListItem>
     <ListItem>{item.notes}</ListItem>
     </UnorderedList>
-  </ListItem>)}
+  </ListItem>
+  </LinkOverlay></LinkBox>
+  )}
 </List>
 
 
@@ -226,22 +256,26 @@ import DogReportCard from '../DogReportCard';
         
       <List spacing={3}>
 {reports.list.filter(item=>item.action==="9" && item.dog==info.id).map((item, index)=>
+  <LinkBox><LinkOverlay href={"/dashboard/cuidados/"+item.dog+"/"+item.id}>
   <ListItem>
     <ListIcon as={MdCheckCircle} color='green.500' /> Outros - {item.id}
+    <Button margin="0 16px" size="32px" padding="0px" backgroundColor="transparent">
+      <MdOutlineEditNote size="32px" color="white" />
+    </Button>
     <UnorderedList>
     <ListItem>{item.title} - {item.date}</ListItem>
     <ListItem>{item.notes}</ListItem>
     </UnorderedList>
-  </ListItem>)}
+  </ListItem>
+  </LinkOverlay></LinkBox>
+  )}
 </List>
 
-
-      </AccordionPanel>
+     </AccordionPanel>
     </AccordionItem>
   
   </Accordion>
   
-        </Box>
       </Flex>
     );
   };
