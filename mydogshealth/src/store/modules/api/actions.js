@@ -1,15 +1,4 @@
-import { REGISTER_OK, REGISTER_ERROR, LOGIN_OK, LOGIN_ERROR, LOGOUT } from "./actionTypes";
 import { SHOW_MSG, CLEAR_MSG } from "./actionTypes";
-import axios from "axios";
-
-const API_URL = "http://localhost/www/mydogshealth/api/";
-
-export const register2 = (email, password) => {
-  axios.post(API_URL + "register/", {
-    email,
-    password,
-  });
-};
 
 export const successMsg = (title, msg) => ({
     type: SHOW_MSG,

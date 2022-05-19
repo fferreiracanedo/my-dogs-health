@@ -47,7 +47,6 @@ export const loginReducer = (state = loginState, action) => {
     }
 }
 
-
 const dogdata = JSON.parse(localStorage.getItem("dogdata"))
 const dogState = dogdata ? { ...dogdata, status: "updating" } : {status: "updating", list: []};
 export const dogReducer = (state = dogState, action) => {
@@ -91,8 +90,6 @@ export const reportReducer = (state = reportState, action) => {
         return state;
     }
 }
-
-
 
 const msgState = {};
 export const msgReducer = (state = msgState, action) => {
