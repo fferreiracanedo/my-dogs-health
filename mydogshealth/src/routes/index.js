@@ -74,7 +74,11 @@ const Routes = () => {
       {!user.logged ? <Redirect to="/" /> : user.profile && user.profile.status==="incomplete" 
                       ? <Redirect to="/register/final" /> :  <Cuidados />}
       </Route>
-      <Route path="/dashboard/cuidados/:id">
+      <Route exact path="/dashboard/cuidados/:id">
+      {!user.logged ? <Redirect to="/" /> : user.profile && user.profile.status==="incomplete" 
+                      ? <Redirect to="/register/final" /> :  <Cuidados />}
+      </Route>
+      <Route exact path="/dashboard/cuidados/:id/:act">
       {!user.logged ? <Redirect to="/" /> : user.profile && user.profile.status==="incomplete" 
                       ? <Redirect to="/register/final" /> :  <Cuidados />}
       </Route>

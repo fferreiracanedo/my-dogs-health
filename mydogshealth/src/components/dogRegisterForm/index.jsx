@@ -46,6 +46,7 @@ const DogRegisterForm = ({ onClose }) => {
   const onSubmitFunction = data => {
     console.log(data,token);
     dispatch(dogRegisterThunk(token, data.imgUrl, data.name, data.breed, data.gender, data.birth));
+    onClose();
     //token, thumb, name, breed, gender, birth
   };
 /*

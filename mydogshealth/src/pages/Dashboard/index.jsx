@@ -14,14 +14,14 @@ const Dashboard = () => {
       width="100%"
       flexDirection="column"
       alignItems="center"
-      height="100vh"
+      minHeight="100vh"
     >
       <HeaderDashBoard />
       <Box
         display="flex"
         flexDirection={{ base: 'column', md: 'row', lg: 'row' }}
         alignItems={{ base: 'center', md: 'baseline', lg: 'baseline' }}
-        justifyContent="space-between"
+        justifyContent="center"
       >
         <Box
           display="flex"

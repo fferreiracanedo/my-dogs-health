@@ -42,7 +42,7 @@ import {
     AccordionPanel,
     AccordionIcon,
   } from '@chakra-ui/react'
-  
+  import DogUpdateForm from '../DogUpdateForm';
   import FormVacina from '../FormVacina';
   import DogCard from '../DogCard';
   import { useSelector } from 'react-redux';
@@ -52,41 +52,57 @@ import FormReport from '../FormReport';
 
   const DogReportCard = ({info}) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
+    const { isOpen: isOpenDogEdit, onOpen: onOpenDogEdit, onClose: onCloseDogEdit } = useDisclosure()
 
     return (
 
-  <Flex alignItems='center'>
-    <Avatar size='xl' src={info.thumb} />
+  <Flex  w="100%" alignItems="center" justifyContent="center">
+
+    <Button  margin="0 16px" size="60px" padding="0px"  backgroundColor="transparent" onClick={onOpenDogEdit}>
+      <MdOutlineEditNote size="60px" color="white" />
+    </Button>
+
+
+
+    <Modal isOpen={isOpenDogEdit} onClose={onCloseDogEdit}>
+          <ModalOverlay />
+          <ModalContent width="320px" display="flex" alignItems="center">
+            <ModalHeader
+              textAlign="center"
+              fontSize={{ base: '16px', md: '18px' }}
+            >
+              Registrar Ação
+            </ModalHeader>
+            <ModalCloseButton bgColor="#AC5858" />
+            <ModalBody>
+              <DogUpdateForm dogdata={info} onClose={onCloseDogEdit} />
+            </ModalBody>
+          </ModalContent>
+        </Modal>
+
+
+    <Avatar size='2xl' src={info.thumb} />
     <Box ml='3'>
       <Text fontSize='xl'  fontWeight='bold'>
-      {info.name}
+      {info.name} ({info.gender})
         <Badge fontSize='xl' ml='1' colorScheme='green'>
         {info.id}
         </Badge>
       </Text>
       <Text fontSize='xl'>{info.breed}</Text>
-      <Text fontSize='xl'>{info.gender}
-      <Badge fontSize='xl' ml='1' colorScheme='green'>
-        {info.birth}
-        </Badge>
+      <Text fontSize='xl'>{info.birth}
     </Text>
     </Box>
     
-    <Button margin="2px" padding="0" backgroundColor="transparent">
-            <MdOutlineEditNote size="30px" color="#b84040" />
-          </Button>
-          <Button margin="2px" padding="0" backgroundColor="transparent">
-            <MdPets size="30px" color="#b84040" />
-          </Button>
-          <Button margin="2px" padding="0" backgroundColor="transparent"  onClick={onOpen}
->
-            <MdHealthAndSafety size="30px" color="#b84040" />
+          
+          <Button margin="0 16px" size="60px" padding="0px" backgroundColor="transparent"  onClick={onOpen}
+>           <MdHealthAndSafety size="60px" color="white" />
           </Button>
 
 
           <Modal isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
-          <ModalContent width="90%" display="flex" alignItems="center">
+          <ModalContent width="320px" display="flex" alignItems="center">
             <ModalHeader
               textAlign="center"
               fontSize={{ base: '16px', md: '18px' }}
