@@ -41,10 +41,8 @@ const DogRegisterForm = ({ onClose }) => {
 
 
   const token = useSelector(state => state.user.profile.token);
-  console.log("token dog",token);
   const dispatch = useDispatch();
   const onSubmitFunction = data => {
-    console.log(data,token);
     dispatch(dogRegisterThunk(token, data.imgUrl, data.name, data.breed, data.gender, data.birth));
     onClose();
     //token, thumb, name, breed, gender, birth
@@ -76,7 +74,7 @@ const DogRegisterForm = ({ onClose }) => {
         <form onSubmit={handleSubmit(onSubmitFunction)}>
           <FormControl padding="12px" isInvalid={errors.name}>
             <Input
-              borderColor="#855050"
+              borderColor="#2a4058"
               width="100%"
               placeholder="Nome"
               {...register('name')}
@@ -89,7 +87,7 @@ const DogRegisterForm = ({ onClose }) => {
 
           <FormControl padding="12px" isInvalid={errors.breed}>
             <Input
-              borderColor="#855050"
+              borderColor="#2a4058"
               width="100%"
               placeholder="Raça"
               {...register('breed')}
@@ -114,7 +112,7 @@ const DogRegisterForm = ({ onClose }) => {
 
           <FormControl padding="12px" isInvalid={errors.imgUrl}>
             <Input
-              borderColor="#855050"
+              borderColor="#2a4058"
               width="100%"
               placeholder="Imagem do seu doguinho"
               {...register('imgUrl')}
@@ -129,7 +127,7 @@ const DogRegisterForm = ({ onClose }) => {
             <FormLabel>Data de Nascimento:</FormLabel>
             <Input
               type="date"
-              borderColor="#855050"
+              borderColor="#2a4058"
               width="100%"
               placeholder="Digite a Data de Nascimento"
               {...register('birth')}
@@ -146,7 +144,7 @@ const DogRegisterForm = ({ onClose }) => {
             type="submit"
             colorScheme="#2c2121"
             color="white"
-            bgColor="#962C2C"
+            bgColor="#2a4058"
             marginBottom="20px"
           >
             Registrar

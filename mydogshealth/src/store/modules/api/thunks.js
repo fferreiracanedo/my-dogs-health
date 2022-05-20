@@ -48,11 +48,11 @@ export const loginThunk = (email, password) => (dispatch) => {
 };
 
 export const logoutThunk = () => (dispatch) => {
+    localStorage.clear();
     dispatch({
         type: LOGOUT,
         payload: null,
     });
-    localStorage.clear();
     dispatch(infoMsg("Logout efetuado com sucesso!", "Acesse a página de login para retornar à plataforma."));
 };
 
