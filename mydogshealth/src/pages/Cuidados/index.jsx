@@ -3,6 +3,8 @@ import HeaderDashBoard from '../../components/HeaderDashBoard';
 import MenuDashboard from '../../components/MenuDashboard';
 import TableDog from '../../components/TableDog';
 import { SimpleGrid } from '@chakra-ui/react'
+
+import TableDog2 from '../../components/TableDog2';
 const Cuidados = () => {
   return (
 

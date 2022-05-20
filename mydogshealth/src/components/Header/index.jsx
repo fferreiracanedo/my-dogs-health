@@ -2,6 +2,7 @@ import { Flex, Button, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import Logo from '../Logo';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+
 const Header = () => {
   const history = useHistory();
   return (

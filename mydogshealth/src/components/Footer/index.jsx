@@ -12,7 +12,7 @@ const Footer = () => {
         </Box>
         <Box w="45vw" m="1vw" display="flex" alignItems="center">
           <Text w="50vw" fontSize={{ base: '18px', md: '36px', lg: '52px' }}>
-            Deixe com que a <Text>MyDogHealth</Text> cuide do seu cãozinho
+            Deixe que a <Text>MyDogsHealth</Text> cuide do seu cãozinho
           </Text>
         </Box>
       </Box>

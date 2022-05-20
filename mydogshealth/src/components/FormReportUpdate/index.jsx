@@ -42,10 +42,8 @@ import {
   
   
     const token = useSelector(state => state.user.profile.token);
-    console.log("token",token);
     const dispatch = useDispatch();
     const onSubmitFunction = data => {
-      console.log("formReport",token, data.notes);
         dispatch(reportUpdateThunk(token, data.reportId, data.notes));
       };
   

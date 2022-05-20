@@ -1,7 +1,10 @@
 import { Box, Text } from '@chakra-ui/react';
 import CardFeed from '../CardFeed';
-
+import { useSelector } from 'react-redux';
 const FeedDashboard = () => {
+  const dogs = useSelector(state => state.dogs);
+  const reports = useSelector(state => state.reports);
+  
   const arrayFeed = [
     {
       titulo: 'OLá Mundo',

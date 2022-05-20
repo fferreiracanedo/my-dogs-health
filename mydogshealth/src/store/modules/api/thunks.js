@@ -62,14 +62,12 @@ export const profileThunk = (token, thumb, name, username, city, specialist, ass
         token, thumb, name, username, city, specialist, association, contact, bio,
     }, { headers: { 'Content-Type': 'multipart/form-data' } })
         .then((success) => {
-            console.log("userdata ok", success.data);
             dispatch({
                 type: UPDATE_OK,
                 payload: success.data.userdata,
             });
         })
         .catch((error) => {
-            console.log("error", error.response.data.message);
             dispatch({
                 type: REGISTER_ERROR,
             });
@@ -91,7 +89,6 @@ export const dogRegisterThunk = (token, thumb, name, breed, gender, birth) => (d
             dispatch(successMsg("Doguinho registrado com sucesso!", success.data.message));
         })
         .catch((error) => {
-            console.log("error", error, token);
             dispatch({
                 type: DOG_UPDATE_ERROR,
             });
@@ -111,7 +108,6 @@ export const dogUpdateThunk = (token, dogId, thumb, name, breed) => (dispatch) =
             dispatch(successMsg("Dados atualizados com sucesso!", success.data.message));
         })
         .catch((error) => {
-            console.log("error", error, token);
             dispatch({
                 type: DOG_UPDATE_ERROR,
             });
@@ -132,7 +128,6 @@ export const dogDeleteThunk = (token, dogId) => (dispatch) => {
             dispatch(successMsg("Dados atualizados com sucesso!", success.data.message));
         })
         .catch((error) => {
-            console.log("error", error, token);
             dispatch({
                 type: DOG_UPDATE_ERROR,
             });
@@ -193,7 +188,6 @@ export const reportDeleteThunk = (token, reportId) => (dispatch) => {
             dispatch(successMsg("Dados atualizados com sucesso!", success.data.message));
         })
         .catch((error) => {
-            console.log("error", error, token);
             dispatch({
                 type: REPORT_UPDATE_ERROR,
             });
@@ -209,14 +203,12 @@ export const userdataThunk = (token) => (dispatch) => {
         token
     }, { headers: { 'Content-Type': 'multipart/form-data' } })
         .then((success) => {
-            console.log("userdata ok", success.data);
             dispatch({
                 type: UPDATE_OK,
                 payload: success.data.userdata,
             });
         })
         .catch((error) => {
-            console.log("userdata error", error);
             dispatch({
                 type: UPDATE_ERROR,
             });
@@ -229,14 +221,12 @@ export const dogdataThunk = (token) => (dispatch) => {
         token,
     }, { headers: { 'Content-Type': 'multipart/form-data' } })
         .then((success) => {
-            console.log("dogdata ok", success.data);
             dispatch({
                 type: DOG_UPDATE_OK,
                 payload: success.data.dogdata,
             });
         })
         .catch((error) => {
-            console.log("dogdata error", error);
             dispatch({
                 type: DOG_UPDATE_ERROR,
             });
@@ -249,14 +239,12 @@ export const reportdataThunk = (token) => (dispatch) => {
         token,
     }, { headers: { 'Content-Type': 'multipart/form-data' } })
         .then((success) => {
-            console.log("reportdata ok", success.data);
             dispatch({
                 type: REPORT_UPDATE_OK,
                 payload: success.data.reportdata,
             });
         })
         .catch((error) => {
-            console.log("reportdata error", error);
             dispatch({
                 type: REPORT_UPDATE_ERROR,
             });

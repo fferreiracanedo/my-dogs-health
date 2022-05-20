@@ -66,14 +66,14 @@ import FormReport from '../FormReport';
 
     <Modal isOpen={isOpenDogEdit} onClose={onCloseDogEdit}>
           <ModalOverlay />
-          <ModalContent width="320px" display="flex" alignItems="center">
+          <ModalContent  display="flex" alignItems="center">
             <ModalHeader
               textAlign="center"
-              fontSize={{ base: '16px', md: '18px' }}
+              fontSize={{ base: '16px', md: '16px' }}
             >
-              Registrar Ação
+              Atualizar Informações
             </ModalHeader>
-            <ModalCloseButton bgColor="#AC5858" />
+            <ModalCloseButton />
             <ModalBody>
               <DogUpdateForm dogdata={info} onClose={onCloseDogEdit} />
             </ModalBody>
@@ -85,13 +85,13 @@ import FormReport from '../FormReport';
     <Box ml='3'>
       <Text fontSize='xl'  fontWeight='bold'>
       {info.name} ({info.gender})
-        <Badge fontSize='xl' ml='1' colorScheme='green'>
-        {info.id}
-        </Badge>
       </Text>
       <Text fontSize='xl'>{info.breed}</Text>
       <Text fontSize='xl'>{info.birth}
     </Text>
+    <Badge fontSize='xl' ml='1' colorScheme='green'>
+        {info.id}
+        </Badge>
     </Box>
     
           
@@ -102,14 +102,14 @@ import FormReport from '../FormReport';
 
           <Modal isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
-          <ModalContent width="320px" display="flex" alignItems="center">
+          <ModalContent  display="flex" alignItems="center">
             <ModalHeader
               textAlign="center"
-              fontSize={{ base: '16px', md: '18px' }}
+              fontSize='16px'
             >
               Registrar Ação
             </ModalHeader>
-            <ModalCloseButton bgColor="#AC5858" />
+            <ModalCloseButton  />
             <ModalBody>
               <FormReport dogId={info.id} onClose={onClose} />
             </ModalBody>

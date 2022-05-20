@@ -29,26 +29,24 @@ const Routes = () => {
 
   useEffect(() => {
     if (user.status==="updating" && user.profile && user.profile.token) {
-      console.log("updating user",user.profile.token)
       dispatch(userdataThunk(user.profile.token));
     }
   }, []);
 
   useEffect(() => {
     if (dogs.status==="updating" && user.profile && user.profile.token) {
-      console.log("updating dogs",user.profile.token)
       dispatch(dogdataThunk(user.profile.token));
     }
   }, []);
 
   useEffect(() => {
     if (reports.status==="updating" && user.profile && user.profile.token) {
-      console.log("updating reports", user.profile.token)
       dispatch(reportdataThunk(user.profile.token));
     }
   }, []);
 
   return (
+    
     <Switch>
       <Route exact path="/">
         {user.logged ? <Redirect to="/dashboard" /> : <LandingPage />}

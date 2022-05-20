@@ -1,5 +1,6 @@
 import { Box, Flex, Heading, Image } from '@chakra-ui/react';
 import logo from '../../assets/image/LogoLandign.svg';
+
 const HeaderRegisterFinal = () => {
   return (
     <Box>
@@ -20,4 +21,5 @@ const HeaderRegisterFinal = () => {
     </Box>
   );
 };
+
 export default HeaderRegisterFinal;

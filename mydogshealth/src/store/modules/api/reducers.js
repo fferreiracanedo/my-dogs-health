@@ -3,19 +3,21 @@ import { REGISTER_OK, REGISTER_ERROR, LOGIN_OK, LOGIN_ERROR, LOGOUT, UPDATE_OK, 
 import { SHOW_MSG, CLEAR_MSG } from "./actionTypes";
 
 const userdata = JSON.parse(localStorage.getItem("userdata"))
-const loginState = userdata 
+const loginState = userdata && userdata.profile
     ? { ...userdata, status: "updating" }
     : { logged: false, status: "updating", profile: null };
 export const loginReducer = (state = loginState, action) => {
     const { type, payload } = action;
     switch (type) {
       case REGISTER_OK: 
+        localStorage.clear();
         return {
             ...state,
             registered: true,
             logged: false,
         };
       case REGISTER_ERROR:
+        localStorage.clear();
         return {
           ...state,
           logged: false,
@@ -36,6 +38,7 @@ export const loginReducer = (state = loginState, action) => {
         };
       case LOGIN_ERROR: //fall-through
       case LOGOUT:
+        localStorage.clear();
         return {
           ...state,
           logged: false,
@@ -82,7 +85,6 @@ export const reportReducer = (state = reportState, action) => {
         };
       case REPORT_UPDATE_ERROR:
         localStorage.setItem("reportdata", JSON.stringify({...state, status: "outdated"}));
-
         return {
           status: "outdated",
         };

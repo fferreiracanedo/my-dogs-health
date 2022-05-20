@@ -1,6 +1,6 @@
+import { Box, Flex, Image } from '@chakra-ui/react';
 import loginLogo from '../../assets/image/LoginLogo.svg';
 import Logo from '../../assets/image/logo.svg';
-import { Box, Flex, Image, Button } from '@chakra-ui/react';
 import Login from '../../components/Login';
 
 const LoginPage = () => {

@@ -1,6 +1,15 @@
 import { Box, Flex, Image, Text } from '@chakra-ui/react';
 import dogMainSection from '../../assets/image/dogMainSection.svg';
 
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator
+} from '@chakra-ui/react';
+import { MdOutlineEditNote, MdHealthAndSafety, MdPets, MdChevronRight, MdCheckCircle } from 'react-icons/md';
+
+
 import { useSelector } from 'react-redux';
 
 const HeaderMainSection = () => {
@@ -10,11 +19,14 @@ const HeaderMainSection = () => {
   return (
     <Flex
       display="flex"
-      justifyContent="space-between"
+      justifyContent="space-around"
       width="100%"
       alignItems="center"
     >
+
       <Box display="flex">
+
+
         <Text
           fontSize={{ base: '14px', md: '14px', lg: '18px' }}
           padding="5px"
@@ -37,7 +49,7 @@ const HeaderMainSection = () => {
           padding="5px"
           fontFamily="Inter"
         >
-          Total de dogs: {dogs.list.length} 
+          Total de dogs: {dogs.list && dogs.list.length} 
         </Text>
       </Box>
     </Flex>
