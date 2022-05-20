@@ -28,23 +28,24 @@ const Routes = () => {
   }, [msg]);
 
   useEffect(() => {
-    if (user.status==="updating" && user.profile && user.profile.token) {
+    if (user.logged && user.status==="updating") {
       dispatch(userdataThunk(user.profile.token));
       dispatch(dogdataThunk(user.profile.token));
+      dispatch(reportdataThunk(user.profile.token));
     }
-  }, []);
+  }, [user]);
 
   useEffect(() => {
     if (dogs.status==="updating" && user.profile && user.profile.token) {
       dispatch(dogdataThunk(user.profile.token));
     }
-  }, []);
+  }, [dogs]);
 
   useEffect(() => {
     if (reports.status==="updating" && user.profile && user.profile.token) {
       dispatch(reportdataThunk(user.profile.token));
     }
-  }, []);
+  }, [reports]);
 
   return (
     

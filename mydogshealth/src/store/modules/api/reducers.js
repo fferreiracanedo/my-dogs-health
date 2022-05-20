@@ -3,9 +3,12 @@ import { REGISTER_OK, REGISTER_ERROR, LOGIN_OK, LOGIN_ERROR, LOGOUT, UPDATE_OK, 
 import { SHOW_MSG, CLEAR_MSG } from "./actionTypes";
 
 const userdata = JSON.parse(localStorage.getItem("userdata"))
+const dogdata = JSON.parse(localStorage.getItem("dogdata"))
+const reportdata = JSON.parse(localStorage.getItem("reportdata"))
+
 const loginState = userdata && userdata.profile
     ? { ...userdata, status: "updating" }
-    : { logged: false, status: "updating", profile: null };
+    : { logged: false, status: "", profile: null };
 export const loginReducer = (state = loginState, action) => {
     const { type, payload } = action;
     switch (type) {
@@ -22,9 +25,16 @@ export const loginReducer = (state = loginState, action) => {
           ...state,
           logged: false,
         };
-      case LOGIN_OK: //fall-through
+      case LOGIN_OK: 
+        localStorage.setItem("userdata", JSON.stringify({logged: true, status: "updating", profile: payload}));
+        return {
+          ...state,
+          logged: true,
+          status: "updating",
+          profile: payload,
+        };
       case UPDATE_OK:
-            localStorage.setItem("userdata", JSON.stringify({logged: true, profile: payload}));
+            localStorage.setItem("userdata", JSON.stringify({logged: true, status: "updated", profile: payload}));
             return {
           ...state,
           logged: true,
@@ -50,7 +60,6 @@ export const loginReducer = (state = loginState, action) => {
     }
 }
 
-const dogdata = JSON.parse(localStorage.getItem("dogdata"))
 const dogState = dogdata ? { ...dogdata, status: "updating" } : {status: "updating", list: []};
 export const dogReducer = (state = dogState, action) => {
     const { type, payload } = action;
@@ -72,7 +81,6 @@ export const dogReducer = (state = dogState, action) => {
     }
 }
 
-const reportdata = JSON.parse(localStorage.getItem("reportdata"))
 const reportState = reportdata ?  { ...reportdata, status: "updating" } : {status: "updating", list: []};
 export const reportReducer = (state = reportState, action) => {
     const { type, payload } = action;
