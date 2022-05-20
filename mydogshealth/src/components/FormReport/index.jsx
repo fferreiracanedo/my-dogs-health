@@ -28,7 +28,7 @@ import {
   import { reportRegisterThunk } from '../../store/modules/api/thunks';
   import { useSelector } from 'react-redux';
   
-  const FormReport = ({dogId}) => {
+  const FormReport = ({dogId, onClose}) => {
     const loginSchema = yup.object().shape({
       dogId: yup.string(dogId),
       action: yup.string().required(),
@@ -48,6 +48,7 @@ import {
     const dispatch = useDispatch();
     const onSubmitFunction = data => {
         dispatch(reportRegisterThunk(token, data.dogId, data.action, data.title, data.notes, data.date));
+        onClose();
       };
   
     

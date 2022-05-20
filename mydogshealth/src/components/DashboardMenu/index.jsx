@@ -61,7 +61,7 @@ const DashboardMenu = () => {
             <MenuItem
                 onClick={() => {
                   dispatch(logoutThunk());
-                  history.push('/');
+                  window.location.assign(window.location.hostname);
                 }}
               >
                 Sair
