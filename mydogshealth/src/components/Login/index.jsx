@@ -42,7 +42,6 @@ const Login = () => {
 
   const dispatch = useDispatch();
   const onSubmitFunction = data => {
-    console.log(data);
     dispatch(loginThunk(data.email, data.password));
   };
 

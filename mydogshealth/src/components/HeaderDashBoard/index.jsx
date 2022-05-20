@@ -13,23 +13,30 @@ import {
   Avatar,
   AvatarBadge,
   AvatarGroup,
+  Spinner,
+  Tooltip 
 } from '@chakra-ui/react';
 
-import { BiAddToQueue } from 'react-icons/bi';
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverAnchor,
+} from '@chakra-ui/react'
 
-import { useHistory } from 'react-router-dom';
-
-import { useDispatch } from 'react-redux';
-import { logoutThunk } from '../../store/modules/api/thunks';
 import { useSelector } from 'react-redux';
 import DashboardMenu from '../DashboardMenu';
+import DrawerInfo from '../DrawerInfo';
 
 const HeaderDashBoard = () => {
-  const history = useHistory();
   const date = new Date();
-  const dispatch = useDispatch();
   const user = useSelector(state => state.user);
-  console.log(user);
+  
   return (
     <Box
       boxShadow="-webkit-box-shadow: -1px 6px 9px -3px rgba(0,0,0,0.75);
@@ -42,70 +49,40 @@ const HeaderDashBoard = () => {
       <Flex
         w="100%"
         m="0 auto"
-        justifyContent={{ base: 'space-evenly', md: 'space-between' }}
-        p={{ base: '15px 0', md: '15px 38px' }}
+        justifyContent={{ base: 'space-evenly', md: 'space-evenly' }}
+        p={{ base: '15px 0', md: '15px 0px' }}
+        maxW={{ base: '100%', md: '1200px' }}
         align="center"
       >
-        <Avatar>
-          <AvatarBadge boxSize="1.25em" bg="green.500" />
-        </Avatar>
+          <DrawerInfo />
+        <Tooltip hasArrow bg='gray.300' color='black' label={user.profile ? 'Usuário ' + user.profile.user : null}>
         <Box>
           <Text fontFamily="Inter" color="#000">
-            {user.profile && user.profile.name}
+            {user.profile && user.profile.username} {user.profile && user.profile.specialist && user.profile.association}
           </Text>
           <Text fontFamily="Poppins" color="#6d6666">
             {user.profile && user.profile.email}
           </Text>
         </Box>
+        </Tooltip>
         <Flex
-          w="190px"
           height="40px"
-          justifyContent="space-between"
+          justifyContent="center"
+          alignItems='center'
           bgColor="#2A4058"
-          padding="13px 20px"
-          borderRadius="13px"
+          padding="0 20px"
+          borderRadius="8px"
           color="white"
           display={{ base: 'none', md: 'flex' }}
         >
-          <Text marginTop="-4px" fontFamily="Inter">
+          <Text fontFamily="Inter">
             {date.toLocaleDateString()}
           </Text>
-          <Text marginTop="-4px" fontFamily="Inter">
-            14:33
-          </Text>
         </Flex>
-
-        <Menu>
-          <MenuButton as={Button} bgColor="#2A4058" color="white">
-            Perfil
-          </MenuButton>
-          <MenuList color="#6d6666">
-            <MenuGroup title="Perfil">
-              <MenuItem onClick={() => history.push('/perfil')}>
-                Minha Conta
-              </MenuItem>
-              <MenuItem
-                onClick={() => {
-                  dispatch(logoutThunk());
-                  history.push('/');
-                }}
-              >
-                Sair{' '}
-              </MenuItem>
-            </MenuGroup>
-            <MenuDivider />
-            <MenuGroup title="Ajuda">
-              <MenuItem>Docs</MenuItem>
-              <MenuItem onClick={() => history.push('/contact')}>
-                Contato
-              </MenuItem>
-              <MenuItem>FAQ</MenuItem>
-            </MenuGroup>
-          </MenuList>
-        </Menu>
         <DashboardMenu />
       </Flex>
     </Box>
   );
 };
+
 export default HeaderDashBoard;

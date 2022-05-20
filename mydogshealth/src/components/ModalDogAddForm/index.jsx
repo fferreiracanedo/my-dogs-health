@@ -11,30 +11,24 @@ import {
     Select,
   } from '@chakra-ui/react';
 
-  import {
-    Editable,
-    EditableInput,
-    EditableTextarea,
-    EditablePreview,
-  } from "@chakra-ui/react";
-
   import * as yup from 'yup';
   import { useForm } from 'react-hook-form';
   import { yupResolver } from '@hookform/resolvers/yup';
   
   import { useSelector, useDispatch } from 'react-redux';
-  import { dogUpdateThunk } from '../../store/modules/api/thunks';
+  import { dogRegisterThunk } from '../../store/modules/api/thunks';
   
-  const DogUpdateForm = ({ onClose, dogdata }) => {
+  const ModalDogAddForm = ({ onClose }) => {
     const toast = useToast();
   
     const dogRegisterSchema = yup.object().shape({
-        dogId: yup.string().required(),
-        name: yup.string().required(),
-      breed: yup.string().required(),
+      name: yup.string().required('Nome Obrigatório'),
+      breed: yup.string().required('Raça Obrigatória'),
+      birth: yup.string().required('Data de Nascimento Obrigatória'),
+      gender: yup.string().required('Gênero Obrigatório'),
       imgUrl: yup
         .string()
-        .required()
+        .required('Link de imagem obrigatória')
         .url('Formato inválido'),
     });
   
@@ -48,11 +42,9 @@ import {
   
   
     const token = useSelector(state => state.user.profile.token);
-    console.log("token dog",token);
     const dispatch = useDispatch();
     const onSubmitFunction = data => {
-      console.log(data,token);
-      dispatch(dogUpdateThunk(token, data.dogId, data.imgUrl, data.name, data.breed));
+      dispatch(dogRegisterThunk(token, data.imgUrl, data.name, data.breed, data.gender, data.birth));
       onClose();
       //token, thumb, name, breed, gender, birth
     };
@@ -81,30 +73,13 @@ import {
           alignItems="center"
         >
           <form onSubmit={handleSubmit(onSubmitFunction)}>
-
-          <FormControl padding="12px" isInvalid={errors.dogId}>
+            <FormControl padding="12px" isInvalid={errors.name}>
               <Input
                 borderColor="#2A4058"
                 width="100%"
-                value={dogdata.id}
-                {...register('dogId')}
-              />
-              <FormErrorMessage>
-                <FormErrorIcon />
-                {errors.dogId && errors.dogId.message}
-              </FormErrorMessage>
-            </FormControl>
-
-
-            <FormControl padding="12px" isInvalid={errors.name}>
-            <Editable defaultValue={dogdata.name}>
-            <EditablePreview />
-            <EditableInput
-                borderColor="#2A4058"
-                width="100%"
                 placeholder="Nome"
-                {...register('name')} />
-            </Editable>
+                {...register('name')}
+              />
               <FormErrorMessage>
                 <FormErrorIcon />
                 {errors.name && errors.name.message}
@@ -112,42 +87,65 @@ import {
             </FormControl>
   
             <FormControl padding="12px" isInvalid={errors.breed}>
-            <Editable defaultValue={dogdata.breed}>
-                <EditablePreview />
-                <EditableInput
+              <Input
                 borderColor="#2A4058"
                 width="100%"
                 placeholder="Raça"
                 {...register('breed')}
               />
-              </Editable>
               <FormErrorMessage>
                 <FormErrorIcon />
                 {errors.breed && errors.breed.message}
               </FormErrorMessage>
             </FormControl>
   
+            <FormControl padding="12px" isInvalid={errors.gender}>
+              <FormLabel htmlFor="gender">Gênero:</FormLabel>
+              <Select {...register('gender')} id="gender">
+                <option value="macho">Macho</option>
+                <option value="fêmea">Fêmea</option>
+              </Select>
+              <FormErrorMessage>
+                <FormErrorIcon />
+                {errors.gender && errors.gender.message}
+              </FormErrorMessage>
+            </FormControl>
+  
             <FormControl padding="12px" isInvalid={errors.imgUrl}>
-            <Editable borderColor="#2A4058" defaultValue={dogdata.thumb}>
-                <EditablePreview />
-                <EditableInput
+              <Input
                 borderColor="#2A4058"
                 width="100%"
                 placeholder="Imagem do seu doguinho"
                 {...register('imgUrl')}
               />
-              </Editable>
               <FormErrorMessage>
                 <FormErrorIcon />
                 {errors.imgUrl && errors.imgUrl.message}
               </FormErrorMessage>
             </FormControl>
-    
+  
+            <FormControl padding="12px" isInvalid={errors.birth}>
+              <FormLabel>Data de Nascimento:</FormLabel>
+              <Input
+                type="date"
+                borderColor="#2A4058"
+                width="100%"
+                placeholder="Digite a Data de Nascimento"
+                {...register('birth')}
+              />
+              <FormErrorMessage>
+                <FormErrorIcon />
+                {errors.birth && errors.birth.message}
+              </FormErrorMessage>
+            </FormControl>
+  
             <Button
               marginTop="20px"
               marginLeft="28%"
               type="submit"
-              bgColor="##2A4058"
+              colorScheme="#2A4058"
+              color="white"
+              bgColor="#2A4058"
               marginBottom="20px"
             >
               Registrar
@@ -157,5 +155,5 @@ import {
       </Flex>
     );
   };
-  export default DogUpdateForm;
+  export default ModalDogAddForm;
   

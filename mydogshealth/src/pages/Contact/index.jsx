@@ -1,7 +1,7 @@
 import { Flex, Text } from '@chakra-ui/react';
-import Logo from '../../components/Logo';
 import { AiOutlineMail, AiOutlinePhone } from 'react-icons/ai';
 import { BsChat } from 'react-icons/bs';
+import Logo from '../../components/Logo';
 
 const Contact = () => {
   return (
@@ -41,24 +41,24 @@ const Contact = () => {
             <AiOutlineMail size="70px" />
             <Text
               marginBlock="5px"
-              color="#792323"
+              color="#2A4058"
               fontWeight="800"
               fontSize="32px"
             >
               E-mail
             </Text>
             <Text marginBlock="5px" fontWeight="600">
-              Tire suas duvidas.
+              Tire suas dúvidas.
             </Text>
-            <Text marginBlock="5px" color="#792323" fontWeight="600">
-              ajuda@mydogshelth.com
+            <Text marginBlock="5px" color="#2A4058" fontWeight="600">
+              ajuda@mydogshealth.com
             </Text>
           </Flex>
           <Flex marginTop="30px" flexDirection="column" alignItems="center">
             <AiOutlinePhone size="70px" />
             <Text
               marginBlock="5px"
-              color="#792323"
+              color="#2A4058"
               fontWeight="800"
               fontSize="32px"
             >
@@ -67,7 +67,7 @@ const Contact = () => {
             <Text marginBlock="5px" fontWeight="600">
               Ligue a qualquer hora.
             </Text>
-            <Text marginBlock="5px" color="#792323" fontWeight="600">
+            <Text marginBlock="5px" color="#2A4058" fontWeight="600">
               +55 (41) 99999-9999
             </Text>
           </Flex>
@@ -80,7 +80,7 @@ const Contact = () => {
             <BsChat size="70px" />
             <Text
               marginBlock="5px"
-              color="#792323"
+              color="#2A4058"
               fontWeight="800"
               fontSize="32px"
             >
@@ -89,7 +89,7 @@ const Contact = () => {
             <Text marginBlock="5px" fontWeight="600">
               Para atendimento imediato.
             </Text>
-            <Text marginBlock="5px" color="#792323" fontWeight="600">
+            <Text marginBlock="5px" color="#2A4058" fontWeight="600">
               Abra nosso chat online.
             </Text>
           </Flex>

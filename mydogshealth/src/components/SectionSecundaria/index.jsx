@@ -4,6 +4,7 @@ import Saude from '../../assets/image/Saude.svg';
 import Parceria from '../../assets/image/Parceria.svg';
 import Foco from '../../assets/image/Foco.svg';
 import EconomiaTempo from '../../assets/image/EconomiaTempo.svg';
+
 const SectionSecundaria = () => {
   return (
     <Box width="90%" m="0 auto">
@@ -14,7 +15,7 @@ const SectionSecundaria = () => {
           fontWeight="regular"
           textAlign="center"
         >
-          Facilidades da Dogs Health
+          Facilidades da MyDogsHealth
         </Heading>
       </Box>
       <Flex
@@ -132,4 +133,5 @@ const SectionSecundaria = () => {
     </Box>
   );
 };
+
 export default SectionSecundaria;

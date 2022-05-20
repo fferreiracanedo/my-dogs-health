@@ -1,6 +1,7 @@
-import { Box, Flex } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import FormProfile from '../../components/FormProfile';
 import HeaderRegisterFinal from '../../components/HeaderRegisterFinal';
+
 const RegisterFinal = () => {
   return (
     <Flex
@@ -12,8 +13,7 @@ const RegisterFinal = () => {
       alignItems="center"
     >
       <HeaderRegisterFinal />
-
-      <FormProfile></FormProfile>
+      <FormProfile />
     </Flex>
   );
 };

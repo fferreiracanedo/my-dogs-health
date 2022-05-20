@@ -1,10 +1,7 @@
-import { Flex, Box, Text, Image } from '@chakra-ui/react';
-import * as yup from 'yup';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import Form from '../../components/Form';
+import { Flex, Box, Image } from '@chakra-ui/react';
 import Logo from '../../assets/image/logo.svg';
 import RegisterLogo from '../../assets/image/registerLogo.svg';
+import Form from '../../components/Form';
 
 const RegisterPage = () => {
   return (
@@ -14,7 +11,6 @@ const RegisterPage = () => {
         display={['none', 'none', 'flex']}
         flexDirection="column"
         alignItems="center"
-       
       >
         <Image
           m="2%"
@@ -35,4 +31,5 @@ const RegisterPage = () => {
     </Flex>
   );
 };
+
 export default RegisterPage;

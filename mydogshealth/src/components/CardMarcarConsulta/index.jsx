@@ -43,7 +43,7 @@ const CardMarcarConsulta = () => {
             bgColor="#FED7D7"
             padding="10px"
           >
-            <ModalHeader textAlign="center">Falar com Especialista</ModalHeader>
+            <ModalHeader textAlign="center">Encontrar Especialista</ModalHeader>
             <ModalCloseButton />
             <ModalBody overflow="auto">
               <Box

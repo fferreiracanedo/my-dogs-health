@@ -6,6 +6,7 @@ import {
     FormControl,
     FormLabel,
     Input,
+    Form,
     FormErrorIcon,
     FormErrorMessage,
     Select,
@@ -28,7 +29,7 @@ import {
   import { reportRegisterThunk } from '../../store/modules/api/thunks';
   import { useSelector } from 'react-redux';
   
-  const FormReport = ({dogId, onClose}) => {
+  const ModalReportAddForm = ({dogId, onClose}) => {
     const loginSchema = yup.object().shape({
       dogId: yup.string(dogId),
       action: yup.string().required(),
@@ -53,13 +54,12 @@ import {
   
     
     return (
-      <Box color="#2A4058" padding="20px" borderRadius="15px">
-        <Flex color="#2A4058" >
+      <>
           <form onSubmit={handleSubmit(onSubmitFunction)}>
             
           <FormControl isInvalid={errors.dogId}>
-              <FormLabel color="#2A4058" marginTop="5px" htmlFor="dogId">
-                Dog:{' '}
+              <FormLabel marginTop="5px" htmlFor="dogId">
+                Dog:
               </FormLabel>
               <Input
               value={dogId}
@@ -74,7 +74,6 @@ import {
               </FormErrorMessage>
             </FormControl>
   
-
             <FormControl padding="12px" isInvalid={errors.action}>
             <FormLabel htmlFor="action">Tipo:</FormLabel>
             <Select {...register('action')} id="action">
@@ -95,8 +94,8 @@ import {
           </FormControl>
 
             <FormControl isInvalid={errors.title}>
-              <FormLabel color="#2A4058" marginTop="5px" htmlFor="title">
-              Título:{' '}
+              <FormLabel marginTop="5px" htmlFor="title">
+              Título:
               </FormLabel>
               <Input
                 placeholder=""
@@ -109,22 +108,20 @@ import {
                 {errors.title && errors.title.message}
               </FormErrorMessage>
             </FormControl>
-            
   
-            <FormLabel color="#2A4058" marginTop="5px" htmlFor="notes">
+            <FormLabel marginTop="5px" htmlFor="notes">
               Observação:
             </FormLabel>
 
             <Editable defaultValue='Efeitos e Médico Veterinário responsável.'>
-            <EditablePreview />
-            <EditableTextarea
+            <EditablePreview borderColor="#2A4058"/>
+            <EditableTextarea borderColor="#2A4058"
                 as={'textarea'}
                 placeholder=""
                 {...register('notes')}
                 height="80px"
             />
             </Editable>
-
   
            <FormControl padding="12px" isInvalid={errors.date}>
             <FormLabel>Data:</FormLabel>
@@ -141,13 +138,12 @@ import {
             </FormErrorMessage>
             </FormControl>
 
-            <Button type="submit" width="100%" >
+            <Button type="submit" width="100%">
               Enviar
             </Button>
           </form>
-        </Flex>
-      </Box>
+      </>
     );
   };
-  export default FormReport;
+  export default ModalReportAddForm;
   

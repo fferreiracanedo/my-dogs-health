@@ -82,6 +82,8 @@ import {
   UnorderedList,
 } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react';
+import ModalReportAdd from '../ModalReportAdd';
+import ModalDogAdd from '../ModalDogAdd';
 
 const TableDog = () => {
   const dogs = useSelector(state => state.dogs);
@@ -89,21 +91,21 @@ const TableDog = () => {
   const user = useSelector(state => state.user);
   const { isOpen, onOpen, onClose } = useDisclosure()
   const { id, act } = useParams();
-console.log(id, act)
-  const dogPage = dogs.list.find(item => item.id.toString() === id);
-  const reportPage = reports.list.find(item => item.id.toString() === act);
+  const dogPage = dogs.list && dogs.list.find(item => item.id.toString() === id);
+  const reportPage = reports.list && reports.list.find(item => item.id.toString() === act);
 
   return (
 
 <Box w="100%">
 
+
     {dogPage 
     ? 
     
-<Flex flexDirection="column" marginTop="10px" width="100%"  gap='8' p="10" alignItems="center" justifyContent="center">
+<Flex flexDirection="column" marginTop="10px" width="100%"  gap='8' p="0" alignItems="center" justifyContent="center">
 
 
-  <Breadcrumb spacing='8px' separator={<MdChevronRight color='gray.500' />}>
+  <Breadcrumb spacing='8px' m='4' separator={<MdChevronRight color='gray.500' />}>
     <BreadcrumbItem>
       <BreadcrumbLink href='/dashboard'>Home</BreadcrumbLink>
     </BreadcrumbItem>
@@ -154,17 +156,31 @@ console.log(id, act)
 
 
     :
-    <Flex flexDirection="row" marginTop="10px" gap='8' p="10"  w="100%" alignItems="center" justifyContent="center">
+    <Flex flexDirection="column" marginTop="10px" gap='8' p="10"  w="100%" alignItems="center" justifyContent="center"
+    alignContent='center'>
 
-    <Wrap w="100%" alignItems="center" justifyContent="center"> 
 
-      <WrapItem>
+<Breadcrumb spacing='8px' m='4' separator={<MdChevronRight color='gray.500' />}>
+      <BreadcrumbItem>
+        <BreadcrumbLink href='/dashboard'>Home</BreadcrumbLink>
+      </BreadcrumbItem>
+    <BreadcrumbItem>
+    <BreadcrumbLink href='/dashboard/cuidados'>
+        Doguinhos
+      </BreadcrumbLink>
+    </BreadcrumbItem>
+        </Breadcrumb>
+
+    <Wrap w="100%" alignItems="center" justifyContent="center" alignContent='center' textAlign='center'> 
+
+      <WrapItem justifyContent="center">
     <Flex
       backgroundColor="#FFFF"
       width="300px"
       height="400px"
       flexDirection="column"
       alignItems="center"
+      justifyContent="center"
       marginTop="20px"
       borderRadius="5px"
       border="solid 2px"
@@ -179,7 +195,7 @@ console.log(id, act)
           backgroundColor="transparent"
           cursor="auto"
         >
-          <MdPets size="30px" color="#2A4058" />
+          <MdPets size="180px" color="#2A4058" />
         </Button>
       </Flex>
 
@@ -207,7 +223,7 @@ console.log(id, act)
             >
               Registrar um Novo Cão
             </ModalHeader>
-            <ModalCloseButton bgColor="#AC5858" />
+            <ModalCloseButton/>
             <ModalBody>
               <DogRegisterForm onClose={onClose} />
             </ModalBody>
@@ -219,6 +235,7 @@ console.log(id, act)
     </Flex>
 
     </WrapItem>
+    
     {dogs.list.map((item, index)=><LinkBox key={index}><LinkOverlay href={"/dashboard/cuidados/"+item.id}><DogCard info={item}/></LinkOverlay></LinkBox>)}
     </Wrap> 
     </Flex>

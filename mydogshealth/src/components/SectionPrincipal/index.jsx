@@ -1,6 +1,7 @@
 import ImgLogo from '../../assets/image/LogoLandign.svg';
 import Logo from '../../assets/image/My Dogs Health.svg';
 import { Box, Flex, Text, Image } from '@chakra-ui/react';
+
 const SectionPrincipal = () => {
   return (
     <Flex
@@ -34,4 +35,5 @@ const SectionPrincipal = () => {
     </Flex>
   );
 };
+
 export default SectionPrincipal;

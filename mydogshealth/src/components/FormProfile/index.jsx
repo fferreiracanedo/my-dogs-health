@@ -21,19 +21,15 @@ import { useSelector } from 'react-redux';
 const FormProfile = () => {
   const loginSchema = yup.object().shape({
     thumb: yup.string(),
-    name: yup.string().required('Nome obrigatório'),
-    username: yup.string().required('Nome de usuário obrigatório'),
-    city: yup.string().required('Cidade obrigatória'),
+    name: yup.string().required('Campo obrigatório'),
+    username: yup.string().required('Campo obrigatório'),
+    city: yup.string().required('Campo obrigatório'),
     specialist: yup.boolean(),
     association: yup.string().when('specialist', {
       is: true,
-      then: yup.string().required('CRMV obrigatório'),
+      then: yup.string().required('Campo obrigatório'),
     }),
     contact: yup.string(),
-    /*.matches(
-        '^\\([0-9]{2}\\) (([0-9]{5}-[0-9]{4})|([0-9]{5}-[0-9]{5}))$',
-        'Formato inválido'
-      )*/
   });
   const {
     register,
@@ -46,18 +42,6 @@ const FormProfile = () => {
   const token = useSelector(state => state.user.profile.token);
   const dispatch = useDispatch();
   const onSubmitFunction = data => {
-    console.log(
-      'formprofile',
-      token,
-      data.thumb,
-      data.name,
-      data.username,
-      data.city,
-      data.specialist,
-      data.association,
-      data.contact,
-      data.bio
-    );
     dispatch(
       profileThunk(
         token,
@@ -77,9 +61,10 @@ const FormProfile = () => {
     <Box bgColor="#fff" padding="20px" borderRadius="15px">
       <Flex>
         <form onSubmit={handleSubmit(onSubmitFunction)}>
+
           <FormControl isInvalid={errors.thumb}>
             <FormLabel marginTop="5px" htmlFor="name" color="#26226B">
-              Thumb:{' '}
+              Foto de Perfil:
             </FormLabel>
             <Input
               placeholder="Link do avatar"
@@ -97,10 +82,10 @@ const FormProfile = () => {
 
           <FormControl isInvalid={errors.name}>
             <FormLabel marginTop="5px" htmlFor="name" color="#26226B">
-              Nome:{' '}
+              Nome:
             </FormLabel>
             <Input
-              placeholder="Digite seu nome"
+              placeholder="Informe seu nome"
               borderColor="black"
               id="name"
               {...register('name')}
@@ -112,12 +97,13 @@ const FormProfile = () => {
               {errors.name && errors.name.message}
             </FormErrorMessage>
           </FormControl>
+
           <FormControl isInvalid={errors.username}>
             <FormLabel marginTop="5px" htmlFor="username" color="#26226B">
-              Nome de usuário:
+              Nome de Usuário:
             </FormLabel>
             <Input
-              placeholder="Digite seu nome de usuário"
+              placeholder="Informe seu nome de usuário"
               borderColor="black"
               id="username"
               {...register('username')}
@@ -134,7 +120,7 @@ const FormProfile = () => {
               Cidade:
             </FormLabel>
             <Input
-              placeholder="Digite seu cidade"
+              placeholder="Informe sua cidade"
               borderColor="black"
               id="city"
               {...register('city')}
@@ -159,7 +145,7 @@ const FormProfile = () => {
               {...register('specialist')}
               color="#26226B"
             >
-              Especialista com CRVM?
+              Especialista com CRMV?
             </Checkbox>
             <FormErrorMessage>
               <FormErrorIcon />
@@ -172,7 +158,7 @@ const FormProfile = () => {
               Certificado CRMV:
             </FormLabel>
             <Input
-              placeholder="Digite seu certificado"
+              placeholder="Informe seu registro profissional"
               id="association"
               borderColor="black"
               {...register('association')}
@@ -190,7 +176,7 @@ const FormProfile = () => {
               Número de contato:
             </FormLabel>
             <Input
-              placeholder="(dd) 99999-0000"
+              placeholder="(00) 99999-0000"
               id="contact"
               borderColor="black"
               {...register('contact')}
@@ -204,7 +190,7 @@ const FormProfile = () => {
           </FormControl>
 
           <FormLabel color="#26226B" marginTop="5px" htmlFor="bio">
-            Bio:
+            Resumo Biográfico:
           </FormLabel>
           <Input
             as={'textarea'}
@@ -232,4 +218,5 @@ const FormProfile = () => {
     </Box>
   );
 };
+
 export default FormProfile;
