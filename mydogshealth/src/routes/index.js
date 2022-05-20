@@ -30,6 +30,7 @@ const Routes = () => {
   useEffect(() => {
     if (user.status==="updating" && user.profile && user.profile.token) {
       dispatch(userdataThunk(user.profile.token));
+      dispatch(dogdataThunk(user.profile.token));
     }
   }, []);
 
