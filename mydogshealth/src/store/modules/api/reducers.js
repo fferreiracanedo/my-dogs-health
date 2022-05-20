@@ -42,7 +42,7 @@ export const loginReducer = (state = loginState, action) => {
         return {
           ...state,
           logged: false,
-          userdata: null,
+          profile: null,
           registered: false,
         };
       default:
