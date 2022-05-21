@@ -99,3 +99,57 @@ $ yarn start
 ## :memo: License
 
 This project is licensed by the MIT license. Check it out in [LICENSE](./LICENSE.md) for more details.
+
+## 🦄 Equipe de Desenvolvimento<br>
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/iuricode">
+        <img src="https://ca.slack-edge.com/TQZR39SET-U02NJQU4B7C-670cb568b975-72" width="100px;" alt="Foto do Mateus Ferreira"/><br>
+        <sub>
+          <b>Mateus Ferreira Canedo</b>
+        </sub>
+      </a>
+    </td>
+   <td align="center">
+      <a href="https://github.com/bosilveira">
+        <img src="https://avatars.githubusercontent.com/u/63247376?v=4" width="100px;" alt="Foto do Luan Catarino"/><br>
+        <sub>
+          <b>Bráulio Silveira</b>
+        </sub>
+      </a>
+    </td>
+       <td align="center">
+      <a href="https://github.com/hyanlopes">
+        <img src="https://ca.slack-edge.com/TQZR39SET-U02KC8TSQ8H-330e1f49a0a7-72" width="100px;" alt="Foto do Mateus Ferreira"/><br>
+        <sub>
+          <b>Hyan Lopes/b>
+        </sub>
+      </a>
+    </td>
+   <td align="center">
+      <a href="https://github.com/carlosrrds">
+        <img src="https://ca.slack-edge.com/TQZR39SET-U02FGSVB9EV-bf3fbb64de9c-72" width="100px;" alt="Foto do Luan Catarino"/><br>
+        <sub>
+          <b>Carlos Roberto</b>
+        </sub>
+      </a>
+    </td>
+   <td align="center">
+      <a href="https://github.com/anthonifelipi">
+        <img src="https://ca.slack-edge.com/TQZR39SET-U02EYVC3F9D-8a2e8c57cdcc-72" width="100px;" alt="Foto do Luan Catarino"/><br>
+        <sub>
+          <b>Anthoni Felipe</b>
+        </sub>
+      </a>
+    </td>
+   <td align="center">
+      <a href="https://github.com/cauaflemos">
+        <img src="https://avatars.githubusercontent.com/u/95310080?v=4" width="100px;" alt="Foto do Luan Catarino"/><br>
+        <sub>
+          <b>Cauã Ferreira</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
