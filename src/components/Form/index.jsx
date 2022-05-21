@@ -84,6 +84,8 @@ const Form = () => {
           display="flex"
           flexDirection="column"
           alignItems="center"
+          boxShadow="-webkit-box-shadow: 0px 5px 15px 4px #2c61f38c; 
+          box-shadow: 0px 5px 15px 4px #2f78d88c;"
           // border="1px solid black"
         >
           <Text

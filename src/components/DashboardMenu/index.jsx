@@ -46,12 +46,7 @@ const DashboardMenu = () => {
             </MenuItem>
             <MenuDivider />
             </MenuGroup>
-            <MenuGroup title="Perfil">
-              <MenuItem onClick={() => history.push('/perfil')}>
-                Minha Conta
-              </MenuItem>
-            </MenuGroup>
-            <MenuDivider />
+           
             <MenuGroup title="Ajuda">
               <MenuItem onClick={() => history.push('/contact')}>
                 Contato

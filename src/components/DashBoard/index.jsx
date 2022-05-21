@@ -15,7 +15,7 @@ const DashBoard = () => {
               fontSize={{ base: '16px', md: '18px', lg: '22px' }}
               fontWeight="700"
             >
-              My Dogs{' '}
+              My Dogs
               <Text
                 fontSize={{ base: '16px', md: '18px', lg: '22px' }}
                 color="#319795"

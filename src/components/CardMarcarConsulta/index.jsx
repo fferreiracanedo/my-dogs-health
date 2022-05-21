@@ -32,7 +32,6 @@ const CardMarcarConsulta = () => {
       padding="1rem"
       borderRadius="8px"
       justifyContent="center"
-      
     >
       <>
         <Modal isOpen={isOpen} onClose={onClose}>
@@ -54,7 +53,6 @@ const CardMarcarConsulta = () => {
                 bgColor="#c07b7b"
                 width="100%"
                 marginBottom="5px"
-                
               >
                 <Box width="100%">
                   <Text color="#fff" fontFamily="Inter" padding="5px">
@@ -283,7 +281,7 @@ const CardMarcarConsulta = () => {
         </Modal>
       </>
 
-      <Box width="100%" >
+      <Box width="100%">
         <Box
           width="100%"
           fontSize={{ base: '18px', md: '14px', lg: '16px', xl: '20px' }}
@@ -302,7 +300,7 @@ const CardMarcarConsulta = () => {
           fontFamily="Poppins"
           fontStyle="normal"
           fontWeight="400"
-          fontSize={{ base: '14px', md: '12px', lg: '12px', xl: '14px' }}
+          fontSize={{ base: '14px', md: '12px', lg: '12px', xl: '12px' }}
           overflow="hidden"
           textOverflow="ellipsis"
           padding="5px"
@@ -338,7 +336,9 @@ const CardMarcarConsulta = () => {
             fontWeight="bold"
             fontSize={{ base: '10px', md: '12px', lg: '18px' }}
           >
-            <Text color="#000" margin="5px 5px 6px 5px">+</Text>
+            <Text color="#000" margin="5px 5px 6px 5px">
+              +
+            </Text>
           </Button>
         </Box>
       </Box>

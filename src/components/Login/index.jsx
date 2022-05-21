@@ -56,8 +56,15 @@ const Login = () => {
         display="flex"
         flexDirection="column"
         alignItems="center"
+        boxShadow="-webkit-box-shadow: 0px 5px 15px 4px #2c61f38c; 
+        box-shadow: 0px 5px 15px 4px #2f78d88c;"
       >
-        <Text fontWeight="bold" fontSize="20px" color="#2A4058" marginTop="20px">
+        <Text
+          fontWeight="bold"
+          fontSize="20px"
+          color="#2A4058"
+          marginTop="20px"
+        >
           Login
         </Text>
         <form onSubmit={handleSubmit(onSubmitFunction)}>

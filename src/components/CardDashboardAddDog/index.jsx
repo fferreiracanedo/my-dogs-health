@@ -49,7 +49,7 @@ const CardDashboardAddDog = () => {
           fontFamily="Poppins"
           fontStyle="normal"
           fontWeight="400"
-          fontSize={{ base: '14px', md: '12px', lg: '12px', xl: '14px' }}
+          fontSize={{ base: '14px', md: '12px', lg: '12px', xl: '12px' }}
           padding="5px"
         >
           Clicando no botão, você pode adicionar um novo doguinho!

@@ -51,76 +51,72 @@ const Routes = () => {
   }, [reports]);
 
   return (
-    <Flex bgColor="#2A4058">
-      <Box>
-        <Switch>
-          <Route exact path="/">
-            {user.logged ? <Redirect to="/dashboard" /> : <LandingPage />}
-          </Route>
-          <Route exact path="/register">
-            {user.logged ? (
-              <Redirect to="/dashboard" />
-            ) : user.registered ? (
-              <Redirect to="/login" />
-            ) : (
-              <RegisterPage />
-            )}
-          </Route>
-          <Route exact path="/register/final">
-            {user.profile && user.profile.status === 'incomplete' ? (
-              <RegisterFinal />
-            ) : (
-              <Redirect to="/dashboard" />
-            )}
-          </Route>
-          <Route exact path="/login">
-            {user.logged ? <Redirect to="/dashboard" /> : <LoginPage />}
-          </Route>
-          <Route exact path="/dashboard">
-            {!user.logged ? (
-              <Redirect to="/" />
-            ) : user.profile && user.profile.status === 'incomplete' ? (
-              <Redirect to="/register/final" />
-            ) : (
-              <Dashboard />
-            )}
-          </Route>
-          <Route exact path="/contact">
-            <Contact />
-          </Route>
-          <Route exact path="/dashboard/cuidados">
-            {!user.logged ? (
-              <Redirect to="/" />
-            ) : user.profile && user.profile.status === 'incomplete' ? (
-              <Redirect to="/register/final" />
-            ) : (
-              <Cuidados />
-            )}
-          </Route>
-          <Route exact path="/dashboard/cuidados/:id">
-            {!user.logged ? (
-              <Redirect to="/" />
-            ) : user.profile && user.profile.status === 'incomplete' ? (
-              <Redirect to="/register/final" />
-            ) : (
-              <Cuidados />
-            )}
-          </Route>
-          <Route exact path="/dashboard/cuidados/:id/:act">
-            {!user.logged ? (
-              <Redirect to="/" />
-            ) : user.profile && user.profile.status === 'incomplete' ? (
-              <Redirect to="/register/final" />
-            ) : (
-              <Cuidados />
-            )}
-          </Route>
-          <Route path="*">
-            {user.logged ? <Redirect to="/dashboard" /> : <LandingPage />}
-          </Route>
-        </Switch>
-      </Box>
-    </Flex>
+    <Switch>
+      <Route exact path="/">
+        {user.logged ? <Redirect to="/dashboard" /> : <LandingPage />}
+      </Route>
+      <Route exact path="/register">
+        {user.logged ? (
+          <Redirect to="/dashboard" />
+        ) : user.registered ? (
+          <Redirect to="/login" />
+        ) : (
+          <RegisterPage />
+        )}
+      </Route>
+      <Route exact path="/register/final">
+        {user.profile && user.profile.status === 'incomplete' ? (
+          <RegisterFinal />
+        ) : (
+          <Redirect to="/dashboard" />
+        )}
+      </Route>
+      <Route exact path="/login">
+        {user.logged ? <Redirect to="/dashboard" /> : <LoginPage />}
+      </Route>
+      <Route exact path="/dashboard">
+        {!user.logged ? (
+          <Redirect to="/" />
+        ) : user.profile && user.profile.status === 'incomplete' ? (
+          <Redirect to="/register/final" />
+        ) : (
+          <Dashboard />
+        )}
+      </Route>
+      <Route exact path="/contact">
+        <Contact />
+      </Route>
+      <Route exact path="/dashboard/cuidados">
+        {!user.logged ? (
+          <Redirect to="/" />
+        ) : user.profile && user.profile.status === 'incomplete' ? (
+          <Redirect to="/register/final" />
+        ) : (
+          <Cuidados />
+        )}
+      </Route>
+      <Route exact path="/dashboard/cuidados/:id">
+        {!user.logged ? (
+          <Redirect to="/" />
+        ) : user.profile && user.profile.status === 'incomplete' ? (
+          <Redirect to="/register/final" />
+        ) : (
+          <Cuidados />
+        )}
+      </Route>
+      <Route exact path="/dashboard/cuidados/:id/:act">
+        {!user.logged ? (
+          <Redirect to="/" />
+        ) : user.profile && user.profile.status === 'incomplete' ? (
+          <Redirect to="/register/final" />
+        ) : (
+          <Cuidados />
+        )}
+      </Route>
+      <Route path="*">
+        {user.logged ? <Redirect to="/dashboard" /> : <LandingPage />}
+      </Route>
+    </Switch>
   );
 };
 export default Routes;

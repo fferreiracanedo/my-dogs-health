@@ -7,7 +7,9 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <Flex width="100%" bgColor="#2A4058" color="#FFF">
-        <Routes />
+        <Box width="100vw" bgColor="#2A4058">
+          <Routes />
+        </Box>
       </Flex>
     </ChakraProvider>
   );
