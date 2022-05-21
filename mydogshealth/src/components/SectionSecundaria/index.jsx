@@ -12,8 +12,10 @@ const SectionSecundaria = () => {
         <Heading
           fontSize="20px"
           color="#319795"
-          fontWeight="regular"
+          fontWeight="normal"
           textAlign="center"
+          fontFamily="Inter"
+          marginTop="10px"
         >
           Facilidades da MyDogsHealth
         </Heading>
@@ -34,17 +36,19 @@ const SectionSecundaria = () => {
         >
           <Flex
             p="10px"
-            bgColor="#C4C4C4"
+            bgColor="#78dcee"
             borderRadius="50px"
             alignItems="center"
             justifyContent="center"
             width="5rem"
             height="5rem"
             mb="5px"
+            padding="12px 24px"
+            border="2px solid #3f7cec"
           >
             <Image alt="Saúde" src={Saude} maxHeight="60px"></Image>
           </Flex>
-          <Text fontSize="0.76rem" mb="5px">
+          <Text padding="12px " fontSize="0.76rem" mb="5px">
             Saúde Canina
           </Text>
         </Box>
@@ -56,17 +60,19 @@ const SectionSecundaria = () => {
         >
           <Flex
             p="7px"
-            bgColor="#C4C4C4"
             borderRadius="50px"
             alignItems="center"
             justifyContent="center"
             width="5rem"
             height="5rem"
             mb="5px"
+            padding="12px 24px"
+            bgColor="#78dcee"
+            border="2px solid #3f7cec"
           >
             <Image alt="Saúde" src={Atendimento} maxHeight="60px"></Image>
           </Flex>
-          <Text mb="5px" fontSize="0.76rem">
+          <Text mt="10px" mb="10px" fontSize="0.76rem">
             Atendimento online
           </Text>
         </Box>
@@ -78,16 +84,19 @@ const SectionSecundaria = () => {
         >
           <Flex
             p="7px"
-            bgColor="#C4C4C4"
+            bgColor="#78dcee"
             borderRadius="50px"
             alignItems="center"
             justifyContent="center"
             width="5rem"
             height="5rem"
+            border="2px solid #3f7cec"
           >
             <Image alt="Saúde" src={EconomiaTempo} maxHeight="40px"></Image>
           </Flex>
-          <Text fontSize="0.76rem">Economia de Tempo</Text>
+          <Text fontSize="0.76rem" mt="10px" mb="10px">
+            Economia de Tempo
+          </Text>
         </Box>
         <Box
           display="flex"
@@ -97,16 +106,19 @@ const SectionSecundaria = () => {
         >
           <Flex
             p="7px"
-            bgColor="#C4C4C4"
+            bgColor="#78dcee"
             borderRadius="50px"
             alignItems="center"
             justifyContent="center"
             width="5rem"
             height="5rem"
+            border="2px solid #3f7cec"
           >
             <Image alt="Saúde" src={Foco} maxHeight="40px"></Image>
           </Flex>
-          <Text fontSize="0.76rem">Foco no Problema</Text>
+          <Text fontSize="0.76rem" mt="10px" mb="10px">
+            Foco no Problema
+          </Text>
         </Box>
         <Box
           display="flex"
@@ -116,17 +128,18 @@ const SectionSecundaria = () => {
         >
           <Flex
             p="7px"
-            bgColor="#C4C4C4"
+            bgColor="#78dcee"
             borderRadius="50px"
             alignItems="center"
             justifyContent="center"
             width="5rem"
             height="5rem"
+            border="2px solid #3f7cec"
           >
             <Image alt="Saúde" src={Parceria} maxHeight="40px"></Image>
           </Flex>
-          <Text fontSize="0.76rem" textAlign="center">
-            Parceria Comunitária
+          <Text mt="10px" mb="10px" fontSize="0.76rem" textAlign="center">
+            Parceria
           </Text>
         </Box>
       </Flex>
