@@ -61,7 +61,7 @@ const Form = () => {
 
   const dispatch = useDispatch();
   const onSubmitFunction = data => {
-    console.log(data);
+    
     dispatch(registerThunk(data.email, data.password));
   };
 
