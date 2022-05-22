@@ -30,7 +30,7 @@ const FormProfilePage = () => {
         result[i] = data[i];
       }
     }
-    console.log(result);
+    
   };
   return (
     <Box bgColor="#8E2C2C" padding="20px" borderRadius="15px" w="288px">

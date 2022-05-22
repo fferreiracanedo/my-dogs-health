@@ -29,7 +29,7 @@ const CardFeed = ({ title, text }) => {
           backgroundColor="transparent"
           color="#fff"
           size="xs"
-          onClick={() => console.log('ADICIONAR FUNCAO AQUI!')}
+          onClick={() => {}}
           borderRadius="1000px"
           padding="0"
           bottom="20px"

@@ -48,10 +48,10 @@ import {
   
   
     const token = useSelector(state => state.user.profile.token);
-    console.log("token dog",token);
+    
     const dispatch = useDispatch();
     const onSubmitFunction = data => {
-      console.log(data,token);
+      
       dispatch(dogUpdateThunk(token, data.dogId, data.imgUrl, data.name, data.breed));
       onClose();
       //token, thumb, name, breed, gender, birth
